@@ -168,7 +168,7 @@ if ( ! class_exists( 'TSSProReSizer' ) ) {
 
 				return $image;
 			} catch ( TSSProException $ex ) {
-				error_log( 'rtTPGReSizer.process() error: ' . $ex->getMessage() );
+				//error_log( 'rtTPGReSizer.process() error: ' . $ex->getMessage() );
 
 				if ( $this->throwOnError ) {
 					// Bubble up exception.

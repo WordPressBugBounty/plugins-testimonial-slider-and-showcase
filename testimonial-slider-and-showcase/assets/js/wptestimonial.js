@@ -334,7 +334,6 @@
 				clickable: true
 			};
 		}
-
 		instance[index] = new Swiper(slider[0], options);
 	}
 

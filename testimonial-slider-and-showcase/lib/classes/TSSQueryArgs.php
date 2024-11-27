@@ -74,7 +74,7 @@ if ( ! class_exists( 'TSSQueryArgs' ) ) :
 
 			if ( $post_not_in ) {
 				$post_not_in                = explode( ',', $post_not_in );
-				$this->args['post__not_in'] = $post_not_in;
+				$this->args['post__not_in'] = $post_not_in; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 			}
 
 			$this->args['posts_per_page'] = $limit;
@@ -169,7 +169,7 @@ if ( ! class_exists( 'TSSQueryArgs' ) ) :
 			}
 
 			if ( ! empty( $taxQ ) ) {
-				$this->args['tax_query'] = $taxQ;
+				$this->args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 
 				if ( count( $taxQ ) > 1 ) {
 					$this->args['tax_query']['relation'] = ! empty( $this->meta['taxonomyRelation'] ) ? esc_attr( $this->meta['taxonomyRelation'] ) : 'AND';

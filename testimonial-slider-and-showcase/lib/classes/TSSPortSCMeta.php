@@ -277,7 +277,7 @@ if ( ! class_exists( 'TSSPortSCMeta' ) ) :
 
 			$mates = TSSPro()->pfpScMetaFields();
 			foreach ( $mates as $metaKey => $field ) {
-				$rValue = ! empty( $_REQUEST[ $metaKey ] ) ? $_REQUEST[ $metaKey ] : null;
+				$rValue = ! empty( $_REQUEST[ $metaKey ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ $metaKey ] ) ) : null;
 				$value  = TSSPro()->sanitize( $field, $rValue );
 				if ( empty( $field['multiple'] ) ) {
 					update_post_meta( $post_id, $metaKey, $value );

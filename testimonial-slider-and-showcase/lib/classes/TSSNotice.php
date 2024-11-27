@@ -20,7 +20,7 @@ if ( ! class_exists( 'TSSNotice' ) ):
 		 */
 		public function __construct() {
 			$current      = time();
-			$black_friday = mktime( 0, 0, 0, 11, 20, 2023 ) <= $current && $current <= mktime( 0, 0, 0, 1, 5, 2024 );
+			$black_friday = mktime( 0, 0, 0, 11, 20, 2024 ) <= $current && $current <= mktime( 0, 0, 0, 1, 5, 2025 );
 
 			if (  $black_friday ) {
 				add_action( 'admin_init', [ $this, 'black_friday_notice' ] );
@@ -71,7 +71,10 @@ if ( ! class_exists( 'TSSNotice' ) ):
 						<img alt="<?php echo esc_attr( $plugin_name ); ?>"
 							src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?>" width="74px"
 							height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
-						<h3 style="margin:0;"><?php echo sprintf( '%s Black Friday Sale 2023!!', esc_html( $plugin_name ) ); ?></h3>
+						<h3 style="margin:0; display:flex; align-items: center">
+                            <?php echo sprintf( '%s Black Friday', esc_html( $plugin_name ) ); ?>
+                            <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/deal.gif'; ?>" width="60px" />
+                        </h3>
 						<p style="margin:0 0 2px;"><?php
 							printf(
 							    /* translators: %s is the plugin name */
@@ -330,7 +333,7 @@ if ( ! class_exists( 'TSSNotice' ) ):
 		 * @return void
 		 */
 		public static function rttss_spare_me() {
-			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'rttss_notice_nonce' ) ) {
+			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'rttss_notice_nonce' ) ) {
 				return;
 			}
 

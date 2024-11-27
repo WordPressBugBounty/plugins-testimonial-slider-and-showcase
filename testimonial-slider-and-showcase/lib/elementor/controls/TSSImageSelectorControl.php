@@ -34,7 +34,7 @@ class TSSImageSelectorControl extends \Elementor\Base_Data_Control {
 	public function enqueue() {
 		$url = TSSPro()->assetsUrl . 'css';
 
-		wp_enqueue_style( 'tss-image-selector', $url . '/image-selector.css', [], '' );
+		wp_enqueue_style( 'tss-image-selector', $url . '/image-selector.css', [], '' ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 	}
 
 	/**

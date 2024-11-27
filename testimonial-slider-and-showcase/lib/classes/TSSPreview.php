@@ -57,9 +57,8 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 				$dColItems = $dCol;
 				$tColItems = $tCol;
 				$mColItems = $mCol;
-
-				$customImgSize = isset( $_REQUEST['tss_custom_image_size'] ) ? array_map( 'sanitize_text_field', $_REQUEST['tss_custom_image_size'] ) : [];
-				$imgSize       = ( ! empty( $_REQUEST['tss_image_size'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_image_size'] ) ) : 'medium' );
+                $customImgSize = isset( $_REQUEST['tss_custom_image_size'] ) && is_array( $_REQUEST['tss_custom_image_size'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['tss_custom_image_size'] ) ) : [];
+                $imgSize       = ( ! empty( $_REQUEST['tss_image_size'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_image_size'] ) ) : 'medium' );
 				$defaultImgId  = ( ! empty( $_REQUEST['default_preview_image'] ) ? absint( $_REQUEST['default_preview_image'] ) : null );
 
 				$isIsotope  = preg_match( '/isotope/', $layout );
@@ -84,6 +83,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 
 				if ( $post__not_in ) {
 					$post__not_in         = explode( ',', $post__not_in );
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 					$args['post__not_in'] = $post__not_in;
 				}
 
@@ -136,6 +136,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 					];
 				}
 				if ( ! empty( $taxQ ) ) {
+                    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					$args['tax_query'] = $taxQ;
 					if ( count( $taxQ ) > 1 ) {
 						$taxQ['relation'] = ! empty( $_REQUEST['tss_taxonomy_relation'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_taxonomy_relation'] ) ) : 'AND';
@@ -212,7 +213,8 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 					$arg['class'] .= ' tss-img-circle';
 				}
 
-				$arg['items']       = ! empty( $_REQUEST['tss_item_fields'] ) ? array_map( 'sanitize_text_field', $_REQUEST['tss_item_fields'] ) : [];
+                $arg['items'] = ! empty( $_REQUEST['tss_item_fields'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['tss_item_fields'] ) ) : [];
+
 				$arg['anchorClass'] = null;
 				$arg['link']        = ! empty( $_REQUEST['tss_detail_page_link'] );
 
@@ -239,7 +241,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 								'hide_empty' => false,
 								'orderby'    => 'meta_value_num',
 								'order'      => 'ASC',
-								'meta_key'   => '_order',
+								'meta_key'   => '_order', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 							]
 						);
 
@@ -279,7 +281,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 					} elseif ( $isCarousel ) {
 						$smartSpeed         = ! empty( $_REQUEST['tss_carousel_speed'] ) ? absint( $_REQUEST['tss_carousel_speed'] ) : 250;
 						$autoplayTimeout    = ! empty( $_REQUEST['tss_carousel_autoplay_timeout'] ) ? absint( $_REQUEST['tss_carousel_autoplay_timeout'] ) : 5000;
-						$cOpt               = ! empty( $_REQUEST['tss_carousel_options'] ) ? array_map( 'sanitize_text_field', $_REQUEST['tss_carousel_options'] ) : [];
+						$cOpt               = ! empty( $_REQUEST['tss_carousel_options'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['tss_carousel_options'] ) ) : [];
 						$autoPlay           = ( in_array( 'autoplay', $cOpt, true ) ? 'true' : 'false' );
 						$autoPlayHoverPause = ( in_array( 'autoplayHoverPause', $cOpt, true ) ? 'true' : 'false' );
 						$nav                = ( in_array( 'nav', $cOpt, true ) ? 'true' : 'false' );

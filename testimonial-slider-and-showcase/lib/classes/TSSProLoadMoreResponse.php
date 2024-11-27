@@ -32,7 +32,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			$error = true;
 			$msg   = $data = null;
 			if ( wp_verify_nonce(TSSPro()->getNonce(),TSSPro()->nonceText()) ) {
-				$scID = isset( $_REQUEST['scID'] ) ? sanitize_text_field( $_REQUEST['scID'] ) : null;
+				$scID = isset( $_REQUEST['scID'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['scID'] ) ) : null;
 
 				if ( ! empty( $scID ) && ! is_null( get_post( $scID ) ) ) {
 					$scMeta = get_post_meta( $scID );
@@ -74,7 +74,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					$post__not_in = ( isset( $scMeta['tss_post__not_in'][0] ) ? sanitize_text_field( $scMeta['tss_post__not_in'][0] ) : null );
 					if ( $post__not_in ) {
 						$post__not_in         = explode( ',', $post__not_in );
-						$args['post__not_in'] = $post__not_in;
+						$args['post__not_in'] = $post__not_in; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 					}
 					/* LIMIT */
 					$limit                  = ( ( empty( $scMeta['tss_limit'][0] ) || '-1' === $scMeta['tss_limit'][0] ) ? 10000000 : absint( $scMeta['tss_limit'][0] ) );
@@ -128,7 +128,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					if ( ! empty( $taxQ ) ) {
-						$args['tax_query'] = $taxQ;
+						$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 						if ( count( $taxQ ) > 1 ) {
 							$taxQ['relation'] = ! empty( $scMeta['tss_taxonomy_relation'][0] ) ? esc_attr( $scMeta['tss_taxonomy_relation'][0] ) : 'AND';
 						}
@@ -296,8 +296,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 		public function tssElLoadMore() {
 			$data   = null;
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$scMeta = json_decode( wp_unslash( $_REQUEST['elData'] ), true );
-
+            $scMeta = ! empty( $_REQUEST['elData'] ) ? json_decode( sanitize_text_field( wp_unslash( $_REQUEST['elData'] ) ), true ) : null;
 			$layout = ( ! empty( $scMeta['tss_layout'] ) ? esc_attr( $scMeta['tss_layout'] ) : 'layout1' );
 			$dCol   = ( isset( $scMeta['tss_desktop_column'] ) ? absint( $scMeta['tss_desktop_column'] ) : 3 );
 			$tCol   = ( isset( $scMeta['tss_tab_column'] ) ? absint( $scMeta['tss_tab_column'] ) : 2 );
@@ -339,7 +338,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 
 			if ( $post__not_in ) {
 				$post__not_in         = explode( ',', $post__not_in );
-				$args['post__not_in'] = $post__not_in;
+				$args['post__not_in'] = $post__not_in; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 			}
 
 			/* LIMIT */
@@ -395,7 +394,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			}
 
 			if ( ! empty( $taxQ ) ) {
-				$args['tax_query'] = $taxQ;
+				$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 
 				if ( count( $taxQ ) > 1 ) {
 					$taxQ['relation'] = ! empty( $scMeta['tss_taxonomy_relation'] ) ? esc_attr( $scMeta['tss_taxonomy_relation'] ) : 'AND';
