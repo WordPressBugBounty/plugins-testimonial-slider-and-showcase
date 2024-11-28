@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-26 10:05+0000\n"
+"POT-Creation-Date: 2024-07-02 10:11+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -83,19 +83,19 @@ msgid "reCAPTCHA field is required."
 msgstr ""
 
 #. translators: %s is the plugin name
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:81, ../lib/classes/TSSNotice.php:81
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:78, ../lib/classes/TSSNotice.php:78
 msgid "🚀 Exciting News: %1$s Black Friday sale is now live!"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:193, ../lib/classes/TSSNotice.php:193
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:190, ../lib/classes/TSSNotice.php:190
 msgid "Enjoying Testimonial Slider and Showcase?"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:194, ../lib/classes/TSSNotice.php:194
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:191, ../lib/classes/TSSNotice.php:191
 msgid "Thank you for choosing Testimonial Slider and Showcase. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:196, ../lib/classes/TSSNotice.php:196
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:193, ../lib/classes/TSSNotice.php:193
 msgid "Yes, You Deserve It!"
 msgstr ""
 
@@ -131,31 +131,31 @@ msgstr ""
 msgid "Styling"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:446, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:353, ../lib/classes/TSSPreview.php:446, ../lib/classes/TSSProInit.php:353
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:444, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:354, ../lib/classes/TSSPreview.php:444, ../lib/classes/TSSProInit.php:354
 msgid "Security Error !!"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:232, ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:428, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:199, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:407, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:163, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:379, ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:199, ../lib/classes/TSSProSC.php:407, ../lib/elementor/elements/renders/TSSElementorRender.php:163, ../lib/elementor/elements/renders/TSSElementorRender.php:379
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:230, ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:426, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:199, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:407, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:163, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:379, ../lib/classes/TSSPreview.php:230, ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:199, ../lib/classes/TSSProSC.php:407, ../lib/elementor/elements/renders/TSSElementorRender.php:163, ../lib/elementor/elements/renders/TSSElementorRender.php:379
 msgid "Loading ..."
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:399, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:365, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:337, ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:365, ../lib/elementor/elements/renders/TSSElementorRender.php:337
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:397, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:365, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:337, ../lib/classes/TSSPreview.php:397, ../lib/classes/TSSProSC.php:365, ../lib/elementor/elements/renders/TSSElementorRender.php:337
 msgid "No testimonial found"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:268, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:240, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:204, ../lib/classes/TSSPreview.php:268, ../lib/classes/TSSProSC.php:240, ../lib/elementor/elements/renders/TSSElementorRender.php:204
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:266, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:240, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:204, ../lib/classes/TSSPreview.php:266, ../lib/classes/TSSProSC.php:240, ../lib/elementor/elements/renders/TSSElementorRender.php:204
 msgid "Show all"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:275, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:247, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:214, ../lib/classes/TSSPreview.php:275, ../lib/classes/TSSProSC.php:247, ../lib/elementor/elements/renders/TSSElementorRender.php:214
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:273, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:247, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:214, ../lib/classes/TSSPreview.php:273, ../lib/classes/TSSProSC.php:247, ../lib/elementor/elements/renders/TSSElementorRender.php:214
 msgid "Search"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:426, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:406, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:378, ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:406, ../lib/elementor/elements/renders/TSSElementorRender.php:378
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:424, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:406, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:378, ../lib/classes/TSSPreview.php:424, ../lib/classes/TSSProSC.php:406, ../lib/elementor/elements/renders/TSSElementorRender.php:378
 msgid "No More Post to load"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:427, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:458, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:429, ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:458, ../lib/elementor/elements/renders/TSSElementorRender.php:429
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:425, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:458, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:429, ../lib/classes/TSSPreview.php:425, ../lib/classes/TSSProSC.php:458, ../lib/elementor/elements/renders/TSSElementorRender.php:429
 msgid "Load More"
 msgstr ""
 
@@ -195,111 +195,111 @@ msgstr ""
 msgid "Custom image size"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1078, ../lib/classes/TSSProHelper.php:1078
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1084, ../lib/classes/TSSProHelper.php:1084
 msgid "Share on facebook"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1084, ../lib/classes/TSSProHelper.php:1084
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1090, ../lib/classes/TSSProHelper.php:1090
 msgid "Share on twitter"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1090, ../lib/classes/TSSProHelper.php:1090
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1096, ../lib/classes/TSSProHelper.php:1096
 msgid "Share on linkedin"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1096, ../lib/classes/TSSProHelper.php:1096
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1102, ../lib/classes/TSSProHelper.php:1102
 msgid "Share on pinterest"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1104, ../lib/classes/TSSProHelper.php:1104
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1110, ../lib/classes/TSSProHelper.php:1110
 msgid "Share on Email"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1122, ../lib/classes/TSSProHelper.php:1122
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1128, ../lib/classes/TSSProHelper.php:1128
 msgid "Layout 1"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1126, ../lib/classes/TSSProHelper.php:1126
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1132, ../lib/classes/TSSProHelper.php:1132
 msgid "Layout 2"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1138, ../lib/classes/TSSProHelper.php:1138
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1144, ../lib/classes/TSSProHelper.php:1144
 msgid "Carousel 1"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1142, ../lib/classes/TSSProHelper.php:1142
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1148, ../lib/classes/TSSProHelper.php:1148
 msgid "Carousel 2"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1153, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:680, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:688, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:785, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:149, ../lib/classes/TSSProHelper.php:1153, ../lib/classes/TSSProOptions.php:680, ../lib/classes/TSSProOptions.php:688, ../lib/classes/TSSProOptions.php:785, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1159, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:680, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:688, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:785, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:149, ../lib/classes/TSSProHelper.php:1159, ../lib/classes/TSSProOptions.php:680, ../lib/classes/TSSProOptions.php:688, ../lib/classes/TSSProOptions.php:785, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
 msgid "Normal"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1154, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:689, ../lib/classes/TSSProHelper.php:1154, ../lib/classes/TSSProOptions.php:689
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1160, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:689, ../lib/classes/TSSProHelper.php:1160, ../lib/classes/TSSProOptions.php:689
 msgid "Circle"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1177, ../lib/classes/TSSProHelper.php:1177
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1183, ../lib/classes/TSSProHelper.php:1183
 msgid "No testimonials found"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1187, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:706, ../lib/classes/TSSProHelper.php:1187, ../lib/classes/TSSProOptions.php:706
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1193, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:706, ../lib/classes/TSSProHelper.php:1193, ../lib/classes/TSSProOptions.php:706
 msgid "Menu Order"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1188, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:79, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:707, ../lib/classes/TSSProHelper.php:1188, ../lib/classes/TSSProOptions.php:79, ../lib/classes/TSSProOptions.php:707
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1194, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:79, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:707, ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:79, ../lib/classes/TSSProOptions.php:707
 msgid "Name"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1189, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:708, ../lib/classes/TSSProHelper.php:1189, ../lib/classes/TSSProOptions.php:708
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1195, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:708, ../lib/classes/TSSProHelper.php:1195, ../lib/classes/TSSProOptions.php:708
 msgid "ID"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1190, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:709, ../lib/classes/TSSProHelper.php:1190, ../lib/classes/TSSProOptions.php:709
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1196, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:709, ../lib/classes/TSSProHelper.php:1196, ../lib/classes/TSSProOptions.php:709
 msgid "Date"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1194, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:713, ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:713
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1200, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:713, ../lib/classes/TSSProHelper.php:1200, ../lib/classes/TSSProOptions.php:713
 msgid "Random"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1205, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:721, ../lib/classes/TSSProHelper.php:1205, ../lib/classes/TSSProOptions.php:721
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1211, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:721, ../lib/classes/TSSProHelper.php:1211, ../lib/classes/TSSProOptions.php:721
 msgid "Ascending"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1206, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:722, ../lib/classes/TSSProHelper.php:1206, ../lib/classes/TSSProOptions.php:722
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1212, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:722, ../lib/classes/TSSProHelper.php:1212, ../lib/classes/TSSProOptions.php:722
 msgid "Descending"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1212, ../lib/classes/TSSProHelper.php:1212
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1218, ../lib/classes/TSSProHelper.php:1218
 msgid "8 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1213, ../lib/classes/TSSProHelper.php:1213
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1219, ../lib/classes/TSSProHelper.php:1219
 msgid "7 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1214, ../lib/classes/TSSProHelper.php:1214
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1220, ../lib/classes/TSSProHelper.php:1220
 msgid "6 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1215, ../lib/classes/TSSProHelper.php:1215
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1221, ../lib/classes/TSSProHelper.php:1221
 msgid "5 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1216, ../lib/classes/TSSProHelper.php:1216
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1222, ../lib/classes/TSSProHelper.php:1222
 msgid "4 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1217, ../lib/classes/TSSProHelper.php:1217
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1223, ../lib/classes/TSSProHelper.php:1223
 msgid "3 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1218, ../lib/classes/TSSProHelper.php:1218
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1224, ../lib/classes/TSSProHelper.php:1224
 msgid "2 Seconds"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1219, ../lib/classes/TSSProHelper.php:1219
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1225, ../lib/classes/TSSProHelper.php:1225
 msgid "1 Second"
 msgstr ""
 
@@ -375,27 +375,27 @@ msgstr ""
 msgid "No ShortCode found in trash."
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:351, ../lib/classes/TSSProInit.php:351
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:352, ../lib/classes/TSSProInit.php:352
 msgid "Settings successfully updated"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:372, ../dist/testimonial-slider-and-showcase/lib/views/settings.php:15, ../lib/classes/TSSProInit.php:372, ../lib/views/settings.php:15
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:373, ../dist/testimonial-slider-and-showcase/lib/views/settings.php:15, ../lib/classes/TSSProInit.php:373, ../lib/views/settings.php:15
 msgid "Testimonial Settings"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:373, ../lib/classes/TSSProInit.php:373
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:374, ../lib/classes/TSSProInit.php:374
 msgid "Settings"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:381, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:382, ../lib/classes/TSSProInit.php:381, ../lib/classes/TSSProInit.php:382
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:382, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:383, ../lib/classes/TSSProInit.php:382, ../lib/classes/TSSProInit.php:383
 msgid "Get Help"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:276, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:70, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:120, ../lib/classes/TSSProLoadMoreResponse.php:276, ../lib/classes/TSSProTaxMeta.php:70, ../lib/classes/TSSProTaxMeta.php:120
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:276, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:72, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:133, ../lib/classes/TSSProLoadMoreResponse.php:276, ../lib/classes/TSSProTaxMeta.php:72, ../lib/classes/TSSProTaxMeta.php:133
 msgid "Security error"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:273, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:270, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:259, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:504, ../lib/classes/TSSProLoadMoreResponse.php:273, ../lib/classes/TSSProLoadMoreResponse.php:270, ../lib/classes/TSSProLoadMoreResponse.php:259, ../lib/classes/TSSProLoadMoreResponse.php:504
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:273, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:270, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:259, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:505, ../lib/classes/TSSProLoadMoreResponse.php:273, ../lib/classes/TSSProLoadMoreResponse.php:270, ../lib/classes/TSSProLoadMoreResponse.php:259, ../lib/classes/TSSProLoadMoreResponse.php:505
 msgid "No more testimonial to load"
 msgstr ""
 
@@ -695,7 +695,7 @@ msgstr ""
 msgid "Order By"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:502, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:192, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:443, ../lib/classes/TSSProOptions.php:502, ../lib/classes/TSSProTaxMeta.php:192, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:502, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:205, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:443, ../lib/classes/TSSProOptions.php:502, ../lib/classes/TSSProTaxMeta.php:205, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
 msgid "Order"
 msgstr ""
 
@@ -1063,15 +1063,15 @@ msgstr ""
 msgid "No shortCode found"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:67, ../lib/classes/TSSProTaxMeta.php:67
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:69, ../lib/classes/TSSProTaxMeta.php:69
 msgid "No term in list"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:117, ../lib/classes/TSSProTaxMeta.php:117
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:130, ../lib/classes/TSSProTaxMeta.php:130
 msgid "Select a taxonomy"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:114, ../lib/classes/TSSProTaxMeta.php:114
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:127, ../lib/classes/TSSProTaxMeta.php:127
 msgid "No term found"
 msgstr ""
 
@@ -1111,23 +1111,23 @@ msgstr ""
 msgid "This is premium field"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:308, ../lib/models/TSSProField.php:308
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:304, ../lib/models/TSSProField.php:304
 msgid "Please use default customizer to add your css. This option is deprecated. "
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:634, ../lib/models/TSSProField.php:634
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:633, ../lib/models/TSSProField.php:633
 msgid "Pro"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:699, ../lib/models/TSSProField.php:699
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:690, ../lib/models/TSSProField.php:690
 msgid "Width"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:805, ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:778, ../lib/models/TSSProField.php:805, ../lib/models/TSSProField.php:778
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:791, ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:764, ../lib/models/TSSProField.php:791, ../lib/models/TSSProField.php:764
 msgid "Active Social link"
 msgstr ""
 
-#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:788, ../lib/models/TSSProField.php:788
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:774, ../lib/models/TSSProField.php:774
 msgid "Available Social link"
 msgstr ""
 

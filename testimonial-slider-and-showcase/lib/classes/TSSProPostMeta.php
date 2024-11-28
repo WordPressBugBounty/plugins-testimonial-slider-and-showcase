@@ -39,9 +39,9 @@ if ( ! class_exists( 'TSSProPostMeta' ) ) :
 		 */
 		public function tss_meta_information() {
 			wp_nonce_field( TSSPro()->nonceText(), TSSPro()->nonceId() );
+
 			echo '<div class="tss-meta-wrapper">';
 			TSSPro()->printHtml( TSSPro()->rtFieldGenerator( TSSPro()->singleTestimonialFields() ), true );
-
 			echo '</div>';
 		}
 
@@ -66,9 +66,8 @@ if ( ! class_exists( 'TSSProPostMeta' ) ) :
 			$mates = TSSPro()->tssTestimonialAllMetaFields();
 
 			foreach ( $mates as $metaKey => $field ) {
-				$rawValue       = isset( $_REQUEST[ $metaKey ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ $metaKey ] ) ) : null;
-
-                $sanitizedValue = TSSPro()->sanitize( $field, $rawValue );
+				$rawValue       = isset( $_REQUEST[ $metaKey ] ) ? $_REQUEST[ $metaKey ] : null;
+				$sanitizedValue = TSSPro()->sanitize( $field, $rawValue );
 
 				if ( empty( $field['multiple'] ) ) {
 					update_post_meta( $post_id, $metaKey, $sanitizedValue );

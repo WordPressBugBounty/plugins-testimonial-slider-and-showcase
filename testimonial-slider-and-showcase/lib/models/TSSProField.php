@@ -49,9 +49,9 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		private function setArgument( $key, $attr ) {
 			$this->type     = isset( $attr['type'] ) ? ( $attr['type'] ? esc_attr( $attr['type'] ) : 'text' ) : 'text';
 			$this->multiple = isset( $attr['multiple'] ) ? ( $attr['multiple'] ? ( $attr['multiple'] ) : false ) : false;
-			$this->name     = ! empty( $key ) ? ( $key ) : '';
-			$this->default  = isset( $attr['default'] ) ? ( $attr['default'] ) : '';
-			$this->value    = isset( $attr['value'] ) ? ( $attr['value'] ? ( $attr['value'] ) : '' ) : '';
+			$this->name     = ! empty( $key ) ? ( $key ) : null;
+			$this->default  = isset( $attr['default'] ) ? ( $attr['default'] ) : null;
+			$this->value    = isset( $attr['value'] ) ? ( $attr['value'] ? ( $attr['value'] ) : null ) : null;
 
 			if ( ! $this->value ) {
 				$post_id = get_the_ID();
@@ -66,23 +66,23 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				}
 			}
 
-			$this->label          = isset( $attr['label'] ) ? ( $attr['label'] ? $attr['label'] : '' ) : '';
-			$this->class          = isset( $attr['class'] ) ? ( $attr['class'] ? $attr['class'] : '' ) : '';
-			$this->holderClass    = isset( $attr['holderClass'] ) ? ( $attr['holderClass'] ? $attr['holderClass'] : '' ) : '';
-			$this->placeholder    = isset( $attr['placeholder'] ) ? ( $attr['placeholder'] ? $attr['placeholder'] : '' ) : '';
-			$this->description    = isset( $attr['description'] ) ? ( $attr['description'] ? $attr['description'] : '' ) : '';
-			$this->descriptionAdv = isset( $attr['description_adv'] ) ? ( $attr['description_adv'] ? $attr['description_adv'] : '' ) : '';
+			$this->label          = isset( $attr['label'] ) ? ( $attr['label'] ? $attr['label'] : null ) : null;
+			$this->class          = isset( $attr['class'] ) ? ( $attr['class'] ? $attr['class'] : null ) : null;
+			$this->holderClass    = isset( $attr['holderClass'] ) ? ( $attr['holderClass'] ? $attr['holderClass'] : null ) : null;
+			$this->placeholder    = isset( $attr['placeholder'] ) ? ( $attr['placeholder'] ? $attr['placeholder'] : null ) : null;
+			$this->description    = isset( $attr['description'] ) ? ( $attr['description'] ? $attr['description'] : null ) : null;
+			$this->descriptionAdv = isset( $attr['description_adv'] ) ? ( $attr['description_adv'] ? $attr['description_adv'] : null ) : null;
 			$this->options        = isset( $attr['options'] ) ? ( $attr['options'] ? array_filter( $attr['options'] ) : [] ) : [];
-			$this->option         = isset( $attr['option'] ) ? ( $attr['option'] ? $attr['option'] : '' ) : '';
-			$this->optionLabel    = isset( $attr['optionLabel'] ) ? ( $attr['optionLabel'] ? $attr['optionLabel'] : '' ) : '';
-			$this->attr           = isset( $attr['attr'] ) ? ( $attr['attr'] ? $attr['attr'] : '' ) : '';
-			$this->alignment      = isset( $attr['alignment'] ) ? ( $attr['alignment'] ? $attr['alignment'] : '' ) : '';
-			$this->blank          = ! empty( $attr['blank'] ) ? $attr['blank'] : '';
-			$this->required       = ! empty( $attr['required'] ) ? ' required' : '';
+			$this->option         = isset( $attr['option'] ) ? ( $attr['option'] ? $attr['option'] : null ) : null;
+			$this->optionLabel    = isset( $attr['optionLabel'] ) ? ( $attr['optionLabel'] ? $attr['optionLabel'] : null ) : null;
+			$this->attr           = isset( $attr['attr'] ) ? ( $attr['attr'] ? $attr['attr'] : null ) : null;
+			$this->alignment      = isset( $attr['alignment'] ) ? ( $attr['alignment'] ? $attr['alignment'] : null ) : null;
+			$this->blank          = ! empty( $attr['blank'] ) ? $attr['blank'] : null;
+			$this->required       = ! empty( $attr['required'] ) ? ' required' : null;
 			$this->frontEnd       = ! empty( $attr['frontEnd'] ) ? true : false;
 
 			if ( $this->frontEnd ) {
-				$this->description = '';
+				$this->description = null;
 			}
 
 			$this->class = $this->class ? esc_attr( $this->class ) . ' rt-form-control' : 'rt-form-control';
@@ -95,13 +95,13 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		 * @param $key
 		 * @param $attr
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		public function Field( $key, $attr = [] ) {
 			$this->setArgument( $key, $attr );
 			$holderId = $this->name . '_holder';
 
-			$html  = '';
+			$html  = null;
 			$html .= '<div class="rt-field-wrapper ' . esc_attr( $this->holderClass ) . '" id="' . esc_attr( $holderId ) . '">';
 
 			if ( $this->label ) {
@@ -222,17 +222,16 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate text field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function text( $attr ) {
-            $value = isset( $this->value ) ? $this->value : '';
 			$readonly = ( isset( $attr['is_pro'] ) && $attr['is_pro'] ) && ! function_exists( 'rttsp' ) ? 'readonly' : '';
 			$h        = '<input
 						type="text"
 						class="' . esc_attr( $this->class ) . '"
 						id="' . esc_attr( $this->name ) . '"
 						' . esc_attr( $readonly ) . '
-						value="' . esc_attr( $value ) . '"
+						value="' . esc_attr( $this->value ) . '"
 						name="' . esc_attr( $this->name ) . '"
 						placeholder="' . esc_attr( $this->placeholder ) . '"
 						' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
@@ -245,16 +244,15 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate text field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function slug() {
-			$h  = '';
-            $value = isset( $this->value ) ? $this->value : '';
+			$h  = null;
 			$h .= '<input
 					type="text"
 					class="' . esc_attr( $this->class ) . '"
 					id="' . esc_attr( $this->name ) . '"
-					value="' . esc_attr( $value ) . '"
+					value="' . esc_attr( $this->value ) . '"
 					name="' . esc_attr( $this->name ) . '"
 					placeholder="' . esc_attr( $this->placeholder ) . '"
 					' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
@@ -266,16 +264,15 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate color picker
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function colorPicker() {
-			$h  = '';
-            $value = isset( $this->value ) ? $this->value : '';
+			$h  = null;
 			$h .= '<input
 					type="text"
 					class="' . esc_attr( $this->class ) . ' rt-color"
 					id="' . esc_attr( $this->name ) . '"
-					value="' . esc_attr( $value ) . '"
+					value="' . esc_attr( $this->value ) . '"
 					name="' . esc_attr( $this->name ) . '"
 					placeholder="' . esc_attr( $this->placeholder ) . '"
 					' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
@@ -287,11 +284,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Custom css field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function customCss() {
-            $value = isset( $this->value ) ? $this->value : '';
-			$h  = '';
+			$h  = null;
 			$h .= '<div class="rt-custom-css">';
 			$h .= '<div class="custom_css_pfp-container">';
 			$h .= '<div name="' . esc_attr( $this->name ) . '" id="ret-"' . absint( wp_rand() ) . '" class="custom-css">';
@@ -303,7 +299,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 					class="custom_css_textarea"
 					id="' . esc_attr( $this->name ) . '"
 					name="' . esc_attr( $this->name ) . '"
-					>' . wp_strip_all_tags( $value ) . '</textarea>';
+					>' . wp_strip_all_tags( $this->value ) . '</textarea>';
 			$h .= '<p class="description"
 					style="color: red">' . esc_html__( 'Please use default customizer to add your css. This option is deprecated. ', 'testimonial-slider-showcase' ) . '</p>';
 			$h .= '</div>';
@@ -314,16 +310,15 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate URL field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function url() {
-			$h  = '';
-            $value = isset( $this->value ) ? $this->value : '';
+			$h  = null;
 			$h .= '<input
 					type="url"
 					class="' . esc_attr( $this->class ) . '"
 					id="' . esc_attr( $this->name ) . '"
-					value="' . esc_url( $value ) . '"
+					value="' . esc_url( $this->value ) . '"
 					name="' . esc_attr( $this->name ) . '"
 					placeholder="' . esc_attr( $this->placeholder ) . '"
 					' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
@@ -336,18 +331,18 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate number field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function number( $attr ) {
-			$h        = '';
+			$h        = null;
 			$readonly = ( isset( $attr['is_pro'] ) && $attr['is_pro'] ) && ! function_exists( 'rttsp' ) ? 'readonly' : '';
-            $value = isset( $this->value ) ? $this->value : '';
+
 			$h .= '<input
 					type="number"
 					class="' . esc_attr( $this->class ) . '"
 					' . esc_attr( $readonly ) . '
 					id="' . esc_attr( $this->name ) . '"
-					value="' . esc_attr( $value ) . '"
+					value="' . esc_attr( $this->value ) . '"
 					name="' . esc_attr( $this->name ) . '"
 					placeholder="' . esc_attr( $this->placeholder ) . '"
 					' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
@@ -359,10 +354,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate Drop-down field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function select( $attr ) {
-			$h = '';
+			$h = null;
 			if ( $this->multiple ) {
 				$this->attr  = " style='min-width:160px;'";
 				$this->name  = $this->name . '[]';
@@ -382,7 +377,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 
 			if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 				foreach ( $this->options as $key => $value ) {
-					$slt = ( in_array( $key, $this->value ) ? 'selected' : '' );
+					$slt = ( in_array( $key, $this->value ) ? 'selected' : null );
 					$h  .= '<option ' . esc_attr( $slt ) . ' value="' . esc_attr( $key ) . '">' . esc_html( $value ) . '</option>';
 				}
 			}
@@ -395,11 +390,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate textArea field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function textArea() {
-			$h  = '';
-            $value = isset( $this->value ) ? $this->value : '';
+			$h  = null;
 			$h .= '<textarea
 				class="' . esc_attr( $this->class ) . ' rt-textarea"
 				id="' . esc_attr( $this->name ) . '"
@@ -407,7 +401,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				placeholder="' . esc_attr( $this->placeholder ) . '"
 				' . TSSPro()->htmlKses( $this->attr, 'basic' ) . '
 				' . esc_attr( $this->required ) . '
-				>' . wp_kses_post( $value ) . '</textarea>';
+				>' . wp_kses_post( $this->value ) . '</textarea>';
 
 			return $h;
 		}
@@ -415,10 +409,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate check box
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function checkbox( $attr ) {
-			$h  = '';
+			$h  = null;
 			$id = $this->name;
 			if ( $this->multiple ) {
 				$this->name  = $this->name . '[]';
@@ -428,7 +422,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				$h .= '<div class="checkbox-group ' . esc_attr( $this->alignment ) . '" id="' . esc_attr( $id ) . '">';
 				if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 					foreach ( $this->options as $key => $value ) {
-						$checked = ( in_array( $key, $this->value ) ? 'checked' : '' );
+						$checked = ( in_array( $key, $this->value ) ? 'checked' : null );
 						$h      .= '<label for="' . esc_attr( $id ) . '-' . esc_attr( $key ) . '">
 									<input type="checkbox" id="' . esc_attr( $id ) . '-' . esc_attr( $key ) . '" ' . esc_attr( $checked ) . ' name="' . esc_attr( $this->name ) . '" value="' . esc_attr( $key ) . '">' . esc_html( $value ) . '
 									</label>';
@@ -436,7 +430,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				}
 				$h .= '</div>';
 			} else {
-				$checked  = ( $this->value == $this->option ? 'checked' : '' );
+				$checked  = ( $this->value == $this->option ? 'checked' : null );
 				$readonly = ( isset( $attr['is_pro'] ) && $attr['is_pro'] ) && ! function_exists( 'rttsp' ) ? 'readonly' : '';
 				$h       .= '<label><input type="checkbox" ' . esc_attr( $readonly ) . ' ' . esc_attr( $checked ) . ' id="' . esc_attr( $this->name ) . '" name="' . esc_attr( $this->name ) . '" value="' . esc_attr( $this->option ) . '" />' . esc_html( $this->optionLabel ) . '</label>';
 			}
@@ -445,8 +439,8 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function switch() {
-			$h       = '';
-			$checked = ( $this->value ? 'checked' : '' );
+			$h       = null;
+			$checked = ( $this->value ? 'checked' : null );
 			$h      .= '<label class="rtts-switch"><input type="checkbox" ' . esc_attr( $checked ) . ' id="' . esc_attr( $this->name ) . '" name="' . esc_attr( $this->name ) . '" value="1" /><span class="rtts-switch-slider round"></span></label>';
 
 			return $h;
@@ -455,34 +449,37 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate Radio field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function radioField( $attr ) {
 			if ( '' === $this->value ) {
 				$this->value = $this->default;
 			}
-			$h        = '';
+
+			$h        = null;
 			$h       .= "<div class='radio-group {$this->alignment}' id='{$this->name}'>";
 			$readonly = ( isset( $attr['is_pro'] ) && $attr['is_pro'] ) && ! function_exists( 'rttsp' ) ? 'readonly' : '';
 
 			if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 				foreach ( $this->options as $key => $value ) {
-					$checked = ( $key == $this->value ? 'checked' : '' );
+					$checked = ( $key == $this->value ? 'checked' : null );
 					$h      .= '<label for="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '">
 								<input type="radio" id="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '" ' . esc_attr( $readonly ) . ' ' . esc_attr( $checked ) . ' name="' . esc_attr( $this->name ) . '" value="' . esc_attr( $key ) . '">' . esc_html( $value ) . '
 								</label>';
 				}
 			}
+
 			$h .= '</div>';
+
 			return $h;
 		}
 
 		private function smartStyle() {
-			$h       = '';
-			$sColor  = ! empty( $this->value['color'] ) ? $this->value['color'] : '';
-			$sSize   = ! empty( $this->value['size'] ) ? $this->value['size'] : '';
-			$sWeight = ! empty( $this->value['weight'] ) ? $this->value['weight'] : '';
-			$sAlign  = ! empty( $this->value['align'] ) ? $this->value['align'] : '';
+			$h       = null;
+			$sColor  = ! empty( $this->value['color'] ) ? $this->value['color'] : null;
+			$sSize   = ! empty( $this->value['size'] ) ? $this->value['size'] : null;
+			$sWeight = ! empty( $this->value['weight'] ) ? $this->value['weight'] : null;
+			$sAlign  = ! empty( $this->value['align'] ) ? $this->value['align'] : null;
 
 			$h .= "<div class='multiple-field-rt-container clear'>";
 
@@ -503,7 +500,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			$h     .= "<option value=''>Default</option>";
 
 			foreach ( $fSizes as $size => $label ) {
-				$sSlt = ( $size == $sSize ? 'selected' : '' );
+				$sSlt = ( $size == $sSize ? 'selected' : null );
 				$h   .= '<option value="' . esc_attr( $size ) . '" ' . esc_attr( $sSlt ) . '>' . esc_html( $label ) . '</option>';
 			}
 
@@ -520,7 +517,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			$weights = TSSPro()->scTextWeight();
 
 			foreach ( $weights as $weight => $label ) {
-				$wSlt = ( $weight == $sWeight ? 'selected' : '' );
+				$wSlt = ( $weight == $sWeight ? 'selected' : null );
 				$h   .= '<option value="' . esc_attr( $weight ) . '" ' . esc_attr( $wSlt ) . '>' . esc_html( $label ) . '</option>';
 			}
 
@@ -537,7 +534,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			$aligns = TSSPro()->scAlignment();
 
 			foreach ( $aligns as $align => $label ) {
-				$aSlt = ( $align == $sAlign ? 'selected' : '' );
+				$aSlt = ( $align == $sAlign ? 'selected' : null );
 				$h   .= '<option value="' . esc_attr( $align ) . '" ' . esc_attr( $aSlt ) . '>' . esc_html( $label ) . '</option>';
 			}
 
@@ -552,10 +549,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		/**
 		 * Generate textArea field
 		 *
-		 * @return ''|string
+		 * @return null|string
 		 */
 		private function simple_image() {
-			$h  = '';
+			$h  = null;
 			$h .= '<div class="rt-simple-image-wrapper"><input
 					type="file"
 					class="' . esc_attr( $this->class ) . ' rt-simple-image"
@@ -567,7 +564,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function radioImage() {
-			$h  = '';
+			$h  = null;
 			$id = 'rtts-' . $this->name;
 
 			$h .= sprintf( "<div class='rtts-radio-image %s' id='%s'>", esc_attr( $this->alignment ), esc_attr( $id ) );
@@ -612,9 +609,11 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			];
 
 			$selected_value = $this->value;
+
 			if ( $this->name == 'layout_type' ) {
 				if ( ! $selected_value ) {
 					$layout = get_post_meta( get_the_ID(), 'tss_layout', true );
+
 					if ( $layout ) {
 						foreach ( $layout_group as $key => $value ) {
 							if ( in_array( $layout, $value ) ) {
@@ -630,17 +629,12 @@ if ( ! class_exists( 'TSSProField' ) ) :
 
 			if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 				foreach ( $this->options as $key => $value ) {
-                    $checked     = ( isset($value['value']) && $value['value'] == $selected_value ? 'checked' : '' );
-                    $is_pro      = ( isset( $value['is_pro'] ) && $value['is_pro'] && ! function_exists( 'rttsp' ) ? '<div class="rtts-ribbon"><span>' . esc_html__( 'Pro', 'testimonial-slider-showcase' ) . '</span></div>' : '' );
-                    $is_pro      = is_string($is_pro) ? $is_pro : '';
-                    $is_data_pro = ( isset( $value['is_pro'] ) && $value['is_pro'] && ! function_exists( 'rttsp' ) ? 'yes' : '' );
-                    $is_data_pro = is_string($is_data_pro) ? $is_data_pro : '';
-                    $name        = isset( $value['name'] ) && $value['name'] ? esc_html( $value['name'] ) : '';
-                    $name        = is_string($name) ? $name : '';
-                    $img_url = isset($value['img']) ? esc_url($value['img']) : '';
-                    if (!empty($img_url) && is_string($img_url)) {
-                        $h .= sprintf(
-                            '<label for="%1$s-%2$s">
+					$checked     = ( $value['value'] == $selected_value ? 'checked' : null );
+					$is_pro      = ( isset( $value['is_pro'] ) && $value['is_pro'] && ! function_exists( 'rttsp' ) ? '<div class="rtts-ribbon"><span>' . esc_html__( 'Pro', 'testimonial-slider-showcase' ) . '</span></div>' : '' );
+					$is_data_pro = ( isset( $value['is_pro'] ) && $value['is_pro'] && ! function_exists( 'rttsp' ) ? 'yes' : '' );
+					$name        = isset( $value['name'] ) && $value['name'] ? esc_html( $value['name'] ) : '';
+					$h          .= sprintf(
+						'<label for="%1$s-%2$s">
 							<input type="radio" id="%1$s-%2$s" %3$s name="%4$s" value="%2$s" data-pro="%7$s">
 							<div class="rtts-radio-image-pro-wrap">
 								<img src="%5$s" title="%8$s" alt="%2$s">
@@ -648,17 +642,15 @@ if ( ! class_exists( 'TSSProField' ) ) :
 								<div class="rtts-checked"><span class="dashicons dashicons-yes"></span></div>
 							</div>
 						</label>',
-                            esc_attr($this->id),
-                            esc_attr($value['value']),
-                            esc_attr($checked),
-                            esc_attr($this->name),
-                            $img_url,
-                            TSSPro()->htmlKses($is_pro, 'basic'),
-                            esc_attr($is_data_pro),
-                            esc_attr($name)
-                        );
-                    }
-
+						esc_attr( $this->id ),
+						esc_attr( $value['value'] ),
+						esc_attr( $checked ),
+						esc_attr( $this->name ),
+						esc_url( $value['img'] ),
+						TSSPro()->htmlKses( $is_pro, 'basic' ),
+						esc_attr( $is_data_pro ),
+						esc_attr( $name )
+					);
 				}
 			}
 			$h .= '</div>';
@@ -666,17 +658,16 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function image() {
-			$h   = '';
-            $value = isset( $this->value ) ? $this->value : '';
+			$h   = null;
 			$h  .= "<div class='rt-image-holder'>";
-			$h  .= '<input type="hidden" name="' . esc_attr( $this->name ) . '" value="' . absint( $value ) . '" id="' . esc_attr( $this->name ) . '" class="hidden-image-id" />';
-			$img = '';
+			$h  .= '<input type="hidden" name="' . esc_attr( $this->name ) . '" value="' . absint( $this->value ) . '" id="' . esc_attr( $this->name ) . '" class="hidden-image-id" />';
+			$img = null;
 			$c   = 'hidden';
 
-			if ( $id = absint( $value ) ) {
+			if ( $id = absint( $this->value ) ) {
 				$aImg = wp_get_attachment_image_src( $id, 'thumbnail' );
 				$img  = "<img src='{$aImg[0]}' >";
-				$c    = '';
+				$c    = null;
 			} else {
 				$aImg = TSSPro()->placeholder_img_src();
 				$img  = "<img src='{$aImg}' >";
@@ -689,11 +680,11 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function imageSize() {
-			$width  = ( ! empty( $this->value['width'] ) ? $this->value['width'] : '' );
-			$height = ( ! empty( $this->value['height'] ) ? $this->value['height'] : '' );
+			$width  = ( ! empty( $this->value['width'] ) ? $this->value['width'] : null );
+			$height = ( ! empty( $this->value['height'] ) ? $this->value['height'] : null );
 			$cropV  = ( ! empty( $this->value['crop'] ) ? $this->value['crop'] : 'soft' );
 
-			$h        = '';
+			$h        = null;
 			$h       .= "<div class='rt-image-size-holder'>";
 			$h       .= "<div class='rt-image-size-width rt-image-size'>";
 			$h       .= '<label>' . esc_html__( 'Width', 'testimonial-slider-showcase' ) . '</label>';
@@ -709,7 +700,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			$cropList = TSSPro()->imageCropType();
 
 			foreach ( $cropList as $crop => $cropLabel ) {
-				$cSl = ( $crop == $cropV ? 'selected' : '' );
+				$cSl = ( $crop == $cropV ? 'selected' : null );
 				$h  .= '<option value="' . esc_attr( $crop ) . '" ' . esc_attr( $cSl ) . '>' . esc_html( $cropLabel ) . '</option>';
 			}
 
@@ -720,37 +711,32 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			return $h;
 		}
 
-        private function video() {
-            $h = '';
-            $value = isset($this->value) && is_string($this->value) ? $this->value : '';
+		private function video() {
+			$h  = null;
+			$h .= "<div class='rt-video-holder'>";
+			$h .= "<div class='rt-video-field'>";
+			$h .= '<input class="rt-video-url ' . esc_attr( $this->class ) . '"
+					id="' . esc_attr( $this->name ) . '"
+					placeholder="' . esc_attr( $this->placeholder ) . '"
+					' . $this->attr . '
+					type="url" name="' . esc_attr( $this->name ) . '" value="' . esc_url( $this->value ) . '" />';
+			$h .= '</div>';
+			$h .= "<div class='rt-video-preview'>";
+			$h .= apply_filters( 'the_content', TSSPro()->htmlKses( $this->value, 'basic' ) );
+			$h .= '</div>';
+			$h .= '</div>';
 
-            $placeholder = isset( $value['placeholder'] ) ? $value['placeholder'] : '';
-            $h .= "<div class='rt-video-holder'>";
-            $h .= "<div class='rt-video-field'>";
-            $h .= '<input class="rt-video-url ' . esc_attr($this->class) . '"
-                id="' . esc_attr($this->name) . '"
-                placeholder="' . esc_attr($placeholder) . '"
-                ' . $this->attr . '
-                type="url" name="' . esc_attr($this->name) . '" value="' . esc_url($value) . '" />';
-            $h .= '</div>';
-            $h .= "<div class='rt-video-preview'>";
-
-            if ( !empty( $value ) ) {
-                $h .= apply_filters('the_content', TSSPro()->htmlKses($value, 'basic'));
-            }
-            $h .= '</div>';
-            $h .= '</div>';
-            return $h;
-        }
+			return $h;
+		}
 
 
 		private function rating() {
-			$h        = '';
-			$selected = ( $this->value ? ' selected' : '' );
+			$h        = null;
+			$selected = ( $this->value ? ' selected' : null );
 			$h       .= '<div class="rt-rating' . esc_attr( $selected ) . '">';
 
 			for ( $i = 1; $i <= 5; $i++ ) {
-				$active = ( $i == $this->value ? 'active' : '' );
+				$active = ( $i == $this->value ? 'active' : null );
 				$h     .= '<span data-star="' . absint( $i ) . '" class="star-' . absint( $i ) . ' dashicons dashicons-star-empty ' . esc_attr( $active ) . '" aria-hidden="true"></span>';
 			}
 
@@ -761,16 +747,16 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function recaptcha() {
-			$h        = '';
+			$h        = null;
 			$settings = get_option( TSSPro()->options['settings'] );
-			$siteKey  = ( ! empty( $settings['tss_site_key'] ) ? esc_attr( $settings['tss_site_key'] ) : '' );
+			$siteKey  = ( ! empty( $settings['tss_site_key'] ) ? esc_attr( $settings['tss_site_key'] ) : null );
 			$h       .= '<div class="g-recaptcha" id="' . esc_attr( $this->name ) . '" data-sitekey="' . esc_html( $siteKey ) . '"></div>';
 
 			return $h;
 		}
 
 		private function socialMedia() {
-			$h  = '';
+			$h  = null;
 			$h .= "<div class='rt-social-media'>";
 
 			if ( ! $this->frontEnd ) {
@@ -779,7 +765,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 
 				if ( ! empty( $this->value ) && is_array( $this->value ) ) {
 					foreach ( $this->value as $socialId => $socialUrl ) {
-						$value = ! empty( $this->value[ $socialId ] ) ? $this->value[ $socialId ] : '';
+						$value = ! empty( $this->value[ $socialId ] ) ? $this->value[ $socialId ] : null;
 						$h    .= '<div class="social-item active-item" data-id="' . esc_attr( $socialId ) . '"><span class="dashicons dashicons-' . esc_attr( $socialId ) . '"></span><input type="text" name="' . esc_attr( $this->name ) . '[' . esc_attr( $socialId ) . ']" value="' . esc_url( $value ) . '"></div>';
 					}
 				}
@@ -820,7 +806,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function multipleOption( $fields = [] ) {
-			$h  = '';
+			$h  = null;
 			$h .= "<div class='multiple-field-rt-container rt-clear'>";
 			if ( ! empty( $fields ) && is_array( $fields ) ) {
 				foreach ( $fields as $key => $field ) {
@@ -833,16 +819,16 @@ if ( ! class_exists( 'TSSProField' ) ) :
 		}
 
 		private function innerField( $key, $options = [] ) {
-			$h        = '';
+			$h        = null;
 			$col_size = ! empty( $options['col_size'] ) ? $options['col_size'] : 3;
 			$type     = ! empty( $options['type'] ) ? $options['type'] : 'color';
-			$label    = ! empty( $options['label'] ) ? $options['label'] : '';
-			$desc     = ! empty( $options['description'] ) ? $options['description'] : '';
-			$val      = ! empty( $this->value[ $key ] ) ? $this->value[ $key ] : '';
-			$class    = ! empty( $options['class'] ) ? $options['class'] : '';
-			$blank    = ! empty( $options['blank'] ) ? $options['blank'] : '';
+			$label    = ! empty( $options['label'] ) ? $options['label'] : null;
+			$desc     = ! empty( $options['description'] ) ? $options['description'] : null;
+			$val      = ! empty( $this->value[ $key ] ) ? $this->value[ $key ] : null;
+			$class    = ! empty( $options['class'] ) ? $options['class'] : null;
+			$blank    = ! empty( $options['blank'] ) ? $options['blank'] : null;
 			$lists    = ! empty( $options['options'] ) ? array_filter( $options['options'] ) : [];
-			$default  = ! empty( $options['default'] ) ? $options['default'] : '';
+			$default  = ! empty( $options['default'] ) ? $options['default'] : null;
 
 			if ( ! $val ) {
 				$val = $default;
@@ -852,9 +838,9 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				case 'number':
 					$h .= '<div class="field-inner col-' . esc_attr( $col_size ) . '">';
 					$h .= '<div class="field-inner-rt-container ' . esc_attr( $key ) . '">';
-					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : '' );
+					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : null );
 					$h .= '<input type="number" value="' . esc_attr( $val ) . '" class="rt-number" name="' . esc_attr( $this->name ) . '[' . esc_attr( $key ) . ']">';
-					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : '' );
+					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : null );
 					$h .= '</div>';
 					$h .= '</div>';
 					break;
@@ -862,9 +848,9 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				case 'color':
 					$h .= '<div class="field-inner col-' . esc_attr( $col_size ) . '">';
 					$h .= '<div class="field-inner-rt-container ' . esc_attr( $key ) . '">';
-					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : '' );
+					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : null );
 					$h .= '<input type="text" value="' . esc_attr( $val ) . '" class="rt-color" name="' . esc_attr( $this->name ) . '[' . esc_attr( $key ) . ']">';
-					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : '' );
+					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : null );
 					$h .= '</div>';
 					$h .= '</div>';
 					break;
@@ -872,7 +858,7 @@ if ( ! class_exists( 'TSSProField' ) ) :
 				case 'select':
 					$h .= '<div class="field-inner col-' . esc_attr( $col_size ) . '">';
 					$h .= '<div class="field-inner-rt-container ' . esc_attr( $key ) . '">';
-					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : '' );
+					$h .= ( $label ? '<span class="label">' . TSSPro()->htmlKses( $label, 'basic' ) . '</span>' : null );
 
 					$h .= "<select name='{$this->name}[$key]' id='{$this->id}_{$key}' class='{$class}'>";
 
@@ -882,13 +868,13 @@ if ( ! class_exists( 'TSSProField' ) ) :
 
 					if ( is_array( $lists ) && ! empty( $lists ) ) {
 						foreach ( $lists as $lKey => $value ) {
-							$slt = ( $lKey == $val ? 'selected' : '' );
+							$slt = ( $lKey == $val ? 'selected' : null );
 							$h  .= '<option ' . esc_attr( $slt ) . ' value="' . esc_attr( $lKey ) . '">' . esc_html( $value ) . '</option>';
 						}
 					}
 
 					$h .= '</select>';
-					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : '' );
+					$h .= ( $desc ? '<p class="description">' . TSSPro()->htmlKses( $desc, 'basic' ) . '</p>' : null );
 					$h .= '</div>';
 					$h .= '</div>';
 					break;
@@ -904,7 +890,10 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			if ( ! $post_id ) {
 				return false;
 			}
+
 			return metadata_exists( $type, $post_id, $meta_key );
 		}
+
+
 	}
 endif;

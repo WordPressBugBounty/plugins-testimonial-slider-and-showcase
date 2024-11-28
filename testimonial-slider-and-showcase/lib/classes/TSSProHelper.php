@@ -39,7 +39,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 
 			if ( $recaptcha_secret ) {
 				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-				$response = isset( $_REQUEST['g-recaptcha-response'] ) ? wp_remote_get( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptcha_secret . '&response=' . sanitize_text_field( wp_unslash( $_REQUEST['g-recaptcha-response'] ) ) ) : null;
+				$response = wp_remote_get( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptcha_secret . '&response=' . sanitize_text_field( $_REQUEST['g-recaptcha-response'] ) );
 				$response = json_decode( $response['body'], true );
 
 				if ( true == $response['success'] ) {
@@ -407,7 +407,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 						'post_status'    => 'publish',
 						'posts_per_page' => -1,
 						'orderby'        => 'title',
-						'post__not_in'   => [ $id ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
+						'post__not_in'   => [ $id ],
 						'order'          => 'ASC',
 					]
 				);
@@ -744,13 +744,19 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 							<a data-pin-do='buttonPin' data-pin-count='beside' href='https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=https%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest'><img src='//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png' /></a>
 						</div>
 					</div>";
-			$html .= '<div id="fb-root"></div>';
-
-            wp_enqueue_script('facebook-sdk');
-            wp_enqueue_script('twitter-widgets');
-            wp_enqueue_script('google-plus');
-            wp_enqueue_script('linkedin-sdk');
-            wp_enqueue_script('pinterest-sdk');
+			$html .= '<div id="fb-root"></div>
+					<script>(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+							if (d.getElementById(id)) return;
+							js = d.createElement(s); js.id = id;
+							js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+							fjs.parentNode.insertBefore(js, fjs);
+						}(document, "script", "facebook-jssdk"));</script>';
+			$html .= "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<script>window.___gcfg = { lang: 'en-US', parsetags: 'onload', };</script>";
+			$html .= "<script src='https://apis.google.com/js/platform.js' async defer></script>";
+			$html .= '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>';
+			$html .= '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>';
 
 			return $html;
 		}

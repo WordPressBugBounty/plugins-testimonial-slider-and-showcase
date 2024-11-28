@@ -1017,10 +1017,3 @@ input:checked + .rtts-switch-slider:before {
 	display: block;
 	background-color: #000;
 }
-.tlp-testimonial-code-sc{
-	color: #fff!important;
-	background: #5d3dfd!important;
-	font-weight: bold;
-	border-color:#5d3dfd!important;
-	padding:8px 15px
-}

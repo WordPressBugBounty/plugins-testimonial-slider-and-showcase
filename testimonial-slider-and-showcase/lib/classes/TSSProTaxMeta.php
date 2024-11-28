@@ -57,9 +57,11 @@ if ( ! class_exists( 'TSSProTaxMeta' ) ) :
 			$error = true;
 
 			if (  wp_verify_nonce(TSSPro()->getNonce(),TSSPro()->nonceText()) && current_user_can('manage_options')) {
-                $terms = ( ! empty( $_REQUEST['terms'] ) ? explode( ',', sanitize_text_field( wp_unslash( $_REQUEST['terms'] ) ) ) : [] );
-                if ( $terms && ! empty( $terms ) ) {
+				$terms = ( ! empty( $_REQUEST['terms'] ) ? explode( ',', sanitize_text_field( $_POST['terms'] ) ) : [] );
+
+				if ( $terms && ! empty( $terms ) ) {
 					$error = false;
+
 					foreach ( $terms as $key => $term_id ) {
 						update_term_meta( $term_id, '_order', $key + 1 );
 					}
@@ -90,14 +92,25 @@ if ( ! class_exists( 'TSSProTaxMeta' ) ) :
 			$html  = $msg = null;
 			$error = true;
 			if ( wp_verify_nonce(TSSPro()->getNonce(),TSSPro()->nonceText()) && current_user_can('manage_options')) {
-				$tax = ( ! empty( $_REQUEST['tax'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['tax'] ) ) ) : null );
-				if ( $tax ) {
+				$tax = ( ! empty( $_REQUEST['tax'] ) ? esc_attr( $_REQUEST['tax'] ) : null );
 
+				if ( $tax ) {
 					$error = false;
+					/*Old Code*/
+//					$terms = get_terms(
+//						$tax,
+//						[
+//							'orderby'    => 'meta_value_num',
+//							'meta_key'   => '_order',
+//							'order'      => 'ASC',
+//							'hide_empty' => false,
+//						]
+//					);
+
 					$terms = get_terms( array(
 						'taxonomy'   => $tax,
 						'orderby'    => 'meta_value_num',
-						'meta_key'   => '_order', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+						'meta_key'   => '_order',
 						'order'      => 'ASC',
 						'hide_empty' => false,
 					) );
