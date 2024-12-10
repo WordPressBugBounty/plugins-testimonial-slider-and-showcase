@@ -60,7 +60,6 @@ if ( ! class_exists( 'TSSFrontEndSubmission' ) ) :
 				add_filter( 'wp_mail_content_type', [ $this, 'set_html_mail_content_type' ] );
 				$success = wp_mail( $to, $subject, $body, $headers );
 				remove_filter( 'wp_mail_content_type', [ $this, 'set_html_mail_content_type' ] );
-
 				return $success;
 			}
 		}

@@ -70,7 +70,7 @@ if ( in_array( 'social_media', $items, true ) && ! empty( $social_media ) && fun
 	$html .= '</div>';
 }
 
-if ( in_array( 'social_share', $items, true ) && function_exists( 'rttsp' ) ) {
+if ( in_array( 'social_share', $items, true ) && function_exists( 'rttsp' ) && isset( $iID, $scMeta, $shareItems ) ) {
 	$html .= TSSPro()->rtShare( $iID, $scMeta, $shareItems );
 }
 

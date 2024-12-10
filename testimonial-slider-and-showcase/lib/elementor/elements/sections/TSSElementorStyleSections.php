@@ -413,7 +413,7 @@ if ( ! class_exists( 'TSSElementorStyleSections' ) ) :
 				'id'       => 'tss_el_rating_typography',
 				'type'     => \Elementor\Group_Control_Typography::get_type(),
 				'selector' => '{{WRAPPER}} .tss-wrapper .single-item-wrapper .rating-wrapper span.dashicons',
-				'exclude'  => [ 'font_family', 'letter_spacing', 'text_transform', 'font_style', 'text_decoration', 'line_height' ],
+				'exclude'  => [ 'font_family', 'letter_spacing', 'text_transform', 'font_style', 'text_decoration', 'line_height' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 			];
 
 			$this->fields[] = [

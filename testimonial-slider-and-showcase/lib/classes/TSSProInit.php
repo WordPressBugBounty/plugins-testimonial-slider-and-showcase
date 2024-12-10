@@ -335,7 +335,7 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 				$mates = TSSPro()->tssAllSettingsFields();
 
 				foreach ( $mates as $key => $field ) {
-					$rValue       = ! empty( $_REQUEST[ $key ] ) ? $_REQUEST[ $key ] : null;
+					$rValue       = ! empty( $_REQUEST[ $key ] ) ? wp_unslash( $_REQUEST[ $key ] ) : null; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 					$value        = TSSPro()->sanitize( $field, $rValue );
 					$data[ $key ] = $value;
 				}

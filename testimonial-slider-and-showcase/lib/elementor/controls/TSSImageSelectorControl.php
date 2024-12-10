@@ -34,7 +34,7 @@ class TSSImageSelectorControl extends \Elementor\Base_Data_Control {
 	public function enqueue() {
 		$url = TSSPro()->assetsUrl . 'css';
 
-		wp_enqueue_style( 'tss-image-selector', $url . '/image-selector.css', [], '' );
+		wp_enqueue_style( 'tss-image-selector', $url . '/image-selector.css', [], '' ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 	}
 
 	/**
@@ -63,7 +63,7 @@ class TSSImageSelectorControl extends \Elementor\Base_Data_Control {
 				<# _.each( data.options, function( options, value ) { #>
 				<input id="<?php echo esc_attr( $control_uid ); ?>" type="radio" name="elementor-image-selector-{{ data.name }}-{{ data._cid }}" value="{{ value }}" data-setting="{{ data.name }}">
 				<label class="elementor-image-selector-label tooltip-target" for="<?php echo esc_attr( $control_uid ); ?>" data-tooltip="{{ options.title }}" title="{{ options.title }}">
-					<img src="{{ options.url }}" alt="{{ options.title }}">
+					<img src="{{ options.url }}" alt="{{ options.title }}"> <?php // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>
 					<span class="elementor-screen-only">{{{ options.title }}}</span>
 				</label>
 				<# } ); #>

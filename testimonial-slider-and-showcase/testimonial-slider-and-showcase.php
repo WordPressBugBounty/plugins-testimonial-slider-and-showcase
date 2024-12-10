@@ -4,8 +4,11 @@
  * Plugin URI: https://radiustheme.com
  * Description: Best Testimonial Slider and Showcase plugin for WordPress website. Testimonials Slider plugin is most customizable and developer friendly testimonial plugin to manage your customers testimonial.
  * Author: RadiusTheme
- * Version: 2.3.13
+ * Version: 2.3.14
  * Author URI: https://radiustheme.com
+ * Tested up to: 6.7
+ * Requires PHP: 7.0
+ * License: GPLv3
  * Tag: testimonials slider, testimonial, testimonials,testimonial slide, testimonial showcase, responsive testimonial, testimonial plugin
  * Text Domain: testimonial-slider-showcase
  * Domain Path: /languages
@@ -18,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-define( 'TSS_VERSION', '2.3.13' );
+define( 'TSS_VERSION', '2.3.14' );
 define( 'TSS_AUTHOR', 'RadiusTheme' );
 define( 'EDD_TSS_STORE_URL', 'https://www.radiustheme.com' );
 define( 'EDD_TSS_ITEM_ID', 11023 );

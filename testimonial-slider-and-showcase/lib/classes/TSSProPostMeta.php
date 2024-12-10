@@ -66,9 +66,8 @@ if ( ! class_exists( 'TSSProPostMeta' ) ) :
 			$mates = TSSPro()->tssTestimonialAllMetaFields();
 
 			foreach ( $mates as $metaKey => $field ) {
-				$rawValue       = isset( $_REQUEST[ $metaKey ] ) ? $_REQUEST[ $metaKey ] : null;
+                $rawValue       = isset( $_REQUEST[ $metaKey ] ) ?  wp_unslash( $_REQUEST[ $metaKey ] ) : null; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				$sanitizedValue = TSSPro()->sanitize( $field, $rawValue );
-
 				if ( empty( $field['multiple'] ) ) {
 					update_post_meta( $post_id, $metaKey, $sanitizedValue );
 				} else {

@@ -310,6 +310,7 @@ if ( ! class_exists( 'TSSPro' ) ) {
 			}
 
 			foreach ( $this->objects as $object ) {
+
 				if ( method_exists( $object, $name ) ) {
 					$count = count( $args );
 					if ( $count == 0 ) {
@@ -340,7 +341,6 @@ if ( ! class_exists( 'TSSPro' ) ) {
 			if ( is_null( self::$_instance ) ) {
 				self::$_instance = new self();
 			}
-
 			return self::$_instance;
 		}
 	}

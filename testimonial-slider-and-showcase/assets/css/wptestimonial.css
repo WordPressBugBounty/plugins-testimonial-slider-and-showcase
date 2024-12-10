@@ -2796,3 +2796,6 @@ body > .tss-tooltip .tss-tooltip-bottom:after {
 	display: block;
 	background-color: #000;
 }
+.rt-single-testimonial-detail .ast-oembed-container {
+	margin: 0 0 20px;
+}

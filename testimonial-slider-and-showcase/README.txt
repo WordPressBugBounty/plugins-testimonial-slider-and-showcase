@@ -1,12 +1,13 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1
 Donate link:
+Stable tag: 2.3.14
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
-Requires at least: 5.6
+Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 2.3.13
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires PHP: 7.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Testimonial Slider and Showcase WordPress plugin is most customizable and user friendly testimonial plugin to manage your customers testimonial.
 
@@ -20,7 +21,7 @@ This testimonials slider plugin is full customizable and allows you to generate 
 
 You also get to customize the testimonials fields, style, color, and general appearance. With this WordPress testimonial plugin, you can control whether the profile images on the testimonials you display are square or rounded. The Testimonial Slider and Showcase Pro allow you to customize the image size. It also lets you order testimonials by date, title, or id.
 
-"Testimonial Slider & Showcase Elementor Addon is a versatile and user-friendly tool for creating customizable testimonial sliders and showcases in Elementor. This addon allows you to display customer reviews, feedback, and testimonials in an attractive showcase or slider format, offering a visually engaging way to highlight your social proof." 
+"Testimonial Slider & Showcase Elementor Addon is a versatile and user-friendly tool for creating customizable testimonial sliders and showcases in Elementor. This addon allows you to display customer reviews, feedback, and testimonials in an attractive showcase or slider format, offering a visually engaging way to highlight your social proof."
 
 [youtube https://www.youtube.com/watch?v=g7x9k15SMLM]
 
@@ -63,7 +64,7 @@ here is how you go about it.
 
     * **Step 2: Filtering**
         You choose the only comma-separated values that should be included. Choose the list of post IDs that you want to exclude, while still using commas to separate the values. Select the limit on the number of posts to display. If you set to empty, you’ll showcase all your found posts.
-        
+
         With the PRO plugin, you then select the categories you want to filter. Leaving the space blank will showcase all your categories. The PRO plugin lets you select the tags you want to use in the filters.
 
     * **Step 3: Fields selection**
@@ -72,7 +73,7 @@ here is how you go about it.
         If you have the PRO version of the plugin, you can choose the social share item sources you want to display. The checkboxes include Facebook, LinkedIn, Twitter, Pinterest, and Email.
 
     * **Step 4: Styling**
-        Choose the parent class you want for adding the custom CSS. Select the color schemes you want for the primary, container background, and item background. Choose colors you want for your button background, hover background, hover background, text, hover text, and border. Choose the overlay style, including the overlay color, overlay opacity, and overlay top padding.        
+        Choose the parent class you want for adding the custom CSS. Select the color schemes you want for the primary, container background, and item background. Choose colors you want for your button background, hover background, hover background, text, hover text, and border. Choose the overlay style, including the overlay color, overlay opacity, and overlay top padding.
 
 3.Now, use the shortcode in the page or post you want it to go using Gutenberg or Elementor addon. Alternatively, just copy the shortcode and paste it on the page or post.
 
@@ -82,7 +83,7 @@ We introduce Elementor Addon for Testimonial Slider so now you can easily use in
 [youtube https://www.youtube.com/watch?v=kK_0-5RSoQg]
 
 == 🏆 How to Enable Front End Submission ==
-From front end user can submit testimonial 
+From front end user can submit testimonial
 
 [youtube https://www.youtube.com/watch?v=3Gd0cHI2uUc]
 
@@ -197,8 +198,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Changelog ==
 
-= 2.3.13 (November 28, 2024) =
-Fixed: Some Issue
+= 2.3.14 (December 10, 2024) =
+Fixed: Admin settings field issue
+
+= 2.3.12 (November 26, 2024) =
+Fixed: PHP Deprecated All Error
 
 = 2.3.11 (July 2, 2024) =
 Fixed: Shortcode meta checkbox default save data.

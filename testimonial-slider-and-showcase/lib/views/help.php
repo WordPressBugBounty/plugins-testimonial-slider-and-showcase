@@ -281,7 +281,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="rttss-testimonial">
 						<p>This plugin provides all the functionality needed for professional-looking testimonials. The developer is also quick to provide support when needed and was able to answer all my questions and resovle any issues that I was having. I would recommend this plugin to anyone looking for a robust testimonial slider.</p>
 						<div class="client-info">
-							<img src="<?php echo esc_url( TSSPro()->assetsUrl ); ?>images/admin/client1.png">
+							<img src="<?php echo esc_url( TSSPro()->assetsUrl ); //phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>images/admin/client1.png">
 							<div>
 								<div class="rttss-star">
 									<i class="dashicons dashicons-star-filled"></i>
@@ -297,7 +297,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="rttss-testimonial">
 						<p>I've used other plugins from Radius Themes with great success and this Testimonials Slider doesn't disappoint! Easy to set up and use. I really like how it fits seamlessly with any site I want to build. Thanks again Radius for a great plugin!!</p>
 						<div class="client-info">
-							<img src="<?php echo esc_url( TSSPro()->assetsUrl ); ?>images/admin/client2.jpeg">
+							<img src="<?php echo esc_url( TSSPro()->assetsUrl ); //phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>images/admin/client2.jpeg">
 							<div>
 								<div class="rttss-star">
 									<i class="dashicons dashicons-star-filled"></i>

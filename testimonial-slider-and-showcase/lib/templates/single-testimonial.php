@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 
 global $post;
-
 $settings = get_option( TSSPro()->options['settings'] );
 $field    = ( ! empty( $settings['field'] ) ? array_map( 'sanitize_text_field', $settings['field'] ) : [] );
 
@@ -23,6 +22,7 @@ while ( have_posts() ) :
 	$company     = get_post_meta( get_the_ID(), 'tss_company', true );
 	$location    = get_post_meta( get_the_ID(), 'tss_location', true );
 	$rating      = get_post_meta( get_the_ID(), 'tss_rating', true );
+	$video_url   = get_post_meta( get_the_ID(), 'tss_video', true );
 	$level       = [];
 	$level[]     = "<span class='author-designation'>" . esc_html( $designation ) . '</span>';
 	$level[]     = "<span class='item-company'>" . esc_html( $company ) . '</span>';
@@ -37,23 +37,18 @@ while ( have_posts() ) :
 						<h2><?php echo wp_kses( get_the_title(), TSSPro()->allowedHtml() ); ?></h2>
 						<?php
 						$html = '';
-						if ( is_array( $settings['field'] ) && ! empty( $settings['field'] ) && in_array( 'rating', $settings['field'], true ) ) {
+                        if ( is_array( $settings['field'] ) && ! empty( $settings['field'] ) && in_array( 'rating', $settings['field'], true ) ) {
 							$html .= '<div class="rating-wrapper">';
-
 							for ( $i = 1; $i <= 5; $i++ ) {
 								$starClass = 'filled';
-
 								if ( $i > $rating ) {
 									$starClass = 'empty';
 								}
-
 								$html .= "<span data-star='$i' class='star-$i dashicons dashicons-star-{$starClass}' aria-hidden='true'></span>";
 							}
 							$html .= '</div>';
 						}
-
 						TSSPro()->printHtml( $html );
-
 						if ( ! empty( $level ) ) {
 							$level     = array_filter( $level );
 							$levelList = implode( ', ', $level );
@@ -66,21 +61,25 @@ while ( have_posts() ) :
 					<div class="testimonial">
 						<?php the_content(); ?>
 					</div>
+                    <?php
+                    if ( !empty( $video_url ) && isset($settings['field']) && in_array('video', $settings['field'])) {
+                         $video = apply_filters('the_content', TSSPro()->htmlKses($video_url, 'basic'));
+                         echo wp_kses_post( $video );
+                    } ?>
 					<?php
 					$social_media = get_post_meta( $post->ID, 'tss_social_media', true );
-
-					if ( is_array( $settings['field'] ) && in_array( 'social_media', $settings['field'], true ) && ! empty( $social_media ) ) :
-						?>
+                    if ( is_array( $settings['field'] ) && in_array( 'social_media', $settings['field'], true ) && ! empty( $social_media ) ) :	?>
 						<div class='author-social'>
-							<?php foreach ( $social_media as $sid => $url ) : ?>
+							<?php foreach ( $social_media as $sid => $url ) :
+                                ?>
 								<a href='<?php echo esc_url( $url ); ?>'><span class='dashicons dashicons-<?php echo esc_attr( $sid ); ?>'></span></a>
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
 					<?php
-					if ( is_array( $settings['field'] ) && ! empty( $settings['field'] ) && in_array( 'social_share', $settings['field'], true ) ) {
-						TSSPro()->printHtml( TSSPro()->rtShare( $post->ID, $settings ) );
-					}
+                        if ( is_array( $settings['field'] ) && ! empty( $settings['field'] ) && in_array( 'social_share', $settings['field'], true ) ) {
+                            TSSPro()->printHtml( TSSPro()->rtShare( $post->ID, $settings ) );
+                        }
 					?>
 				</div>
 			</article>

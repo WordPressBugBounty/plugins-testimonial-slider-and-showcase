@@ -176,7 +176,7 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 							'hide_empty' => false,
 							'orderby'    => 'meta_value_num',
 							'order'      => 'ASC',
-							'meta_key'   => '_order',
+							'meta_key'   => '_order', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 							'include'    => $postCategories,
 						]
 					);
