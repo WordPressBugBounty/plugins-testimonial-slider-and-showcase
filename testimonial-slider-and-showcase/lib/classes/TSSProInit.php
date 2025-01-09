@@ -227,6 +227,11 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 				'deps'   => [ 'jquery' ],
 				'footer' => false,
 			];
+            $scripts['tss-popup']        = [
+                'src'    => TSSPro()->assetsUrl . 'vendor/popup/jquery.magnific-popup.min.js',
+                'deps'   => [ 'jquery' ],
+                'footer' => false,
+            ];
 			$scripts['tss-image-load']     = [
 				'src'    => TSSPro()->assetsUrl . 'vendor/isotope/imagesloaded.pkgd.min.js',
 				'deps'   => [ 'jquery' ],
@@ -279,6 +284,7 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 
 			$styles['tss-fontello'] = TSSPro()->assetsUrl . 'vendor/fontello/css/tss-font.min.css';
 			$styles['swiper']       = TSSPro()->assetsUrl . 'vendor/swiper/swiper.min.css';
+			$styles['tss-popup']    = TSSPro()->assetsUrl . 'vendor/popup/magnific-popup.css';
 			$styles['tss']          = TSSPro()->assetsUrl . 'css/wptestimonial.css';
 
 			if ( is_admin() ) {

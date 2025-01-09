@@ -52,7 +52,6 @@ if ( in_array( 'rating', $items, true ) ) {
 		if ( $i > $rating ) {
 			$starClass = 'empty';
 		}
-
 		$html .= "<span data-star='$i' class='star-$i dashicons dashicons-star-{$starClass}' aria-hidden='true'></span>";
 	}
 

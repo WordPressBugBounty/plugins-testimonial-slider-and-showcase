@@ -323,6 +323,7 @@ if ( ! class_exists( 'TSSPortSCMeta' ) ) :
 					'wp-color-picker',
 					'tss-select2',
 					class_exists( 'Rtcl' ) ? 'rtt-swiper' : 'swiper',
+					'tss-popup',
 					'tss-image-load',
 					'tss-isotope',
 					'tss-admin-preview',
@@ -336,6 +337,7 @@ if ( ! class_exists( 'TSSPortSCMeta' ) ) :
 				[
 					'wp-color-picker',
 					'tss-fontello',
+					'tss-popup',
 					'tss-select2',
 					'swiper',
 					'tss-admin',

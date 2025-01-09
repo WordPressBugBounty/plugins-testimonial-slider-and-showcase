@@ -1017,6 +1017,7 @@ input:checked + .rtts-switch-slider:before {
 	display: block;
 	background-color: #000;
 }
+
 .tlp-testimonial-code-sc{
 	color: #fff!important;
 	background: #5d3dfd!important;

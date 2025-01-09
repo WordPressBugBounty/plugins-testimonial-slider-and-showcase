@@ -53,6 +53,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 			}
 
 			if ( count( $this->scA ) ) {
+				array_push( $script, 'tss-popup' );
 				array_push( $script, 'tss-image-load' );
 
 				if ( $caro ) {
@@ -64,6 +65,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 					array_push( $script, 'tss-isotope' );
 				}
 
+				array_push( $style, 'tss-popup' );
 				array_push( $style, 'tss-fontello' );
 				array_push( $style, 'dashicons' );
 				array_push( $script, 'tss' );
@@ -202,12 +204,12 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 				) . "' class='rt-row tss-{$layout}{$masonryG} {$preLoader}'>";
 
 				// WP_Query args.
+
 				$query_args = new TSSQueryArgs();
 				$tssArgs = $query_args->buildArgs( $buildMetas, $isCarousel );
-
 				$tssQuery = new WP_Query( $tssArgs );
 				if ( $tssQuery->have_posts() ) {
-					if ( $isIsotope ) {
+                    if ( $isIsotope ) {
 						$terms = get_terms(
 							[
 								'taxonomy'   => TSSPro()->taxonomies['category'],
@@ -218,28 +220,81 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 							]
 						);
 
-						$html          .= '<div class="tss-iso-filter"><div id="iso-button-' . absint( $rand ) . '" class="tss-isotope-button-wrapper tooltip-active filter-button-group">';
+                        $html          .= '<div class="tss-iso-filter"><div id="iso-button-' . absint( $rand ) . '" class="tss-isotope-button-wrapper tooltip-active filter-button-group">';
 						$htmlButton     = null;
 						$fSelectTrigger = false;
 
-						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-							foreach ( $terms as $term ) {
-								$fSelect = null;
+                        if ( isset( $tssFilterType ) && 'rating' === $tssFilterType ) {
+                            $args = [
+                                'post_type'      => 'testimonial',
+                                'posts_per_page' => -1,
+                                'post_status'    => 'publish',
+                            ];
+                            $query = new WP_Query($args);
+                            $totalReviews = 0;
+                            $totalScore = 0;
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    $rating = get_post_meta(get_the_ID(), 'tss_rating', true);
+                                    if (!empty($rating)) {
+                                        $totalReviews++;
+                                        $totalScore += floatval($rating);
+                                    }
+                                }
+                                wp_reset_postdata();
+                            }
+                            $averageRating = $totalReviews > 0 ? round($totalScore / $totalReviews, 2) : 0;
+                            if(  $hasAverage == 1 ){
+                            ?>
+                            <div class="tlp-average-rating">
+                                <div class="tlp-rating-title"><?php echo esc_html( $averageRatingText ) ?></div>
+                                <div class="tlp-client-rating">
+                                    <?php
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= floor($averageRating)) {
+                                            echo "<i class='dashicons dashicons-star-filled' aria-hidden='true'></i>";
+                                        } elseif ($i <= $averageRating) {
+                                            echo "<i class='dashicons custom-star-half' aria-hidden='true'></i>";
+                                        } else {
+                                            echo "<i class='dashicons dashicons-star-empty' aria-hidden='true'></i>";
+                                        }
+                                    }
+                                    ?>
+                                    <span><?php echo esc_html($averageRating); ?> <?php echo esc_html__( 'out of 5 stars', 'testimonial-slider-showcase' )?></span>
+                                </div>
+                                <div class="total-rating-text"><?php echo esc_html__('Based on', 'testimonial-slider-showcase')?> <?php echo esc_html($totalReviews); ?> <?php echo esc_html__('Reviews', 'testimonial-slider-showcase')?></div>
+                            </div>
+                            <?php } ?>
 
-								if ( $tItem == $term->term_id ) {
-									$fSelect        = ' selected';
-									$fSelectTrigger = true;
-								}
+                            <?php $ratings = [5, 4, 3, 2, 1];
+                            if (!empty( $ratings )) {
+                                foreach ( $ratings as $rating ) {
+                                    $htmlButton .= "<span class='rt-iso-button' data-filter-counter='" . esc_attr($rating) . "' data-filter='.rating_" . esc_attr($rating) . "'>";
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        $starClass = ($i <= $rating) ? 'filled' : 'empty';
+                                        $htmlButton .= "<i data-star='" . esc_attr($i) . "' class='star-$i dashicons dashicons-star-{$starClass}' aria-hidden='true'></i>";
+                                    }
+                                    $htmlButton .= "</span>";
+                                }
+                            }
 
-								$htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
-							}
-						}
-
+                        } else{
+                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                foreach ( $terms as $term ) {
+                                    $fSelect = null;
+                                    if ( $tItem == $term->term_id ) {
+                                        $fSelect        = ' selected';
+                                        $fSelectTrigger = true;
+                                    }
+                                    $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
+                                }
+                            }
+                        }
 						if ( empty( $isotopeShowAll ) ) {
 							$fSelect = ( $fSelectTrigger ? null : ' selected' );
 							$html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter='' data-filter='*'>" . esc_html__( 'Show all', 'testimonial-slider-showcase' ) . '</span>';
 						}
-
 						$html .= $htmlButton;
 						$html .= '</div>';
 
@@ -406,7 +461,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 						$noMorePostText = esc_html__( 'No More Post to load', 'testimonial-slider-showcase' );
 						$loadingText    = esc_html__( 'Loading ...', 'testimonial-slider-showcase' );
 						$htmlUtility   .= '<div class="tss-load-more">
-												<span class="rt-button" data-sc-id="' . absint( $scID ) . '" data-total-pages="' . absint( $totalPage ) . '" data-posts-per-page="' . $postPp . '" data-found-posts="' . absint( $foundPosts ) . '" data-paged="1" data-no-more-post-text="' . esc_attr( $noMorePostText ) . '" data-loading-text="' . esc_attr( $loadingText ) . '">' . esc_html( $loadMore ) . ' <span>(' . esc_html( $morePosts ) . ')</span></span>
+												<span class="rt-button" data-sc-id="' . absint( $scID ) . '" data-total-pages="' . absint( $totalPage ) . '" data-posts-per-page="' . $postPp . '" data-found-posts="' . absint( $foundPosts ) . '" data-paged="1" data-no-more-post-text="' . esc_attr( $noMorePostText ) . '" data-loading-text="' . esc_attr( $loadingText ) . '">' . esc_html( $loadMore  ) . ' <span>(' . esc_html( $morePosts ) . ')</span></span>
 											</div>';
 					} elseif ( 'load_on_scroll' === $paginationType ) {
 						$htmlUtility .= '<div class="tss-scroll-load-more" data-trigger="1" data-sc-id="' . absint( $scID ) . '" data-paged="2"></div>';
@@ -454,7 +509,9 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 				'imgSize'             => ! empty( $meta['tss_image_size'][0] ) ? sanitize_text_field( $meta['tss_image_size'][0] ) : 'medium',
 				'testi_limit'         => ! empty( $meta['tss_testimonial_limit'][0] ) ? absint( $meta['tss_testimonial_limit'][0] ) : null,
 				'gridType'            => ! empty( $meta['tss_grid_style'][0] ) ? esc_attr( $meta['tss_grid_style'][0] ) : 'even',
+                'hasAverage'          => ! empty( $meta['tss_average_switch'][0] ) ? true : false,
 				'readMore'            => ! empty( $meta['tss_read_more_button_text'][0] ) ? esc_html( $meta['tss_read_more_button_text'][0] ) : null,
+				'averageRatingText'   => ! empty( $meta['tss_average_rating_text'][0] ) ? esc_html( $meta['tss_average_rating_text'][0] ) : esc_html__( 'Average Rating', 'testimonial-slider-showcase' ),
 				'loadMore'            => ! empty( $meta['tss_load_more_button_text'][0] ) ? esc_html( $meta['tss_load_more_button_text'][0] ) : esc_html__( 'Load More', 'testimonial-slider-showcase' ),
 				'margin'              => ! empty( $meta['tss_margin'][0] ) ? esc_attr( $meta['tss_margin'][0] ) : 'default',
 				'imageType'           => ! empty( $meta['tss_image_type'][0] ) ? esc_attr( $meta['tss_image_type'][0] ) : 'normal',
@@ -479,7 +536,9 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 				'tItem'               => ! empty( $meta['tss_isotope_selected_filter'][0] ) ? absint( $meta['tss_isotope_selected_filter'][0] ) : null,
 				'isotopeShowAll'      => ! empty( $meta['tss_isotope_filter_show_all'][0] ) ? true : false,
 				'isotopeSearchFilter' => ! empty( $meta['tss_isotope_search_filtering'][0] ) ? true : false,
-			];
+                'tssFilterType'       => ! empty( $meta['tss_isotope_filter_type'][0] ) ? esc_attr( $meta['tss_isotope_filter_type'][0] ) : 'cat',
+
+            ];
 		}
 
 		/**

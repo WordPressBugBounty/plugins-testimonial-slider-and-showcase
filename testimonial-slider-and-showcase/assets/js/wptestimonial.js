@@ -813,4 +813,39 @@
 			RTPromoContent();
 		}
 	});
+
+	// Open popup
+	// $('.tlp-openPopup').on('click', function () {
+	// 	const popupId = $(this).data('popup-id');
+	// 	$('#' + popupId).fadeIn();
+	// });
+	//
+	// // Close popup
+	// $(document).on('click', '.close-popup', function () {
+	// 	$(this).closest('.tlp-popup').fadeOut();
+	// });
+	//
+	// // Close popup when clicking outside content
+	// $(window).on('click', function (event) {
+	// 	if ($(event.target).hasClass('tlp-popup')) {
+	// 		$(event.target).fadeOut();
+	// 	}
+	// });
+
+	$('.tlp-openPopup').magnificPopup({
+		type: 'iframe'
+	});
+
+
+		// $('.tlp-openPopup').magnificPopup({
+		// 	type: 'iframe',
+		// 	mainClass: 'mfp-fade',
+		// 	removalDelay: 160,
+		// 	preloader: false,
+		// 	fixedContentPos: false
+		// });
+
+
+
+
 })(jQuery);

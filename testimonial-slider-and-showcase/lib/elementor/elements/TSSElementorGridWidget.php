@@ -55,7 +55,7 @@ class TSSElementorGridWidget extends \Elementor\Widget_Base {
 	 */
 	public function get_script_depends() {
 		if ( \Elementor\Plugin::$instance->preview->is_preview_mode() || \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			return [ 'tss-image-load', 'tss-isotope', 'tss' ];
+			return [ 'tss-image-load', 'tss-popup', 'tss-isotope', 'tss' ];
 		}
 
 		return [];
@@ -67,7 +67,7 @@ class TSSElementorGridWidget extends \Elementor\Widget_Base {
 	 * @return array
 	 */
 	public function get_style_depends() {
-		return [ 'tss', 'tss-fontello', 'dashicons' ];
+		return [ 'tss', 'tss-popup', 'tss-fontello', 'dashicons' ];
 	}
 
 	/**

@@ -290,6 +290,8 @@ if ( ! class_exists( 'TSSElementorStyleSections' ) ) :
 				'tab'   => $this->tab,
 			];
 
+            $this->fields = array_merge( apply_filters( 'rttss_elementor_rating_average', $this->fields ) );
+
 			$this->fields[] = [
 				'type'            => \Elementor\Controls_Manager::RAW_HTML,
 				'id'              => 'tss_el_author_name_note',
@@ -550,7 +552,7 @@ if ( ! class_exists( 'TSSElementorStyleSections' ) ) :
 				'id'       => 'tss_el_image_border',
 				'mode'     => 'group',
 				'label'    => esc_html__( 'Border', 'testimonial-slider-showcase' ),
-				'selector' => '{{WRAPPER}} .tss-wrapper .rt-responsive-img',
+				'selector' => '{{WRAPPER}} .tss-wrapper .tlp-openPopup:before, {{WRAPPER}} .tss-wrapper .rt-responsive-img',
 			];
 
 			$this->fields = array_merge( apply_filters( 'rttss_elementor_before_image_border', $this->fields ) );
@@ -571,7 +573,7 @@ if ( ! class_exists( 'TSSElementorStyleSections' ) ) :
 				],
 				'separator'  => 'before',
 				'selectors'  => [
-					'{{WRAPPER}} .tss-wrapper .rt-responsive-img, {{WRAPPER}} .tss-wrapper .tss-layout9 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-isotope4 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-carousel9 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-layout9 .profile-img-wrapper:after, {{WRAPPER}} .tss-wrapper .tss-isotope4 .profile-img-wrapper:after, {{WRAPPER}} .tss-wrapper .tss-carousel9 .profile-img-wrapper:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tss-wrapper .tlp-openPopup:before, {{WRAPPER}} .tlp-video-image-2, {{WRAPPER}} .tss-wrapper .rt-responsive-img, {{WRAPPER}} .tss-wrapper .tss-layout9 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-isotope4 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-carousel9 .profile-img-wrapper:before, {{WRAPPER}} .tss-wrapper .tss-layout9 .profile-img-wrapper:after, {{WRAPPER}} .tss-wrapper .tss-isotope4 .profile-img-wrapper:after, {{WRAPPER}} .tss-wrapper .tss-carousel9 .profile-img-wrapper:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			];
 
@@ -581,7 +583,6 @@ if ( ! class_exists( 'TSSElementorStyleSections' ) ) :
 
 			return $this->fields;
 		}
-
 		/**
 		 * Grid Colors Section
 		 *

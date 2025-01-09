@@ -1108,7 +1108,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 			}
 
 			if ( $html ) {
-				$html = "<div class='tss-social-share'>{$html}</div>";
+				$html = "<div class='tss-social-share'><span class='share-icons'> ". esc_html__('Social on: ', 'testimonial-slider-showcase') ." </span> {$html}</div>";
 			}
 
 			return $html;
@@ -1245,6 +1245,10 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 
 			if ( ! empty( $settings['tss_el_location'] ) ) {
 				$visibility[] = 'location';
+			}
+
+			if ( ! empty( $settings['tss_el_video'] ) ) {
+				$visibility[] = 'video';
 			}
 
 			if ( ! empty( $settings['tss_el_rating'] ) ) {

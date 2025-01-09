@@ -31,6 +31,7 @@ if ( ! class_exists( 'TSSTemplate' ) ) :
 			if ( get_post_type() == TSSPro()->post_type || is_post_type_archive( TSSPro()->post_type ) ) {
 				wp_enqueue_style(
 					[
+						'tss-popup',
 						'tss-fontello',
 						'tlp-owl-carousel-css',
 						'tlp-owl-carousel-theme-css',

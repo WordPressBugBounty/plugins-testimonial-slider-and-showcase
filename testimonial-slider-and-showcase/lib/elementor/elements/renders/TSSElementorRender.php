@@ -41,7 +41,9 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 			}
 
 			if ( count( $this->scA ) ) {
+				array_push( $script, 'tss-popup' );
 				array_push( $script, 'tss-image-load' );
+				array_push( $script, 'tss-isotope' );
 				if ( $caro ) {
 					array_push( $style, 'swiper' );
 					array_push( $script, 'swiper' );
@@ -170,44 +172,100 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 
 			if ( $tssQuery->have_posts() ) {
 				if ( $isIsotope ) {
-					$terms = get_terms(
-						[
-							'taxonomy'   => TSSPro()->taxonomies['category'],
-							'hide_empty' => false,
-							'orderby'    => 'meta_value_num',
-							'order'      => 'ASC',
-							'meta_key'   => '_order', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
-							'include'    => $postCategories,
-						]
-					);
 
-					$tooltipClass   = $isotopTooltip ? 'tooltip-active' : '';
-					$html          .= '<div class="tss-iso-filter"><div id="iso-button-' . absint( $rand ) . '" class="tss-isotope-button-wrapper ' . $tooltipClass . ' filter-button-group">';
-					$htmlButton     = null;
-					$fSelectTrigger = false;
+                    $terms = get_terms(
+                        [
+                            'taxonomy'   => TSSPro()->taxonomies['category'],
+                            'hide_empty' => false,
+                            'orderby'    => 'meta_value_num',
+                            'order'      => 'ASC',
+                            'meta_key'   => '_order', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+                            'include'    => $postCategories,
+                        ]
+                    );
 
-					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-						foreach ( $terms as $term ) {
-							$fSelect = null;
+                    $tooltipClass   = $isotopTooltip ? 'tooltip-active' : '';
+                    $html          .= '<div class="tss-iso-filter"><div id="iso-button-' . absint( $rand ) . '" class="tss-isotope-button-wrapper ' . $tooltipClass . ' filter-button-group">';
+                    $htmlButton     = null;
+                    $fSelectTrigger = false;
 
-							if ( $tItem == $term->term_id ) {
-								$fSelect        = ' selected';
-								$fSelectTrigger = true;
-							}
+                    if( $isotopeType == 'rating' ) {
+                        $args = [
+                            'post_type'      => 'testimonial',
+                            'posts_per_page' => -1,
+                            'post_status'    => 'publish',
+                        ];
+                        $query = new WP_Query($args);
+                        $totalReviews = 0;
+                        $totalScore = 0;
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                $rating = get_post_meta(get_the_ID(), 'tss_rating', true);
+                                if (!empty($rating)) {
+                                    $totalReviews++;
+                                    $totalScore += floatval($rating);
+                                }
+                            }
+                            wp_reset_postdata();
+                        }
 
-							$htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
-						}
-					}
+                        $averageRating = $totalReviews > 0 ? round($totalScore / $totalReviews, 2) : 0;
 
-					if ( empty( $isotopeShowAll ) ) {
-						$fSelect = ( $fSelectTrigger ? null : ' selected' );
-						$html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter='' data-filter='*'>" . esc_html__(
-							'Show all',
-							'testimonial-slider-showcase'
-						) . '</span>';
-					}
+                        if( $ratingText == 1 ){ ?>
+                        <div class="tlp-average-rating">
+                            <div class="tlp-rating-title"><?php echo esc_html( $ratingTitle ) ?></div>
+                            <div class="tlp-client-rating">
+                                <?php
+                                for ($i = 1; $i <= 5; $i++) {
+                                    if ($i <= floor($averageRating)) {
+                                        echo "<i class='dashicons dashicons-star-filled' aria-hidden='true'></i>";
+                                    } elseif ($i <= $averageRating) {
+                                        echo "<i class='dashicons custom-star-half' aria-hidden='true'></i>";
+                                    } else {
+                                        echo "<i class='dashicons dashicons-star-empty' aria-hidden='true'></i>";
+                                    }
+                                }
+                                ?>
+                                <span><?php echo esc_html($averageRating); ?> <?php echo esc_html__( 'out of 5 stars', 'testimonial-slider-showcase' )?></span>
+                            </div>
+                            <div class="total-rating-text"><?php echo esc_html__('Based on', 'testimonial-slider-showcase')?> <?php echo esc_html($totalReviews); ?> <?php echo esc_html__('Reviews', 'testimonial-slider-showcase')?></div>
+                        </div>
+                        <?php } ?>
 
-					$html .= $htmlButton;
+                        <?php $ratings = [5, 4, 3, 2, 1];
+                        if (!empty( $ratings )) {
+                            foreach ( $ratings as $rating ) {
+                                $htmlButton .= "<span class='rt-iso-button' data-filter-counter='" . esc_attr($rating) . "' data-filter='.rating_" . esc_attr($rating) . "'>";
+                                for ($i = 1; $i <= 5; $i++) {
+                                    $starClass = ($i <= $rating) ? 'filled' : 'empty';
+                                    $htmlButton .= "<i data-star='" . esc_attr($i) . "' class='star-$i dashicons dashicons-star-{$starClass}' aria-hidden='true'></i>";
+                                }
+                                $htmlButton .= "</span>";
+                            }
+                        }
+                    }else{
+                        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                            foreach ( $terms as $term ) {
+                                $fSelect = null;
+                                if ( $tItem == $term->term_id ) {
+                                    $fSelect        = ' selected';
+                                    $fSelectTrigger = true;
+                                }
+                                $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
+                            }
+                        }
+                    }
+
+                    if ( empty( $isotopeShowAll ) ) {
+                        $fSelect = ( $fSelectTrigger ? null : ' selected' );
+                        $html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter='' data-filter='*'>" . esc_html__(
+                            'Show all',
+                            'testimonial-slider-showcase'
+                        ) . '</span>';
+                    }
+
+                    $html .= $htmlButton;
 					$html .= '</div>';
 
 					if ( ! empty( $isotopeSearchFilter ) ) {
@@ -216,9 +274,7 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 							'testimonial-slider-showcase'
 						) . "' /></div>";
 					}
-
 					$html .= '</div>';
-
 					$html .= '<div class="tss-isotope" id="tss-isotope-' . $rand . '">';
 				} elseif ( $isCarousel ) {
 					$autoPlay           = ( in_array( 'autoplay', $cOpt ) ? 'true' : 'false' );
@@ -257,7 +313,6 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 
 				while ( $tssQuery->have_posts() ) :
 					$tssQuery->the_post();
-
 					$iID                 = get_the_ID();
 					$arg['iID']          = $iID;
 					$arg['author']       = get_the_title();
@@ -274,7 +329,6 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 					if ( in_array( 'read_more', $arg['items'] ) && function_exists( 'rttsp' ) ) {
 						$aHtml = "<a class='rt-read-more' href='" . esc_url( $arg['pLink'] ) . "'>{$arg['read_more']}</a>";
 					}
-
 					if ( $enable_testi_limit ) {
 						if ( $testi_limit ) {
 							$arg['testimonial'] = TSSPro()->tssWordLimit( $testi_limit, $aHtml );
@@ -282,23 +336,19 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 					}
 
 					$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );
-
 					if ( $isIsotope && taxonomy_exists( TSSPro()->taxonomies['category'] ) ) {
 						$termAs = wp_get_post_terms(
 							$iID,
 							TSSPro()->taxonomies['category'],
 							[ 'fields' => 'all' ]
 						);
-
 						$isoFilter = null;
-
 						if ( ! empty( $termAs ) ) {
 							foreach ( $termAs as $term ) {
 								$isoFilter .= ' ' . 'iso_' . $term->term_id;
 								$isoFilter .= ' ' . $term->slug;
 							}
 						}
-
 						$arg['isoFilter'] = $isoFilter;
 					}
 
@@ -320,14 +370,10 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 				} elseif ( $isCarousel ) {
 					if ( 'grid' !== $scMeta['tss_el_layout_type'] ) {
 						$html .= '</div>';
-
 						$html .= 'true' === $nav ? '<div class="swiper-arrow swiper-button-next"><i class="rttss-right-open"></i></div><div class="swiper-arrow swiper-button-prev"><i class="rttss-left-open"></i></div>' : '';
 						$html .= 'true' === $dots ? '<div class="swiper-pagination"></div>' : '';
-
 						$html .= '</div>';
-
-						$html .= '</div>'; // End Carousel item holder.
-
+						$html .= '</div>';
 						if ( 'carousel12' === $layout ) {
 							$html .= $this->renderThumbSlider( $tssQuery, $scMeta, $arg );
 						}
@@ -449,6 +495,9 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 				'isotopeShowAll'      => ! empty( $meta['tss_el_isotope_show_all'] ) ? false : true,
 				'isotopeSearchFilter' => ! empty( $meta['tss_el_isotope_search'] ) ? true : false,
 				'isotopTooltip'       => ! empty( $meta['tss_el_isotope_tooltip'] ) ? true : false,
+				'ratingText'       => ! empty( $meta['tss_el_hide_rating_text'] ) ? true : false,
+                'isotopeType'         => ! empty( $meta['tss_el_isotope_filter_type'] ) ? esc_html( $meta['tss_el_isotope_filter_type'] ) : 'category',
+                'ratingTitle'           => ! empty( $meta['tss_el_rating_title'] ) ? esc_html( $meta['tss_el_rating_title'] ) : '',
 			];
 		}
 

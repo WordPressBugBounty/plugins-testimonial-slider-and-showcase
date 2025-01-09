@@ -20,9 +20,12 @@
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 calc(33.33% - 10px);
 	flex: 0 0 calc(33.33% - 10px);
-	max-width: calc(33.33% - 10px);
 	margin: 0 5px 10px;
 	background: #fff;
+}
+
+.elementor-control-tss_el_layout_type .elementor-control-image-selector-wrapper .elementor-image-selector-label{
+	max-width: calc(33.33% - 10px);
 }
 
 .elementor-control-image-selector-wrapper input:checked + .elementor-image-selector-label {

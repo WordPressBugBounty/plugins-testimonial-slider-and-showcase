@@ -47,6 +47,7 @@
 
     });
 
+
     /* social media */
     $(".rt-sm-wrapper .rt-sm-sortable-list").sortable({
         connectWith: ".rt-sm-sortable-list",

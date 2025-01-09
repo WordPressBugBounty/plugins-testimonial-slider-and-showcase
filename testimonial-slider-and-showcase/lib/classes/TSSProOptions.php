@@ -365,6 +365,21 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 					'default'     => 5000,
 					'description' => esc_html__( 'Autoplay interval timeout', 'testimonial-slider-showcase' ),
 				],
+                'tss_average_switch'                => [
+                    'type'        => 'switch',
+                    'label'       => esc_html__( 'Average', 'testimonial-slider-showcase' ),
+                    'holderClass' => 'tss-isotope-item tss-hidden',
+                    'optionLabel' => esc_html__( 'Enable', 'testimonial-slider-showcase' ),
+                    'option'      => 1,
+                ],
+
+                'tss_average_rating_text'     => [
+                    'type'        => 'text',
+                    'label'       => esc_html__( 'Average Rating text', 'testimonial-slider-showcase' ),
+                    'holderClass' => 'tss-isotope-item tss-hidden',
+                    'default'     => esc_html__( 'Average Rating', 'testimonial-slider-showcase' ),
+                ],
+
 				'tss_pagination'                => [
 					'type'        => 'switch',
 					'label'       => esc_html__( 'Pagination', 'testimonial-slider-showcase' ),
@@ -842,7 +857,7 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 				$fields      = $this->singleTestimonialFields();
 				$fieldsArray = [];
 				foreach ( $fields as $index => $field ) {
-					$fieldsArray[ str_replace( 'tss_', '', $index ) ] = ( $index == 'tss_video' ? esc_html__(
+					$fieldsArray[ str_replace( 'tss_', '', $index ) ] = ( $index == 'video' ? esc_html__(
 						'Video',
 						'testimonial-slider-showcase'
 					) : $field['label'] );

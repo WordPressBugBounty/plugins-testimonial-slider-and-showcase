@@ -551,6 +551,7 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 			return $this->fields;
 		}
 
+
 		/**
 		 * Text Limit Section
 		 *
@@ -590,6 +591,7 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 
 			return $this->fields;
 		}
+
 
 		/**
 		 * Slider Section

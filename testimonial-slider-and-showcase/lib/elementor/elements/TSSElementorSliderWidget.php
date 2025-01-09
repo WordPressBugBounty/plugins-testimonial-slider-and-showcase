@@ -55,7 +55,7 @@ class TSSElementorSliderWidget extends \Elementor\Widget_Base {
 	 */
 	public function get_script_depends() {
 
-		return [ 'tss-image-load', 'swiper', 'tss-isotope', 'tss' ];
+		return [ 'tss-image-load', 'tss-popup', 'swiper', 'tss-isotope', 'tss' ];
 
 	}
 
@@ -65,7 +65,7 @@ class TSSElementorSliderWidget extends \Elementor\Widget_Base {
 	 * @return array
 	 */
 	public function get_style_depends() {
-		return [ 'swiper', 'tss-fontello', 'dashicons', 'tss' ];
+		return [ 'swiper', 'tss-popup', 'tss-fontello', 'dashicons', 'tss' ];
 	}
 
 	/**
