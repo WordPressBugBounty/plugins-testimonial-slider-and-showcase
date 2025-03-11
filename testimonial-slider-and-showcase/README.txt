@@ -1,11 +1,11 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1
 Donate link:
-Stable tag: 2.3.15
+Stable tag: 2.3.16
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
 Tested up to: 6.7
-Requires PHP: 7.0
+Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Testimonial Slider and Showcase WordPress plugin is most customizable and user f
 
 [Testimonial](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) Slider and Showcase plugin for WordPress website. It is a developer and user-friendly testimonial plugin that facilitates easy management of customer testimonials. Since it is fully responsive, it ensures that your testimonials appear in beautiful layouts on all devices.
 
-👉 [ShortCode Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/) | [Elementor Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/elementor-grid-layout-1/) | [Documentation](https://www.radiustheme.com/docs/testimonial-slider/getting-started/installation/) | [Get Pro](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) 👈
+👉 [ShortCode Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/) | [Elementor Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/elementor-grid-layout-1/) | [Documentation](https://www.radiustheme.com/docs/testimonial-slider/) | [Get Pro](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) 👈
 
 This testimonials slider plugin is full customizable and allows you to generate shortcodes easily. You can use the shortcodes onto any post or page on which you need to showcase testimonials in slider or grid view. It offers many variations of the grid and slider layouts.
 
@@ -197,6 +197,9 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 06. Styles
 
 == Changelog ==
+
+= 2.3.16 (March 11, 2025) =
+Fixed: Template Layout Directory Path
 
 = 2.3.15 (January 09, 2025) =
 Added: Rating Filter, Video Popup Layout

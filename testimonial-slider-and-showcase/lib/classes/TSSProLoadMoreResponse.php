@@ -237,19 +237,16 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 							if ( $isIsotope ) {
 								$termAs    = wp_get_post_terms( $iID, TSSPro()->taxonomies['category'], [ 'fields' => 'all' ] );
 								$isoFilter = null;
-
 								if ( ! empty( $termAs ) ) {
 									foreach ( $termAs as $term ) {
 										$isoFilter .= ' iso_' . $term->term_id;
 										$isoFilter .= ' ' . $term->slug;
 									}
 								}
-
 								$arg['isoFilter'] = $isoFilter;
 							}
 							$arg['img'] = TSSPro()->getFeatureImage( $iID, $imgSize, $customImgSize );
 							$data      .= TSSPro()->render( 'layouts/' . $layout, $arg );
-
 						}
 
 						if ( ! empty( $data ) ) {

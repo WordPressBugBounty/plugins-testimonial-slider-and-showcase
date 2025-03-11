@@ -250,6 +250,23 @@ if ( ! class_exists( 'TSSPro' ) ) {
 			include $viewPath;
 		}
 
+        /**
+         * Remove any character that is not alphanumeric, /, _, or -.
+         *
+         * @param string $name Name to sanitize.
+         *
+         * @return array|string|string[]|null
+         */
+        private static function sanitize_file_name( $name ) {
+            // Remove anything that is not alphanumeric, _, -, or /.
+            $name = preg_replace( '/[^a-zA-Z0-9\/_\-]/', '', $name );
+            // Prevent directory traversal.
+            $name = str_replace( [ '../', '..' ], '', $name );
+            // Replace multiple slashes with a single slash.
+            $name = preg_replace( '/\/+/', '/', $name );
+            return trim( $name, '/' ); // Trim leading and trailing slashes.
+        }
+
 		/**
 		 * Render.
 		 *
@@ -261,7 +278,7 @@ if ( ! class_exists( 'TSSPro' ) ) {
 		 */
 		public function render( $viewName, $args = [], $return = true ) {
 
-			$path = str_replace( '.', '/', $viewName );
+            $path = self::sanitize_file_name( $viewName );
 
 			if ( $args ) {
 				extract( $args );
@@ -271,10 +288,11 @@ if ( ! class_exists( 'TSSPro' ) ) {
 				"testimonial-slider-showcase/{$path}.php",
 			];
 
+
 			$pro_path = $this->proTemplatesPath . $viewName . '.php';
 
-			if ( locate_template( $template ) ) {
-				$template_file = locate_template( $template );
+            if ( locate_template( $template ) ) {
+                $template_file = locate_template( $template );
 			} elseif ( function_exists( 'rttsp' ) && file_exists( $pro_path ) ) {
 				$template_file = $pro_path;
 			} else {
@@ -288,10 +306,8 @@ if ( ! class_exists( 'TSSPro' ) ) {
 			if ( $return ) {
 				ob_start();
 				include $template_file;
-
 				return ob_get_clean();
 			} else {
-
 				include $template_file;
 			}
 		}
