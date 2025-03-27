@@ -928,11 +928,13 @@
 /******************************************************/
 .tss-wrapper .tss-layout2 .single-item-wrapper,
 .tss-wrapper .tss-carousel2 .single-item-wrapper {
-	margin-bottom: 30px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
+}
+.tss-wrapper .tss-carousel2 .single-item-wrapper {
+	margin-bottom: 30px;
 }
 
 .tss-wrapper .tss-layout2 .single-item-wrapper .profile-img-wrapper,
@@ -943,6 +945,16 @@
 .tss-wrapper .tss-carousel2 .single-item-wrapper h4.author-bio {
 	text-align: center;
 }
+.tss-wrapper .tss-layout2 .rating-wrapper,
+.tss-wrapper .tss-carousel2 .rating-wrapper,
+.tss-wrapper .tss-layout2 .single-item-wrapper h3.author-name,
+.tss-wrapper .tss-layout2 .single-item-wrapper h4.author-bio,
+.tss-wrapper .tss-carousel2 .single-item-wrapper h3.author-name,
+.tss-wrapper .tss-carousel2 .single-item-wrapper h4.author-bio {
+	padding: 0 10px;
+}
+
+
 
 .tss-wrapper .tss-layout2 .single-item-wrapper:hover .item-content-wrapper:after,
 .tss-wrapper .tss-carousel2 .single-item-wrapper:hover .item-content-wrapper:after {

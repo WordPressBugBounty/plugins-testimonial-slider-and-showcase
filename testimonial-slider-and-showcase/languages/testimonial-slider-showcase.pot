@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-11 08:23+0000\n"
+"POT-Creation-Date: 2025-03-27 04:54+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -82,20 +82,15 @@ msgstr ""
 msgid "reCAPTCHA field is required."
 msgstr ""
 
-#. translators: %s is the plugin name
-#: ../lib/classes/TSSNotice.php:80
-msgid "🚀 Exciting News: %1$s Black Friday sale is now live!"
-msgstr ""
-
-#: ../lib/classes/TSSNotice.php:190
+#: ../lib/classes/TSSNotice.php:189
 msgid "Enjoying Testimonial Slider and Showcase?"
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:191
+#: ../lib/classes/TSSNotice.php:190
 msgid "Thank you for choosing Testimonial Slider and Showcase. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:193
+#: ../lib/classes/TSSNotice.php:192
 msgid "Yes, You Deserve It!"
 msgstr ""
 
