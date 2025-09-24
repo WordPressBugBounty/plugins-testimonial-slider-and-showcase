@@ -69,6 +69,35 @@ if ( ! class_exists( 'TSSNotice' ) ):
                         $download_link = 'https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/';
 					?>
 
+<!--					<div class="notice notice-info is-dismissible" data-rttss-dismissable="rttss_bf_2021"-->
+<!--						style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">-->
+<!--						<img alt="--><?php //echo esc_attr( $plugin_name ); ?><!--"-->
+<!--							src="--><?php //echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?><!--" width="74px"-->
+<!--							height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>-->
+<!--						<h3 style="margin:0; display:flex; align-items: center">-->
+<!--                            --><?php //echo sprintf( '%s Black Friday', esc_html( $plugin_name ) ); ?>
+<!--                            <img alt="--><?php //echo esc_attr( $plugin_name ); ?><!--" src="--><?php //echo esc_url( TSSPro()->assetsUrl ) . 'images/deal.gif'; ?><!--" width="60px" />-->
+<!--                        </h3>-->
+<!---->
+<!--						<p style="margin:0 0 2px;">--><?php
+//							printf(
+//							    /* translators: %s is the plugin name */
+//								esc_html__(
+//									'🚀 Exciting News: %1$s Black Friday sale is now live!',
+//									'testimonial-slider-showcase'
+//								),
+//								esc_html( $plugin_name )
+//							);
+//                        ?>
+<!--                            Get the plugin today and enjoy discounts up to <b> 50%.</b>-->
+<!--						</p>-->
+<!---->
+<!--						<p style="margin:0;">-->
+<!--							<a class="button button-primary" href="--><?php //echo esc_url( $download_link ); ?><!--" target="_blank">Buy Now</a>-->
+<!--							<a class="button button-dismiss" href="#">Dismiss</a>-->
+<!--						</p>-->
+<!--					</div>-->
+
                     <div class="notice notice-info is-dismissible" data-rttss-dismissable="rttss_bf_2021"
                          style="display:grid !important;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
                         <img alt="<?php echo esc_attr( $plugin_name ); ?>"

@@ -1,7 +1,7 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1
 Donate link:
-Stable tag: 2.3.17
+Stable tag: 2.3.18
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
 Tested up to: 6.7
@@ -197,6 +197,9 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 06. Styles
 
 == Changelog ==
+
+= 2.3.18 (September 24, 2025) =
+Fixed: Security issue and pagination style
 
 = 2.3.17 (March 27, 2025) =
 Fixed: Layout Style issue with responsive

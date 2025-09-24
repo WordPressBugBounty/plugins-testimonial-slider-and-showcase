@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-27 04:54+0000\n"
+"POT-Creation-Date: 2025-09-24 04:17+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Testimonial Slider and Showcase"
 msgstr ""
 
-#: ../lib/classes/TSSElementorInit.php:178, ../lib/classes/TSSElementorInit.php:179
+#: ../lib/classes/TSSElementorInit.php:179, ../lib/classes/TSSElementorInit.php:180
 msgid "Isotope Layout"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:54, ../lib/classes/TSSProOptions.php:176
+#: ../lib/classes/TSSFrontEndSubmission.php:54, ../lib/classes/TSSProOptions.php:173
 msgid "[{site_name}] New Testimonial received"
 msgstr ""
 
@@ -82,15 +82,15 @@ msgstr ""
 msgid "reCAPTCHA field is required."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:189
+#: ../lib/classes/TSSNotice.php:218
 msgid "Enjoying Testimonial Slider and Showcase?"
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:190
+#: ../lib/classes/TSSNotice.php:219
 msgid "Thank you for choosing Testimonial Slider and Showcase. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:192
+#: ../lib/classes/TSSNotice.php:221
 msgid "Yes, You Deserve It!"
 msgstr ""
 
@@ -130,27 +130,27 @@ msgstr ""
 msgid "Security Error !!"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:462, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:425
+#: ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:463, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:427
 msgid "Loading ..."
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:420, ../lib/elementor/elements/renders/TSSElementorRender.php:383
+#: ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:421, ../lib/elementor/elements/renders/TSSElementorRender.php:385
 msgid "No testimonial found"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:268, ../lib/classes/TSSProSC.php:296, ../lib/elementor/elements/renders/TSSElementorRender.php:262
+#: ../lib/classes/TSSPreview.php:268, ../lib/classes/TSSProSC.php:296, ../lib/elementor/elements/renders/TSSElementorRender.php:264
 msgid "Show all"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:275, ../lib/classes/TSSProSC.php:302, ../lib/elementor/elements/renders/TSSElementorRender.php:272
+#: ../lib/classes/TSSPreview.php:275, ../lib/classes/TSSProSC.php:302, ../lib/elementor/elements/renders/TSSElementorRender.php:274
 msgid "Search"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:461, ../lib/elementor/elements/renders/TSSElementorRender.php:424
+#: ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:462, ../lib/elementor/elements/renders/TSSElementorRender.php:426
 msgid "No More Post to load"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:515, ../lib/elementor/elements/renders/TSSElementorRender.php:475
+#: ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:516, ../lib/elementor/elements/renders/TSSElementorRender.php:477
 msgid "Load More"
 msgstr ""
 
@@ -158,19 +158,19 @@ msgstr ""
 msgid "Testimonial ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:64, ../lib/classes/TSSProOptions.php:89, ../lib/elementor/elements/sections/TSSElementorContentSections.php:315
+#: ../lib/classes/TSSProAdmin.php:64, ../lib/classes/TSSProOptions.php:86, ../lib/elementor/elements/sections/TSSElementorContentSections.php:315
 msgid "Image"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:65, ../lib/classes/TSSProOptions.php:113, ../lib/classes/TSSProOptions.php:529, ../lib/classes/TSSProOptions.php:879
+#: ../lib/classes/TSSProAdmin.php:65, ../lib/classes/TSSProOptions.php:110, ../lib/classes/TSSProOptions.php:526, ../lib/classes/TSSProOptions.php:876
 msgid "Designation"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:66, ../lib/classes/TSSProOptions.php:114, ../lib/classes/TSSProOptions.php:534, ../lib/classes/TSSProOptions.php:880
+#: ../lib/classes/TSSProAdmin.php:66, ../lib/classes/TSSProOptions.php:111, ../lib/classes/TSSProOptions.php:531, ../lib/classes/TSSProOptions.php:877
 msgid "Company"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:67, ../lib/classes/TSSProOptions.php:115, ../lib/classes/TSSProOptions.php:539, ../lib/classes/TSSProOptions.php:881
+#: ../lib/classes/TSSProAdmin.php:67, ../lib/classes/TSSProOptions.php:112, ../lib/classes/TSSProOptions.php:536, ../lib/classes/TSSProOptions.php:878
 msgid "Location"
 msgstr ""
 
@@ -230,11 +230,11 @@ msgstr ""
 msgid "Carousel 2"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1153, ../lib/classes/TSSProOptions.php:695, ../lib/classes/TSSProOptions.php:703, ../lib/classes/TSSProOptions.php:800, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
+#: ../lib/classes/TSSProHelper.php:1153, ../lib/classes/TSSProOptions.php:692, ../lib/classes/TSSProOptions.php:700, ../lib/classes/TSSProOptions.php:797, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
 msgid "Normal"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1154, ../lib/classes/TSSProOptions.php:704
+#: ../lib/classes/TSSProHelper.php:1154, ../lib/classes/TSSProOptions.php:701
 msgid "Circle"
 msgstr ""
 
@@ -242,31 +242,31 @@ msgstr ""
 msgid "No testimonials found"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1187, ../lib/classes/TSSProOptions.php:721
+#: ../lib/classes/TSSProHelper.php:1187, ../lib/classes/TSSProOptions.php:718
 msgid "Menu Order"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1188, ../lib/classes/TSSProOptions.php:79, ../lib/classes/TSSProOptions.php:722
+#: ../lib/classes/TSSProHelper.php:1188, ../lib/classes/TSSProOptions.php:76, ../lib/classes/TSSProOptions.php:719
 msgid "Name"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1189, ../lib/classes/TSSProOptions.php:723
+#: ../lib/classes/TSSProHelper.php:1189, ../lib/classes/TSSProOptions.php:720
 msgid "ID"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1190, ../lib/classes/TSSProOptions.php:724
+#: ../lib/classes/TSSProHelper.php:1190, ../lib/classes/TSSProOptions.php:721
 msgid "Date"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:728
+#: ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:725
 msgid "Random"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1205, ../lib/classes/TSSProOptions.php:736
+#: ../lib/classes/TSSProHelper.php:1205, ../lib/classes/TSSProOptions.php:733
 msgid "Ascending"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1206, ../lib/classes/TSSProOptions.php:737
+#: ../lib/classes/TSSProHelper.php:1206, ../lib/classes/TSSProOptions.php:734
 msgid "Descending"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "1 Second"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:136, ../lib/classes/TSSProInit.php:140, ../lib/classes/TSSProInit.php:141, ../lib/classes/TSSProInit.php:142, ../lib/classes/TSSProOptions.php:84, ../lib/classes/TSSProOptions.php:869
+#: ../lib/classes/TSSProInit.php:136, ../lib/classes/TSSProInit.php:140, ../lib/classes/TSSProInit.php:141, ../lib/classes/TSSProInit.php:142, ../lib/classes/TSSProOptions.php:81, ../lib/classes/TSSProOptions.php:866
 msgid "Testimonial"
 msgstr ""
 
@@ -406,663 +406,663 @@ msgstr ""
 msgid "Slug configuration"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:105, ../lib/classes/TSSProOptions.php:146
+#: ../lib/classes/TSSProOptions.php:102, ../lib/classes/TSSProOptions.php:143
 msgid "Select the field"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:110, ../lib/classes/TSSProOptions.php:876, ../lib/classes/TSSProOptions.php:867
+#: ../lib/classes/TSSProOptions.php:107, ../lib/classes/TSSProOptions.php:873, ../lib/classes/TSSProOptions.php:864
 msgid "Author"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:111, ../lib/classes/TSSProOptions.php:877, ../lib/classes/TSSProOptions.php:868
+#: ../lib/classes/TSSProOptions.php:108, ../lib/classes/TSSProOptions.php:874, ../lib/classes/TSSProOptions.php:865
 msgid "Author Image"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:112, ../lib/classes/TSSProOptions.php:878
+#: ../lib/classes/TSSProOptions.php:109, ../lib/classes/TSSProOptions.php:875
 msgid "Short Description"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:116, ../lib/classes/TSSProOptions.php:544, ../lib/classes/TSSProOptions.php:665, ../lib/classes/TSSProOptions.php:882, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:93, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:407
+#: ../lib/classes/TSSProOptions.php:113, ../lib/classes/TSSProOptions.php:541, ../lib/classes/TSSProOptions.php:662, ../lib/classes/TSSProOptions.php:879, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:93, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:407
 msgid "Rating"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:121, ../lib/classes/TSSProOptions.php:151
+#: ../lib/classes/TSSProOptions.php:118, ../lib/classes/TSSProOptions.php:148
 msgid "Select the option which you like to display"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:131, ../lib/classes/TSSProOptions.php:278
+#: ../lib/classes/TSSProOptions.php:128, ../lib/classes/TSSProOptions.php:275
 msgid "Social share items"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:158
+#: ../lib/classes/TSSProOptions.php:155
 msgid "Disable admin notification"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:159
+#: ../lib/classes/TSSProOptions.php:156
 msgid "Disable"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:165
+#: ../lib/classes/TSSProOptions.php:162
 msgid "Admin Notification to Email"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:168
+#: ../lib/classes/TSSProOptions.php:165
 msgid "If blank this will be the admin email."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:173
+#: ../lib/classes/TSSProOptions.php:170
 msgid "Notification Email Subject"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:188
+#: ../lib/classes/TSSProOptions.php:185
 msgid "reCAPTCHA"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:203
+#: ../lib/classes/TSSProOptions.php:200
 msgid "Site Key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:209
+#: ../lib/classes/TSSProOptions.php:206
 msgid "Secret Key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:222
+#: ../lib/classes/TSSProOptions.php:219
 msgid "Custom CSS"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:224
+#: ../lib/classes/TSSProOptions.php:221
 msgid "Add your custom css here!!!"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:235
+#: ../lib/classes/TSSProOptions.php:232
 msgid "Deactivate License"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:236
+#: ../lib/classes/TSSProOptions.php:233
 msgid "Activate License"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:243
+#: ../lib/classes/TSSProOptions.php:240
 msgid "Enter your license key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:253, ../lib/classes/TSSProOptions.php:775
+#: ../lib/classes/TSSProOptions.php:250, ../lib/classes/TSSProOptions.php:772
 msgid "Facebook"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:254, ../lib/classes/TSSProOptions.php:776
+#: ../lib/classes/TSSProOptions.php:251, ../lib/classes/TSSProOptions.php:773
 msgid "Twitter"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:255
+#: ../lib/classes/TSSProOptions.php:252
 msgid "LinkedIn"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:256, ../lib/classes/TSSProOptions.php:779
+#: ../lib/classes/TSSProOptions.php:253, ../lib/classes/TSSProOptions.php:776
 msgid "Pinterest"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:257, ../lib/classes/TSSProOptions.php:780
+#: ../lib/classes/TSSProOptions.php:254, ../lib/classes/TSSProOptions.php:777
 msgid "Email"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:267
+#: ../lib/classes/TSSProOptions.php:264
 msgid "Field selection"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:272
+#: ../lib/classes/TSSProOptions.php:269
 msgid "Check the field which you want to display"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:290
+#: ../lib/classes/TSSProOptions.php:287
 msgid "Grid"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:291
+#: ../lib/classes/TSSProOptions.php:288
 msgid "Slider"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:299
+#: ../lib/classes/TSSProOptions.php:296
 msgid "Layout type"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:305
+#: ../lib/classes/TSSProOptions.php:302
 msgid "Grid Layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:310
+#: ../lib/classes/TSSProOptions.php:307
 msgid "Slider Layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:319
+#: ../lib/classes/TSSProOptions.php:316
 msgid "Layout style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:320
+#: ../lib/classes/TSSProOptions.php:317
 msgid "Click to the Layout name to see live demo"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:326
+#: ../lib/classes/TSSProOptions.php:323
 msgid "Desktop column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:333
+#: ../lib/classes/TSSProOptions.php:330
 msgid "Tab column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:340
+#: ../lib/classes/TSSProOptions.php:337
 msgid "Mobile column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:346
+#: ../lib/classes/TSSProOptions.php:343
 msgid "Speed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:350
+#: ../lib/classes/TSSProOptions.php:347
 msgid "Auto play Speed in milliseconds"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:353
+#: ../lib/classes/TSSProOptions.php:350
 msgid "Carousel Options"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:362
+#: ../lib/classes/TSSProOptions.php:359
 msgid "Autoplay timeout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:366
+#: ../lib/classes/TSSProOptions.php:363
 msgid "Autoplay interval timeout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:370
+#: ../lib/classes/TSSProOptions.php:367
 msgid "Average"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:372, ../lib/classes/TSSProOptions.php:387, ../lib/classes/TSSProOptions.php:452
+#: ../lib/classes/TSSProOptions.php:369, ../lib/classes/TSSProOptions.php:384, ../lib/classes/TSSProOptions.php:449
 msgid "Enable"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:378
+#: ../lib/classes/TSSProOptions.php:375
 msgid "Average Rating text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:380, ../lib/classes/TSSProSC.php:514
+#: ../lib/classes/TSSProOptions.php:377, ../lib/classes/TSSProSC.php:515
 msgid "Average Rating"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:385, ../lib/classes/TSSProOptions.php:848, ../lib/elementor/elements/sections/TSSElementorContentSections.php:235, ../lib/elementor/elements/sections/TSSElementorContentSections.php:275
+#: ../lib/classes/TSSProOptions.php:382, ../lib/classes/TSSProOptions.php:845, ../lib/elementor/elements/sections/TSSElementorContentSections.php:235, ../lib/elementor/elements/sections/TSSElementorContentSections.php:275
 msgid "Pagination"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:392
+#: ../lib/classes/TSSProOptions.php:389
 msgid "Display per page"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:395
+#: ../lib/classes/TSSProOptions.php:392
 msgid "If value of Limit setting is not blank (empty), this value should be smaller than Limit value."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:399
+#: ../lib/classes/TSSProOptions.php:396
 msgid "Load more button text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:401
+#: ../lib/classes/TSSProOptions.php:398
 msgid "Load more"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:405
+#: ../lib/classes/TSSProOptions.php:402
 msgid "Image Size"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:411
+#: ../lib/classes/TSSProOptions.php:408
 msgid "Custom Image Size"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:415
+#: ../lib/classes/TSSProOptions.php:412
 msgid "Please note that, if you enter image size larger than the actual image iteself, the image sizes will fallback to the default thumbnail dimension (150x150 px)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:420
+#: ../lib/classes/TSSProOptions.php:417
 msgid "Image Type"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:428
+#: ../lib/classes/TSSProOptions.php:425
 msgid "Testimonial limit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:429
+#: ../lib/classes/TSSProOptions.php:426
 msgid "Testimonial limit only integer number is allowed, Leave it blank for full text."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:433
+#: ../lib/classes/TSSProOptions.php:430
 msgid "Margin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:435
+#: ../lib/classes/TSSProOptions.php:432
 msgid "Select the margin for layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:441
+#: ../lib/classes/TSSProOptions.php:438
 msgid "Grid style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:444
+#: ../lib/classes/TSSProOptions.php:441
 msgid "Select grid style for layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:451
+#: ../lib/classes/TSSProOptions.php:448
 msgid "Detail page link"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:458
+#: ../lib/classes/TSSProOptions.php:455
 msgid "Default preview  image"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:459
+#: ../lib/classes/TSSProOptions.php:456
 msgid "Add an image for default preview"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:469
+#: ../lib/classes/TSSProOptions.php:466
 msgid "Include only"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:471, ../lib/classes/TSSProOptions.php:476
+#: ../lib/classes/TSSProOptions.php:468, ../lib/classes/TSSProOptions.php:473
 msgid "List of post IDs to show (comma-separated values, for example: 1,2,3)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:474, ../lib/elementor/elements/sections/TSSElementorContentSections.php:389
+#: ../lib/classes/TSSProOptions.php:471, ../lib/elementor/elements/sections/TSSElementorContentSections.php:389
 msgid "Exclude"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:479
+#: ../lib/classes/TSSProOptions.php:476
 msgid "Limit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:481
+#: ../lib/classes/TSSProOptions.php:478
 msgid "The number of posts to show. Set empty to show all found posts."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:484
+#: ../lib/classes/TSSProOptions.php:481
 msgid "Categories"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:489, ../lib/classes/TSSProOptions.php:498
+#: ../lib/classes/TSSProOptions.php:486, ../lib/classes/TSSProOptions.php:495
 msgid "Select the category you want to filter, Leave it blank for All category"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:493
+#: ../lib/classes/TSSProOptions.php:490
 msgid "Tags"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:502
+#: ../lib/classes/TSSProOptions.php:499
 msgid "Taxonomy relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:506
+#: ../lib/classes/TSSProOptions.php:503
 msgid "Select this option if you select more than one taxonomy like category and tag, or category , tag and tools"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:510, ../lib/elementor/elements/sections/TSSElementorContentSections.php:434
+#: ../lib/classes/TSSProOptions.php:507, ../lib/elementor/elements/sections/TSSElementorContentSections.php:434
 msgid "Order By"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:517, ../lib/classes/TSSProTaxMeta.php:192, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
+#: ../lib/classes/TSSProOptions.php:514, ../lib/classes/TSSProTaxMeta.php:192, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
 msgid "Order"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:548
+#: ../lib/classes/TSSProOptions.php:545
 msgid "Video URL"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:552
+#: ../lib/classes/TSSProOptions.php:549
 msgid "Only Youtube and Vimeo url allowed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:555
+#: ../lib/classes/TSSProOptions.php:552
 msgid "Social media"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:568
+#: ../lib/classes/TSSProOptions.php:565
 msgid "Parent class"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:570
+#: ../lib/classes/TSSProOptions.php:567
 msgid "Parent class for adding custom css"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:574
+#: ../lib/classes/TSSProOptions.php:571
 msgid "Color schema"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:578
+#: ../lib/classes/TSSProOptions.php:575
 msgid "Primary"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:588
+#: ../lib/classes/TSSProOptions.php:585
 msgid "Background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:592
+#: ../lib/classes/TSSProOptions.php:589
 msgid "Hover background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:596
+#: ../lib/classes/TSSProOptions.php:593
 msgid "Active background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:600
+#: ../lib/classes/TSSProOptions.php:597
 msgid "Text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:604
+#: ../lib/classes/TSSProOptions.php:601
 msgid "Hover text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:608, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:178, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:554
+#: ../lib/classes/TSSProOptions.php:605, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:178, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:554
 msgid "Border"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:615
+#: ../lib/classes/TSSProOptions.php:612
 msgid "Isotope counter tooltip background color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:620
+#: ../lib/classes/TSSProOptions.php:617
 msgid "Isotope counter tooltip text color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:625
+#: ../lib/classes/TSSProOptions.php:622
 msgid "Gutter / Padding"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:630
+#: ../lib/classes/TSSProOptions.php:627
 msgid "Image Border Style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:635
+#: ../lib/classes/TSSProOptions.php:632
 msgid "Border width at pixel"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:636
+#: ../lib/classes/TSSProOptions.php:633
 msgid "Only number is allowed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:640, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:218, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:260
+#: ../lib/classes/TSSProOptions.php:637, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:218, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:260
 msgid "Border Color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:644
+#: ../lib/classes/TSSProOptions.php:641
 msgid "Border style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:647
+#: ../lib/classes/TSSProOptions.php:644
 msgid "Solid"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:648
+#: ../lib/classes/TSSProOptions.php:645
 msgid "Dotted"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:649
+#: ../lib/classes/TSSProOptions.php:646
 msgid "Dashed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:650
+#: ../lib/classes/TSSProOptions.php:647
 msgid "Double"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:657
+#: ../lib/classes/TSSProOptions.php:654
 msgid "Author name"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:661
+#: ../lib/classes/TSSProOptions.php:658
 msgid "Author bio"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:670
+#: ../lib/classes/TSSProOptions.php:667
 msgid "Social"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:674
+#: ../lib/classes/TSSProOptions.php:671
 msgid "Testimonial Style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:678
+#: ../lib/classes/TSSProOptions.php:675
 msgid "Color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:688
+#: ../lib/classes/TSSProOptions.php:685
 msgid "OR Relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:689
+#: ../lib/classes/TSSProOptions.php:686
 msgid "AND Relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:696
+#: ../lib/classes/TSSProOptions.php:693
 msgid "Italic"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:697
+#: ../lib/classes/TSSProOptions.php:694
 msgid "Oblique"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:710
+#: ../lib/classes/TSSProOptions.php:707
 msgid "1 Column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:711
+#: ../lib/classes/TSSProOptions.php:708
 msgid "2 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:712
+#: ../lib/classes/TSSProOptions.php:709
 msgid "3 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:713
+#: ../lib/classes/TSSProOptions.php:710
 msgid "4 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:714
+#: ../lib/classes/TSSProOptions.php:711
 msgid "5 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:715
+#: ../lib/classes/TSSProOptions.php:712
 msgid "6 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:743
+#: ../lib/classes/TSSProOptions.php:740
 msgid "Even"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:744
+#: ../lib/classes/TSSProOptions.php:741
 msgid "Masonry"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:750
+#: ../lib/classes/TSSProOptions.php:747
 msgid "Soft Crop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:751
+#: ../lib/classes/TSSProOptions.php:748
 msgid "Hard Crop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:766
+#: ../lib/classes/TSSProOptions.php:763
 msgid "Bootstrap default"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:767
+#: ../lib/classes/TSSProOptions.php:764
 msgid "No Margin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:777
+#: ../lib/classes/TSSProOptions.php:774
 msgid "Instagram"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:778
+#: ../lib/classes/TSSProOptions.php:775
 msgid "Linkedin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:781
+#: ../lib/classes/TSSProOptions.php:778
 msgid "Skype"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:782
+#: ../lib/classes/TSSProOptions.php:779
 msgid "Whatsapp"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:783
+#: ../lib/classes/TSSProOptions.php:780
 msgid "Telegram"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:791, ../lib/classes/TSSProOptions.php:821, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:319, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:373, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:428, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:499
+#: ../lib/classes/TSSProOptions.php:788, ../lib/classes/TSSProOptions.php:818, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:319, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:373, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:428, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:499
 msgid "Left"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:792, ../lib/classes/TSSProOptions.php:822, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:327, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:381, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:436, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:507
+#: ../lib/classes/TSSProOptions.php:789, ../lib/classes/TSSProOptions.php:819, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:327, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:381, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:436, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:507
 msgid "Right"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:793, ../lib/classes/TSSProOptions.php:823, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:323, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:377, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:432, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:503
+#: ../lib/classes/TSSProOptions.php:790, ../lib/classes/TSSProOptions.php:820, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:323, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:377, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:432, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:503
 msgid "Center"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:794, ../lib/classes/TSSProOptions.php:824
+#: ../lib/classes/TSSProOptions.php:791, ../lib/classes/TSSProOptions.php:821
 msgid "Justify"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:801
+#: ../lib/classes/TSSProOptions.php:798
 msgid "Bold"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:802
+#: ../lib/classes/TSSProOptions.php:799
 msgid "Bolder"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:803
+#: ../lib/classes/TSSProOptions.php:800
 msgid "Lighter"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:804
+#: ../lib/classes/TSSProOptions.php:801
 msgid "Inherit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:805
+#: ../lib/classes/TSSProOptions.php:802
 msgid "Initial"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:806
+#: ../lib/classes/TSSProOptions.php:803
 msgid "Unset"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:807
+#: ../lib/classes/TSSProOptions.php:804
 msgid "100"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:808
+#: ../lib/classes/TSSProOptions.php:805
 msgid "200"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:809
+#: ../lib/classes/TSSProOptions.php:806
 msgid "300"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:810
+#: ../lib/classes/TSSProOptions.php:807
 msgid "400"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:811
+#: ../lib/classes/TSSProOptions.php:808
 msgid "500"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:812
+#: ../lib/classes/TSSProOptions.php:809
 msgid "600"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:813
+#: ../lib/classes/TSSProOptions.php:810
 msgid "700"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:814
+#: ../lib/classes/TSSProOptions.php:811
 msgid "800"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:815
+#: ../lib/classes/TSSProOptions.php:812
 msgid "900"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:830
+#: ../lib/classes/TSSProOptions.php:827
 msgid "10 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:831
+#: ../lib/classes/TSSProOptions.php:828
 msgid "20 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:832
+#: ../lib/classes/TSSProOptions.php:829
 msgid "30 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:833
+#: ../lib/classes/TSSProOptions.php:830
 msgid "40 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:834
+#: ../lib/classes/TSSProOptions.php:831
 msgid "50 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:835
+#: ../lib/classes/TSSProOptions.php:832
 msgid "60 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:836
+#: ../lib/classes/TSSProOptions.php:833
 msgid "70 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:837
+#: ../lib/classes/TSSProOptions.php:834
 msgid "80 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:838
+#: ../lib/classes/TSSProOptions.php:835
 msgid "90 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:844
+#: ../lib/classes/TSSProOptions.php:841
 msgid "Loop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:845
+#: ../lib/classes/TSSProOptions.php:842
 msgid "Auto Play"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:846
+#: ../lib/classes/TSSProOptions.php:843
 msgid "Pause on mouse hover"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:847
+#: ../lib/classes/TSSProOptions.php:844
 msgid "Nav Button"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:849, ../lib/elementor/elements/sections/TSSElementorContentSections.php:653
+#: ../lib/classes/TSSProOptions.php:846, ../lib/elementor/elements/sections/TSSElementorContentSections.php:653
 msgid "Auto Height"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:850
+#: ../lib/classes/TSSProOptions.php:847
 msgid "Lazy Load"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:851
+#: ../lib/classes/TSSProOptions.php:848
 msgid "Right to left (RTL)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:860
+#: ../lib/classes/TSSProOptions.php:857
 msgid "Video"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:870
+#: ../lib/classes/TSSProOptions.php:867
 msgid "Read More"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:873
+#: ../lib/classes/TSSProOptions.php:870
 msgid "Social Share"
 msgstr ""
 
@@ -1070,19 +1070,19 @@ msgstr ""
 msgid "Testimonial's Information"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:488
+#: ../lib/classes/TSSProSC.php:489
 msgid "No shortCode found"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:264, ../lib/elementor/elements/renders/TSSElementorRender.php:230
+#: ../lib/classes/TSSProSC.php:264, ../lib/elementor/elements/renders/TSSElementorRender.php:232
 msgid "out of 5 stars"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:232
+#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
 msgid "Based on"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:232
+#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
 msgid "Reviews"
 msgstr ""
 

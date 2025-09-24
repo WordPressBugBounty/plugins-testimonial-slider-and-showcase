@@ -164,6 +164,7 @@ if ( ! class_exists( 'TSSElementorInit' ) ) :
 		 * @return array
 		 */
 		public function promotePremiumWidgets( $config ) {
+
 			if ( function_exists( 'rttsp' ) ) {
 				return $config;
 			}

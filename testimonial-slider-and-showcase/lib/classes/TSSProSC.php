@@ -359,9 +359,10 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 						}
 
 						if ( $testi_limit ) {
-							$arg['testimonial'] = TSSPro()->strip_tags_content( get_the_content(), $testi_limit, $aHtml );
+							$row_content = apply_filters( 'the_content', get_the_content() );
+							$arg['testimonial'] = TSSPro()->strip_tags_content( $row_content, $testi_limit, $aHtml );
 						} else {
-							$arg['testimonial'] = get_the_content();
+							$arg['testimonial']  = apply_filters( 'the_content', get_the_content() );
 						}
 
 						$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );

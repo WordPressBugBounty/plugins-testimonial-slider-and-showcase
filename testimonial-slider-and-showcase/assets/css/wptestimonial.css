@@ -2079,18 +2079,23 @@
 
 .tss-wrapper .tss-pagination ul.pagination-list li span,
 .tss-wrapper .tss-pagination ul.pagination-list li a {
-	padding: 4px 10px;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
 	font-size: 15px;
 	background: #eee;
 	border: 1px solid transparent;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
+	color: #2550ea;
+	display: inline-block;
 }
 
 .tss-wrapper .tss-pagination ul.pagination-list li.active span,
 .tss-wrapper .tss-pagination ul.pagination-list li span:hover,
 .tss-wrapper .tss-pagination ul.pagination-list li a:hover {
-	background: #8c8989;
+	background: #2550ea;
 	color: #ffffff;
 }
 

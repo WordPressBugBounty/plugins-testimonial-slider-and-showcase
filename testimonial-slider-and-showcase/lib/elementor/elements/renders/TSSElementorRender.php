@@ -171,6 +171,8 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 			$tssQuery = new WP_Query( $tssArgs );
 
 			if ( $tssQuery->have_posts() ) {
+
+
 				if ( $isIsotope ) {
 
                     $terms = get_terms(
@@ -316,7 +318,7 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 					$iID                 = get_the_ID();
 					$arg['iID']          = $iID;
 					$arg['author']       = get_the_title();
-					$arg['testimonial']  = get_the_content();
+					$arg['testimonial']  = apply_filters( 'the_content', get_the_content() );
 					$arg['designation']  = get_post_meta( $iID, 'tss_designation', true );
 					$arg['company']      = get_post_meta( $iID, 'tss_company', true );
 					$arg['location']     = get_post_meta( $iID, 'tss_location', true );

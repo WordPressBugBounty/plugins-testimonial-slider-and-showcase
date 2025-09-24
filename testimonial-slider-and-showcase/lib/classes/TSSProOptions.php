@@ -51,7 +51,6 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 			if ( isset( $fields['tss_feature_image'] ) ) {
 				unset( $fields['tss_feature_image'] );
 			}
-
 			return apply_filters( 'tss_front_end_mandatory_fields', $fields );
 		}
 
@@ -59,7 +58,6 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 			$fields                                 = $this->singleTestimonialFields();
 			$fields['tss_social_media']['frontEnd'] = true;
 			$fields                                 = $this->frontEndFields() + $fields + $this->frontEndRecaptcha();
-
 			return apply_filters( 'tss_from_all_fields', $fields );
 		}
 
@@ -69,7 +67,6 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 					'type' => 'recaptcha',
 				],
 			];
-
 			return apply_filters( 'tss_from_end_recaptcha_field', $fields );
 		}
 
