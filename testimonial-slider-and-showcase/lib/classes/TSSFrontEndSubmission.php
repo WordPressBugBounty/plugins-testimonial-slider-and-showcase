@@ -31,6 +31,7 @@ if ( ! class_exists( 'TSSFrontEndSubmission' ) ) :
 		 */
 		private function sendAdminNotification() {
 			$settings = get_option( TSSPro()->options['settings'] );
+
 			if ( ! isset( $settings['notification_disable'] ) || ( isset( $settings['notification_disable'] ) && empty( $settings['notification_disable'] ) ) ) {
 				$site_name    = get_bloginfo( 'name' );
 				$siteUrl      = home_url();
@@ -79,6 +80,7 @@ if ( ! class_exists( 'TSSFrontEndSubmission' ) ) :
 		 * @return void
 		 */
 		public function tss_submit_action() {
+
 			$error       = true;
 			$msg         = $data = null;
 			$required    = [];
@@ -103,8 +105,11 @@ if ( ! class_exists( 'TSSFrontEndSubmission' ) ) :
 			}
 
 			if ( empty( $required ) ) {
+				// REMOVED: print_r('here'); <- This was causing the JSON parse error
+
 				if ( wp_verify_nonce(TSSPro()->getNonce(),TSSPro()->nonceText()) ) {
 					$r = true;
+
 					if ( ! TSSPro()->verifyRecaptcha() && $enableRecaptcha ) {
 						$r   = false;
 						$msg = esc_html__( 'reCAPTCHA verification error', 'testimonial-slider-showcase' );
@@ -237,10 +242,14 @@ if ( ! class_exists( 'TSSFrontEndSubmission' ) ) :
 					'ajaxurl'   => esc_url( admin_url( 'admin-ajax.php' ) ),
 					'nonce'     => esc_html( wp_create_nonce( TSSPro()->nonceText() ) ),
 					'nonceId'   => esc_html( TSSPro()->nonceId() ),
+					'success'   => [
+						'tss_thankyou' => esc_html__( 'Thank you for your testimonial!', 'testimonial-slider-showcase' ),
+					],
 					'error'     => [
 						'tss_name'        => esc_html__( 'Name field is required.', 'testimonial-slider-showcase' ),
 						'tss_testimonial' => esc_html__( 'Testimonial field is required.', 'testimonial-slider-showcase' ),
 						'tss_recaptcha'   => esc_html__( 'reCAPTCHA field is required.', 'testimonial-slider-showcase' ),
+						'tss_error'    => esc_html__( 'An error occurred. Please try again.', 'testimonial-slider-showcase' ),
 					],
 					'recaptcha' => [
 						'enable'   => in_array( 'tss_recaptcha', $activeFields, true ),

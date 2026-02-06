@@ -156,6 +156,8 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					$testi_limit      = ! empty( $scMeta['tss_testimonial_limit'][0] ) ? absint( $scMeta['tss_testimonial_limit'][0] ) : null;
+
+
 					$arg              = [];
 					$arg['grid']      = "rt-col-md-{$dCol} rt-col-sm-{$tCol} rt-col-xs-{$mCol}";
 					$gridType         = ! empty( $scMeta['tss_grid_style'][0] ) ? esc_attr( $scMeta['tss_grid_style'][0] ) : 'even';

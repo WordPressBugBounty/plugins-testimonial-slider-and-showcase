@@ -105,6 +105,21 @@
         container.find($id).show();
     });
 
+    jQuery(document).ready(function ($) {
+        $('#settings-tabs .rt-tab-nav li a').on('click', function (e) {
+            e.preventDefault();
+
+            const $this = $(this);
+            const target = $this.attr('href');
+
+            $('#settings-tabs .rt-tab-nav li').removeClass('active');
+            $('#settings-tabs .rt-tab-content').hide();
+
+            $this.parent('li').addClass('active');
+            $(target).fadeIn(200);
+        });
+    });
+
     if ($("#sc-item-select").length) {
         $("#sc-item-select").select2({
             placeholder: "Select multiple item",

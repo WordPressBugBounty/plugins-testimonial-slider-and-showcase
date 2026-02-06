@@ -67,6 +67,10 @@
 
 	RTInitCaroIso();
 
+	$(window).on('et_fb_ajax_render', function(){
+		rtInitCarousel();
+	});
+
 	function RTInitCaroIso() {
 		var elementInstances = [];
 		var elementThumbInstances = [];

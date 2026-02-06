@@ -78,10 +78,8 @@ $html .= '<div class="item-content-wrapper tss-right">';
 if ( in_array( 'testimonial', $items, true ) && $testimonial ) {
 	$html .= "<div class='item-content'>{$testimonial}</div>";
 }
-
 $html .= '</div>';
 $html .= '</div>';
 $html .= '</div>';
-
 
 TSSPro()->printHtml( $html );

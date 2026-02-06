@@ -2967,3 +2967,10 @@ body .mfp-iframe-holder .mfp-close:hover{
 .tss-wrapper.tss-submit-wrapper .rt-simple-image-preview{
 	cursor: pointer;
 }
+.tlp-portfolio-block-footer .wp-block-group-is-layout-flex,
+.tlp-portfolio-block-header .wp-block-group-is-layout-flex{
+	justify-content: space-between;
+}
+.wp-site-blocks .rt-single-testimonial-detail .profile-img{
+	overflow: hidden;
+}

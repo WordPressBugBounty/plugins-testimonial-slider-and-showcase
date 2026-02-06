@@ -1,10 +1,10 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1
 Donate link:
-Stable tag: 2.3.18
+Stable tag: 2.4.2
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -197,6 +197,20 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 06. Styles
 
 == Changelog ==
+
+
+= 2.4.1 (December 10, 2025) =
+* Updated: WordPress 6.9 compatibility check.
+* Updated: Tested up to WordPress 6.9.
+* Fixed: Minor CSS issues.
+
+= 2.4.0 (November 20, 2025) =
+Updated: Settings Page UI Changed
+
+
+= 2.3.19 (October 2, 2025) =
+Fixed: Frontend Submission Testimonial issue
+Supported : Divi Builder
 
 = 2.3.18 (September 24, 2025) =
 Fixed: Security issue and pagination style

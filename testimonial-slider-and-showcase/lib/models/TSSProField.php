@@ -107,7 +107,6 @@ if ( ! class_exists( 'TSSProField' ) ) :
 			if ( $this->label ) {
 				$pro_label = ( isset( $attr['is_pro'] ) && $attr['is_pro'] ) && ! function_exists( 'rttsp' ) ? '<span class="rtts-pro rtts-tooltip">' . esc_html__( '[Pro]', 'testimonial-slider-showcase' ) . '<span class="rtts-tooltiptext">' . esc_html__( 'This is premium field', 'testimonial-slider-showcase' ) . '</span></span>' : '';
 				$pro_label = apply_filters( 'rtts_pro_label', $pro_label );
-
 				$html .= "<div class='rt-label'>";
 				$html .= '<label for="' . esc_attr( $this->id ) . '">' . TSSPro()->htmlKses( $this->label, 'basic' ) . ' ' . $pro_label . '</label>';
 				$html .= '</div>';

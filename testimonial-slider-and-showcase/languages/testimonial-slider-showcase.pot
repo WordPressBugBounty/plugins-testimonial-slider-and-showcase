@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-24 04:17+0000\n"
+"POT-Creation-Date: 2025-12-10 05:34+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -30,67 +30,79 @@ msgstr ""
 msgid "Isotope Layout"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:54, ../lib/classes/TSSProOptions.php:173
+#: ../lib/classes/TSSFrontEndSubmission.php:55, ../lib/classes/TSSProOptions.php:173
 msgid "[{site_name}] New Testimonial received"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:57
+#: ../lib/classes/TSSFrontEndSubmission.php:58
 msgid "Dear Administrator,<br /><br />You have received a new Testimonial on the website {site_name}.<br /><br />Please do not respond to this message. It is automatically generated and is for information purposes only."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:90
+#: ../lib/classes/TSSFrontEndSubmission.php:92
 msgid "Name field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:94
+#: ../lib/classes/TSSFrontEndSubmission.php:96
 msgid "Testimonial field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:102
+#: ../lib/classes/TSSFrontEndSubmission.php:104
 msgid "reCAPTCHA field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:177
+#: ../lib/classes/TSSFrontEndSubmission.php:182
 msgid "Session error"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:110
+#: ../lib/classes/TSSFrontEndSubmission.php:115
 msgid "reCAPTCHA verification error"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:173
+#: ../lib/classes/TSSFrontEndSubmission.php:178
 msgid "Wp Error!!!."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:171
+#: ../lib/classes/TSSFrontEndSubmission.php:176
 msgid "Testimonial successfully posted."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:201
+#: ../lib/classes/TSSFrontEndSubmission.php:206
 msgid "Submit"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:241
+#: ../lib/classes/TSSFrontEndSubmission.php:246
+msgid "Thank you for your testimonial!"
+msgstr ""
+
+#: ../lib/classes/TSSFrontEndSubmission.php:249
 msgid "Name field is required."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:242, ../lib/classes/TSSFrontEndSubmission.php:247
+#: ../lib/classes/TSSFrontEndSubmission.php:250, ../lib/classes/TSSFrontEndSubmission.php:256
 msgid "Testimonial field is required."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:243
+#: ../lib/classes/TSSFrontEndSubmission.php:251
 msgid "reCAPTCHA field is required."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:218
+#: ../lib/classes/TSSFrontEndSubmission.php:252
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: ../lib/classes/TSSNotice.php:107
+msgid "🚀 Exciting News: <b>Testimonial Slider Showcase Black Friday Sale Has Officially Begun! </b>"
+msgstr ""
+
+#: ../lib/classes/TSSNotice.php:235
 msgid "Enjoying Testimonial Slider and Showcase?"
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:219
+#: ../lib/classes/TSSNotice.php:236
 msgid "Thank you for choosing Testimonial Slider and Showcase. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:221
+#: ../lib/classes/TSSNotice.php:238
 msgid "Yes, You Deserve It!"
 msgstr ""
 
@@ -102,39 +114,35 @@ msgstr ""
 msgid "Layout Preview"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:113, ../lib/classes/TSSPortSCMeta.php:140
+#: ../lib/classes/TSSPortSCMeta.php:113, ../lib/views/settings-header.php:73
 msgid "Documentation"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:141
-msgid "Get started by spending some time with the documentation we included step by step process with screenshots with video."
-msgstr ""
-
-#: ../lib/classes/TSSPortSCMeta.php:204, ../lib/elementor/elements/sections/TSSElementorContentSections.php:48, ../lib/elementor/elements/sections/TSSElementorContentSections.php:119, ../lib/elementor/elements/sections/TSSElementorContentSections.php:191
+#: ../lib/classes/TSSPortSCMeta.php:159, ../lib/elementor/elements/sections/TSSElementorContentSections.php:48, ../lib/elementor/elements/sections/TSSElementorContentSections.php:119, ../lib/elementor/elements/sections/TSSElementorContentSections.php:191
 msgid "Layout"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:205, ../lib/elementor/elements/sections/TSSElementorContentSections.php:356
+#: ../lib/classes/TSSPortSCMeta.php:160, ../lib/elementor/elements/sections/TSSElementorContentSections.php:356
 msgid "Filtering"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:206
+#: ../lib/classes/TSSPortSCMeta.php:161
 msgid "Field Selection"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:207
+#: ../lib/classes/TSSPortSCMeta.php:162
 msgid "Styling"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:446, ../lib/classes/TSSProInit.php:360
+#: ../lib/classes/TSSPreview.php:446, ../lib/classes/TSSProInit.php:369
 msgid "Security Error !!"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:463, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:427
+#: ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:467, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:427
 msgid "Loading ..."
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:421, ../lib/elementor/elements/renders/TSSElementorRender.php:385
+#: ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:425, ../lib/elementor/elements/renders/TSSElementorRender.php:385
 msgid "No testimonial found"
 msgstr ""
 
@@ -146,11 +154,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:462, ../lib/elementor/elements/renders/TSSElementorRender.php:426
+#: ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:466, ../lib/elementor/elements/renders/TSSElementorRender.php:426
 msgid "No More Post to load"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:516, ../lib/elementor/elements/renders/TSSElementorRender.php:477
+#: ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:520, ../lib/elementor/elements/renders/TSSElementorRender.php:477
 msgid "Load More"
 msgstr ""
 
@@ -374,27 +382,27 @@ msgstr ""
 msgid "No ShortCode found in trash."
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:358
+#: ../lib/classes/TSSProInit.php:367
 msgid "Settings successfully updated"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:379, ../lib/views/settings.php:15
+#: ../lib/classes/TSSProInit.php:388
 msgid "Testimonial Settings"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:380
+#: ../lib/classes/TSSProInit.php:389, ../lib/views/settings-header.php:42
 msgid "Settings"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:388, ../lib/classes/TSSProInit.php:389
+#: ../lib/classes/TSSProInit.php:397, ../lib/classes/TSSProInit.php:398
 msgid "Get Help"
 msgstr ""
 
-#: ../lib/classes/TSSProLoadMoreResponse.php:273, ../lib/classes/TSSProTaxMeta.php:70, ../lib/classes/TSSProTaxMeta.php:120
+#: ../lib/classes/TSSProLoadMoreResponse.php:275, ../lib/classes/TSSProTaxMeta.php:70, ../lib/classes/TSSProTaxMeta.php:120
 msgid "Security error"
 msgstr ""
 
-#: ../lib/classes/TSSProLoadMoreResponse.php:270, ../lib/classes/TSSProLoadMoreResponse.php:267, ../lib/classes/TSSProLoadMoreResponse.php:256, ../lib/classes/TSSProLoadMoreResponse.php:501
+#: ../lib/classes/TSSProLoadMoreResponse.php:272, ../lib/classes/TSSProLoadMoreResponse.php:269, ../lib/classes/TSSProLoadMoreResponse.php:258, ../lib/classes/TSSProLoadMoreResponse.php:503
 msgid "No more testimonial to load"
 msgstr ""
 
@@ -586,7 +594,7 @@ msgstr ""
 msgid "Average Rating text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:377, ../lib/classes/TSSProSC.php:515
+#: ../lib/classes/TSSProOptions.php:377, ../lib/classes/TSSProSC.php:519
 msgid "Average Rating"
 msgstr ""
 
@@ -1070,7 +1078,7 @@ msgstr ""
 msgid "Testimonial's Information"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:489
+#: ../lib/classes/TSSProSC.php:493
 msgid "No shortCode found"
 msgstr ""
 
@@ -1134,31 +1142,39 @@ msgstr ""
 msgid "This is premium field"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:308
+#: ../lib/models/TSSProField.php:307
 msgid "Please use default customizer to add your css. This option is deprecated. "
 msgstr ""
 
-#: ../lib/models/TSSProField.php:634
+#: ../lib/models/TSSProField.php:633
 msgid "Pro"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:698
+#: ../lib/models/TSSProField.php:697
 msgid "Width"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:804, ../lib/models/TSSProField.php:777
+#: ../lib/models/TSSProField.php:803, ../lib/models/TSSProField.php:776
 msgid "Active Social link"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:787
+#: ../lib/models/TSSProField.php:786
 msgid "Available Social link"
 msgstr ""
 
-#: ../lib/views/settings.php:18
-msgid "General settings"
+#: ../lib/views/settings-header.php:23
+msgid "Testimonial Slider Showcase"
 msgstr ""
 
-#: ../lib/views/settings.php:28
+#: ../lib/views/settings-header.php:51
+msgid "Support"
+msgstr ""
+
+#: ../lib/views/settings-header.php:59
+msgid "Help"
+msgstr ""
+
+#: ../lib/views/settings.php:27
 msgid "General"
 msgstr ""
 

@@ -285,7 +285,16 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 			$styles['tss-fontello'] = TSSPro()->assetsUrl . 'vendor/fontello/css/tss-font.min.css';
 			$styles['swiper']       = TSSPro()->assetsUrl . 'vendor/swiper/swiper.min.css';
 			$styles['tss-popup']    = TSSPro()->assetsUrl . 'vendor/popup/magnific-popup.css';
-			$styles['tss']          = TSSPro()->assetsUrl . 'css/wptestimonial.css';
+
+
+
+			if ( class_exists( 'ET_Builder_Plugin' ) ) {
+				// Divi is active
+				$styles['tss'] = TSSPro()->assetsUrl . 'css/divi-wptestimonial.css';
+			} else {
+				// Divi not active
+				$styles['tss'] = TSSPro()->assetsUrl . 'css/wptestimonial.css';
+			}
 
 			if ( is_admin() ) {
 				$scripts['tss-select2']       = [

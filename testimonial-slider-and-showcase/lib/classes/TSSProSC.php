@@ -360,9 +360,12 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 
 						if ( $testi_limit ) {
 							$row_content = apply_filters( 'the_content', get_the_content() );
-							$arg['testimonial'] = TSSPro()->strip_tags_content( $row_content, $testi_limit, $aHtml );
+							$plain_text = wp_strip_all_tags( $row_content );
+							$limited_text = wp_trim_words( $plain_text, $testi_limit, '...' );
+							$arg['testimonial'] = '<p>' . $limited_text . '</p>' . $aHtml;
+
 						} else {
-							$arg['testimonial']  = apply_filters( 'the_content', get_the_content() );
+							$arg['testimonial'] = apply_filters( 'the_content', get_the_content() );
 						}
 
 						$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );
@@ -398,6 +401,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 						$html .= TSSPro()->render( 'layouts/' . $layout, $arg );
 
 					endwhile;
+
 
 					if ( $isIsotope ) {
 						$html .= '</div>'; // End isotope.

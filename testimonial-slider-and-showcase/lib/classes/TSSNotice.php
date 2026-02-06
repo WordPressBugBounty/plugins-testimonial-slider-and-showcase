@@ -20,7 +20,7 @@ if ( ! class_exists( 'TSSNotice' ) ):
 		 */
 		public function __construct() {
 			$current      = time();
-            $black_friday = mktime( 0, 0, 0, 3, 26, 2025 ) <= $current && $current <= mktime( 0, 0, 0, 4, 7, 2025 );
+            $black_friday = mktime( 0, 0, 0, 11, 15, 2025 ) <= $current && $current <= mktime( 0, 0, 0, 1, 7, 2026 );
 
             if (  $black_friday ) {
 				add_action( 'admin_init', [ $this, 'black_friday_notice' ] );
@@ -68,57 +68,74 @@ if ( ! class_exists( 'TSSNotice' ) ):
                         $plugin_name   = 'Testimonial Slider and Showcase';
                         $download_link = 'https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/';
 					?>
+                    <style>
+                        /*.team_page_tlp_team_get_help .tss-black-friday {*/
+                        /*    margin-left: 2px;*/
+                        /*    margin-top: 15px;*/
+                        /*}*/
+                        .tss-black-friday .tss-btn-wrapper .button-primary{
+                            background-color: #5d3dfd;
+                            border-color: #5d3dfd;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        .tss-black-friday .tss-btn-wrapper .button-primary:hover{
+                            background-color: #4e35cc;
+                            border-color: #4e35cc;
+                        }
+                        .tss-black-friday .tss-btn-wrapper .button-dismiss{
+                            border-color: #5d3dfd;
+                            color: #5d3dfd;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        .tss-black-friday .tss-btn-wrapper .button-dismiss:hover{
+                            background-color: #4e35cc;
+                            border-color: #4e35cc;
+                            color: #fff;
+                        }
+                    </style>
+					<div class="notice notice-info is-dismissible tss-black-friday" data-rttss-dismissable="rttss_bf_2021"
+						style="display:grid;grid-template-columns: 100px auto;padding-top: 10px; padding-bottom: 17px;">
+						<img alt="<?php echo esc_attr( $plugin_name ); ?>"
+							src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?>" width="74px"
+							height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
+						<h3 style="margin:0; display:flex; align-items: center">
+                            <?php echo sprintf( '%s Black Friday', esc_html( $plugin_name ) ); ?>
+                            <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/deal.gif'; ?>" width="60px" /><span style="color:red;margin-left:5px"> up to  40%</span>
+                        </h3>
 
-<!--					<div class="notice notice-info is-dismissible" data-rttss-dismissable="rttss_bf_2021"-->
-<!--						style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">-->
-<!--						<img alt="--><?php //echo esc_attr( $plugin_name ); ?><!--"-->
-<!--							src="--><?php //echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?><!--" width="74px"-->
-<!--							height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>-->
-<!--						<h3 style="margin:0; display:flex; align-items: center">-->
-<!--                            --><?php //echo sprintf( '%s Black Friday', esc_html( $plugin_name ) ); ?>
+						<p style="margin:0 0 2px;"><?php
+                            echo __( "🚀 Exciting News: <b>Testimonial Slider Showcase Black Friday Sale Has Officially Begun! </b>", "testimonial-slider-showcase" );
+                        ?>
+                            Grab the plugin today and unlock unbeatable discounts before they’re gone!
+						</p>
+
+						<p style="margin:0;" class="tss-btn-wrapper">
+							<a class="button button-primary" href="<?php echo esc_url( $download_link ); ?>" target="_blank">Buy Now</a>
+							<a class="button button-dismiss" href="#">Dismiss</a>
+						</p>
+					</div>
+
+<!--                    <div class="notice notice-info is-dismissible" data-rttss-dismissable="rttss_bf_2021"-->
+<!--                         style="display:grid !important;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">-->
+<!--                        <img alt="--><?php //echo esc_attr( $plugin_name ); ?><!--"-->
+<!--                             src="--><?php //echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?><!--" width="74px"-->
+<!--                             height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>-->
+<!--                        <h3 style="margin:0;display: inline-flex;align-items: center;gap: 4px;">-->
+<!--                            --><?php //echo sprintf( ' %s – 🌙 Eid Special Offer', esc_html( $plugin_name ) ); ?>
 <!--                            <img alt="--><?php //echo esc_attr( $plugin_name ); ?><!--" src="--><?php //echo esc_url( TSSPro()->assetsUrl ) . 'images/deal.gif'; ?><!--" width="60px" />-->
 <!--                        </h3>-->
-<!---->
-<!--						<p style="margin:0 0 2px;">--><?php
-//							printf(
-//							    /* translators: %s is the plugin name */
-//								esc_html__(
-//									'🚀 Exciting News: %1$s Black Friday sale is now live!',
-//									'testimonial-slider-showcase'
-//								),
-//								esc_html( $plugin_name )
-//							);
-//                        ?>
-<!--                            Get the plugin today and enjoy discounts up to <b> 50%.</b>-->
-<!--						</p>-->
-<!---->
-<!--						<p style="margin:0;">-->
-<!--							<a class="button button-primary" href="--><?php //echo esc_url( $download_link ); ?><!--" target="_blank">Buy Now</a>-->
-<!--							<a class="button button-dismiss" href="#">Dismiss</a>-->
-<!--						</p>-->
-<!--					</div>-->
-
-                    <div class="notice notice-info is-dismissible" data-rttss-dismissable="rttss_bf_2021"
-                         style="display:grid !important;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
-                        <img alt="<?php echo esc_attr( $plugin_name ); ?>"
-                             src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/icon-128x128.gif'; ?>" width="74px"
-                             height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
-                        <h3 style="margin:0;display: inline-flex;align-items: center;gap: 4px;">
-                            <?php echo sprintf( ' %s – 🌙 Eid Special Offer', esc_html( $plugin_name ) ); ?>
-                            <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TSSPro()->assetsUrl ) . 'images/deal.gif'; ?>" width="60px" />
-                        </h3>
-                        <p style="margin-top: 0; font-size: 14px;">
-                            <strong>Eid Special:</strong>
-                            Celebrate Eid with exclusive discounts on
-                            <b><a href="<?php echo esc_url( $download_link ); ?>" style="text-decoration: none;color: inherit">Testimonial Slider and Showcase Pro</a></b>. Save
-                            <b style="display:inline-block;color: white;background:red;padding: 0 8px;border-radius:3px; transform: skewX(-10deg);">UP TO 40%</b>
-                            for a limited time! 🎁🌙✨
-                        </p>
-                        <p style="margin:0;">
-                            <a class="button button-primary" href="<?php echo esc_url( $download_link ); ?>" target="_blank">Buy Now</a>
-                            <a class="button button-dismiss" href="#">Dismiss</a>
-                        </p>
-                    </div>
+<!--                        <p style="margin-top: 0; font-size: 14px;">-->
+<!--                            <strong>Eid Special:</strong>-->
+<!--                            Celebrate Eid with exclusive discounts on-->
+<!--                            <b><a href="--><?php //echo esc_url( $download_link ); ?><!--" style="text-decoration: none;color: inherit">Testimonial Slider and Showcase Pro</a></b>. Save-->
+<!--                            <b style="display:inline-block;color: white;background:red;padding: 0 8px;border-radius:3px; transform: skewX(-10deg);">UP TO 40%</b>-->
+<!--                            for a limited time! 🎁🌙✨-->
+<!--                        </p>-->
+<!--                        <p style="margin:0;">-->
+<!--                            <a class="button button-primary" href="--><?php //echo esc_url( $download_link ); ?><!--" target="_blank">Buy Now</a>-->
+<!--                            <a class="button button-dismiss" href="#">Dismiss</a>-->
+<!--                        </p>-->
+<!--                    </div>-->
 
 					<?php
 				}

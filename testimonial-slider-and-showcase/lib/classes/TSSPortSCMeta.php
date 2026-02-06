@@ -123,58 +123,13 @@ if ( ! class_exists( 'TSSPortSCMeta' ) ) :
 		 * @return void
 		 */
 		public function rt_plugin_sc_pro_information() {
-			$fb_link = 'https://www.facebook.com/groups/234799147426640/';
-			$rt_link = 'https://www.radiustheme.com/';
-			$contact = 'https://www.radiustheme.com/contact/';
-			$review  = 'https://wordpress.org/support/plugin/testimonial-slider-and-showcase/reviews/?filter=5#new-post';
 
-			$html = sprintf(
-				'<div class="rt-document-box">
-					<div class="rt-box-icon"><i class="dashicons dashicons-media-document"></i></div>
-					<div class="rt-box-content">
-						<h3 class="rt-box-title">%1$s</h3>
-							<p>%2$s</p>
-							<a href="%3$s" target="_blank" class="rt-admin-btn">%1$s</a>
-					</div>
-				</div>',
-				esc_html__( 'Documentation', 'testimonial-slider-showcase' ),
-				esc_html__( 'Get started by spending some time with the documentation we included step by step process with screenshots with video.', 'testimonial-slider-showcase' ),
-				esc_url( TSSPro()->documentation_link() )
-			);
-
-			$html .= '<div class="rt-document-box">
-						<div class="rt-box-icon"><i class="dashicons dashicons-sos"></i></div>
-						<div class="rt-box-content">
-							<h3 class="rt-box-title">Need Help?</h3>
-								<p>Stuck with something? Please create a
-								<a href="' . esc_url( $contact ) . '">ticket here</a> or post on <a href="' . esc_url( $fb_link ) . '">facebook group</a>. For emergency case join our <a href="' . esc_url( $rt_link ) . '">live chat</a>.</p>
-								<a href="' . esc_url( $contact ) . '" target="_blank" class="rt-admin-btn">Get Support</a>
-							</div>
-						</div>';
+			$html = '';
 
 			if ( ! function_exists( 'rttsp' ) ) {
-				$html .= '<div class="rt-document-box">
-                    <div class="rt-box-icon"><i class="dashicons dashicons-awards"></i></div>
-                    <div class="rt-box-content">
-                        <h3 class="rt-box-title">Pro Features</h3>
-                        <ol style="margin-left: 13px;">
-                            <li>30 Amazing Layouts with Grid, Slider, Isotope & Video.</li>
-                            <li>Front End Submission</li>
-                            <li>Layout Preview in Shortcode Settings.</li>
-                            <li>Taxonomy Ordering</li>
-                        </ol>
-                        <a href="' . esc_url( TSSPro()->pro_version_link() ) . '" class="rt-admin-btn" target="_blank">Get Pro Version</a>
-                    </div>
-                </div>';
+				$html .= TSSPro()->render_view('settings-promo',[],true);
 			}
-			$html .= '<div class="rt-document-box">
-						<div class="rt-box-icon"><i class="dashicons dashicons-smiley"></i></div>
-						<div class="rt-box-content">
-							<h3 class="rt-box-title">Happy Our Work?</h3>
-							<p>Thank you for choosing Testimonial Slider. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow.</p>
-							<a target="_blank" href="' . esc_url( $review ) . '" class="rt-admin-btn">Yes, You Deserve It</a>
-						</div>
-					</div>';
+
 
 			TSSPro()->printHtml( $html );
 		}
