@@ -1,4 +1,4 @@
-# Copyright (C) 2025 Testimonial Slider And Showcase
+# Copyright (C) 2026 Testimonial Slider And Showcase
 # This file is distributed under the same license as the Testimonial Slider And Showcase package.
 msgid ""
 msgstr ""
@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-10 05:34+0000\n"
+"POT-Creation-Date: 2026-08-04 10:23+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,1526 +14,1526 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/classes/TSSAdmin.php:63
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSAdmin.php:63, ../lib/classes/TSSAdmin.php:63
 msgid "Don't miss out on our biggest sale of the year! Get yours."
 msgstr ""
 
-#: ../lib/classes/TSSAjaxResponse.php:54
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSAjaxResponse.php:54, ../lib/classes/TSSAjaxResponse.php:54
 msgid "No shortcode found."
 msgstr ""
 
-#: ../lib/classes/TSSElementorInit.php:71
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSElementorInit.php:71, ../lib/classes/TSSElementorInit.php:71
 msgid "Testimonial Slider and Showcase"
 msgstr ""
 
-#: ../lib/classes/TSSElementorInit.php:179, ../lib/classes/TSSElementorInit.php:180
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSElementorInit.php:179, ../dist/testimonial-slider-and-showcase/lib/classes/TSSElementorInit.php:180, ../lib/classes/TSSElementorInit.php:179, ../lib/classes/TSSElementorInit.php:180
 msgid "Isotope Layout"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:55, ../lib/classes/TSSProOptions.php:173
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:55, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:173, ../lib/classes/TSSFrontEndSubmission.php:55, ../lib/classes/TSSProOptions.php:173
 msgid "[{site_name}] New Testimonial received"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:58
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:58, ../lib/classes/TSSFrontEndSubmission.php:58
 msgid "Dear Administrator,<br /><br />You have received a new Testimonial on the website {site_name}.<br /><br />Please do not respond to this message. It is automatically generated and is for information purposes only."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:92
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:92, ../lib/classes/TSSFrontEndSubmission.php:92
 msgid "Name field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:96
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:96, ../lib/classes/TSSFrontEndSubmission.php:96
 msgid "Testimonial field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:104
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:104, ../lib/classes/TSSFrontEndSubmission.php:104
 msgid "reCAPTCHA field is required"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:182
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:182, ../lib/classes/TSSFrontEndSubmission.php:182
 msgid "Session error"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:115
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:115, ../lib/classes/TSSFrontEndSubmission.php:115
 msgid "reCAPTCHA verification error"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:178
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:178, ../lib/classes/TSSFrontEndSubmission.php:178
 msgid "Wp Error!!!."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:176
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:176, ../lib/classes/TSSFrontEndSubmission.php:176
 msgid "Testimonial successfully posted."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:206
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:206, ../lib/classes/TSSFrontEndSubmission.php:206
 msgid "Submit"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:246
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:246, ../lib/classes/TSSFrontEndSubmission.php:246
 msgid "Thank you for your testimonial!"
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:249
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:249, ../lib/classes/TSSFrontEndSubmission.php:249
 msgid "Name field is required."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:250, ../lib/classes/TSSFrontEndSubmission.php:256
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:250, ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:256, ../lib/classes/TSSFrontEndSubmission.php:250, ../lib/classes/TSSFrontEndSubmission.php:256
 msgid "Testimonial field is required."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:251
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:251, ../lib/classes/TSSFrontEndSubmission.php:251
 msgid "reCAPTCHA field is required."
 msgstr ""
 
-#: ../lib/classes/TSSFrontEndSubmission.php:252
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSFrontEndSubmission.php:252, ../lib/classes/TSSFrontEndSubmission.php:252
 msgid "An error occurred. Please try again."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:107
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:107, ../lib/classes/TSSNotice.php:107
 msgid "🚀 Exciting News: <b>Testimonial Slider Showcase Black Friday Sale Has Officially Begun! </b>"
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:235
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:235, ../lib/classes/TSSNotice.php:235
 msgid "Enjoying Testimonial Slider and Showcase?"
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:236
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:236, ../lib/classes/TSSNotice.php:236
 msgid "Thank you for choosing Testimonial Slider and Showcase. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
-#: ../lib/classes/TSSNotice.php:238
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSNotice.php:238, ../lib/classes/TSSNotice.php:238
 msgid "Yes, You Deserve It!"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:95
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:95, ../lib/classes/TSSPortSCMeta.php:95
 msgid "Short Code Generator"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:104
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:104, ../lib/classes/TSSPortSCMeta.php:104
 msgid "Layout Preview"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:113, ../lib/views/settings-header.php:73
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:113, ../dist/testimonial-slider-and-showcase/lib/views/settings-header.php:73, ../lib/classes/TSSPortSCMeta.php:113, ../lib/views/settings-header.php:73
 msgid "Documentation"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:159, ../lib/elementor/elements/sections/TSSElementorContentSections.php:48, ../lib/elementor/elements/sections/TSSElementorContentSections.php:119, ../lib/elementor/elements/sections/TSSElementorContentSections.php:191
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:159, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:48, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:119, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:191, ../lib/classes/TSSPortSCMeta.php:159, ../lib/elementor/elements/sections/TSSElementorContentSections.php:48, ../lib/elementor/elements/sections/TSSElementorContentSections.php:119, ../lib/elementor/elements/sections/TSSElementorContentSections.php:191
 msgid "Layout"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:160, ../lib/elementor/elements/sections/TSSElementorContentSections.php:356
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:160, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:356, ../lib/classes/TSSPortSCMeta.php:160, ../lib/elementor/elements/sections/TSSElementorContentSections.php:356
 msgid "Filtering"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:161
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:161, ../lib/classes/TSSPortSCMeta.php:161
 msgid "Field Selection"
 msgstr ""
 
-#: ../lib/classes/TSSPortSCMeta.php:162
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPortSCMeta.php:162, ../lib/classes/TSSPortSCMeta.php:162
 msgid "Styling"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:446, ../lib/classes/TSSProInit.php:369
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:446, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:369, ../lib/classes/TSSPreview.php:446, ../lib/classes/TSSProInit.php:369
 msgid "Security Error !!"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:467, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:427
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:232, ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:428, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:201, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:467, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:165, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:427, ../lib/classes/TSSPreview.php:232, ../lib/classes/TSSPreview.php:428, ../lib/classes/TSSProSC.php:201, ../lib/classes/TSSProSC.php:467, ../lib/elementor/elements/renders/TSSElementorRender.php:165, ../lib/elementor/elements/renders/TSSElementorRender.php:427
 msgid "Loading ..."
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:425, ../lib/elementor/elements/renders/TSSElementorRender.php:385
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:399, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:425, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:385, ../lib/classes/TSSPreview.php:399, ../lib/classes/TSSProSC.php:425, ../lib/elementor/elements/renders/TSSElementorRender.php:385
 msgid "No testimonial found"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:268, ../lib/classes/TSSProSC.php:296, ../lib/elementor/elements/renders/TSSElementorRender.php:264
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:268, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:296, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:264, ../lib/classes/TSSPreview.php:268, ../lib/classes/TSSProSC.php:296, ../lib/elementor/elements/renders/TSSElementorRender.php:264
 msgid "Show all"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:275, ../lib/classes/TSSProSC.php:302, ../lib/elementor/elements/renders/TSSElementorRender.php:274
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:275, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:302, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:274, ../lib/classes/TSSPreview.php:275, ../lib/classes/TSSProSC.php:302, ../lib/elementor/elements/renders/TSSElementorRender.php:274
 msgid "Search"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:466, ../lib/elementor/elements/renders/TSSElementorRender.php:426
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:426, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:466, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:426, ../lib/classes/TSSPreview.php:426, ../lib/classes/TSSProSC.php:466, ../lib/elementor/elements/renders/TSSElementorRender.php:426
 msgid "No More Post to load"
 msgstr ""
 
-#: ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:520, ../lib/elementor/elements/renders/TSSElementorRender.php:477
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSPreview.php:427, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:520, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:477, ../lib/classes/TSSPreview.php:427, ../lib/classes/TSSProSC.php:520, ../lib/elementor/elements/renders/TSSElementorRender.php:477
 msgid "Load More"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:36
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProAdmin.php:36, ../lib/classes/TSSProAdmin.php:36
 msgid "Testimonial ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:64, ../lib/classes/TSSProOptions.php:86, ../lib/elementor/elements/sections/TSSElementorContentSections.php:315
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProAdmin.php:64, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:86, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:315, ../lib/classes/TSSProAdmin.php:64, ../lib/classes/TSSProOptions.php:86, ../lib/elementor/elements/sections/TSSElementorContentSections.php:315
 msgid "Image"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:65, ../lib/classes/TSSProOptions.php:110, ../lib/classes/TSSProOptions.php:526, ../lib/classes/TSSProOptions.php:876
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProAdmin.php:65, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:110, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:526, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:876, ../lib/classes/TSSProAdmin.php:65, ../lib/classes/TSSProOptions.php:110, ../lib/classes/TSSProOptions.php:526, ../lib/classes/TSSProOptions.php:876
 msgid "Designation"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:66, ../lib/classes/TSSProOptions.php:111, ../lib/classes/TSSProOptions.php:531, ../lib/classes/TSSProOptions.php:877
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProAdmin.php:66, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:111, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:531, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:877, ../lib/classes/TSSProAdmin.php:66, ../lib/classes/TSSProOptions.php:111, ../lib/classes/TSSProOptions.php:531, ../lib/classes/TSSProOptions.php:877
 msgid "Company"
 msgstr ""
 
-#: ../lib/classes/TSSProAdmin.php:67, ../lib/classes/TSSProOptions.php:112, ../lib/classes/TSSProOptions.php:536, ../lib/classes/TSSProOptions.php:878
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProAdmin.php:67, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:112, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:536, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:878, ../lib/classes/TSSProAdmin.php:67, ../lib/classes/TSSProOptions.php:112, ../lib/classes/TSSProOptions.php:536, ../lib/classes/TSSProOptions.php:878
 msgid "Location"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:324
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:324, ../lib/classes/TSSProHelper.php:324
 msgid "Show All"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:492
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:492, ../lib/classes/TSSProHelper.php:492
 msgid "&laquo;"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:493
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:493, ../lib/classes/TSSProHelper.php:493
 msgid "&raquo;"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:700
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:700, ../lib/classes/TSSProHelper.php:700
 msgid "Custom image size"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1078
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1078, ../lib/classes/TSSProHelper.php:1078
 msgid "Share on facebook"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1084
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1084, ../lib/classes/TSSProHelper.php:1084
 msgid "Share on twitter"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1090
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1090, ../lib/classes/TSSProHelper.php:1090
 msgid "Share on linkedin"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1096
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1096, ../lib/classes/TSSProHelper.php:1096
 msgid "Share on pinterest"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1104
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1104, ../lib/classes/TSSProHelper.php:1104
 msgid "Share on Email"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1111
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1111, ../lib/classes/TSSProHelper.php:1111
 msgid "Social on: "
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1122
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1122, ../lib/classes/TSSProHelper.php:1122
 msgid "Layout 1"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1126
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1126, ../lib/classes/TSSProHelper.php:1126
 msgid "Layout 2"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1138
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1138, ../lib/classes/TSSProHelper.php:1138
 msgid "Carousel 1"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1142
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1142, ../lib/classes/TSSProHelper.php:1142
 msgid "Carousel 2"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1153, ../lib/classes/TSSProOptions.php:692, ../lib/classes/TSSProOptions.php:700, ../lib/classes/TSSProOptions.php:797, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1153, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:692, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:700, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:797, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:149, ../lib/classes/TSSProHelper.php:1153, ../lib/classes/TSSProOptions.php:692, ../lib/classes/TSSProOptions.php:700, ../lib/classes/TSSProOptions.php:797, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:149
 msgid "Normal"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1154, ../lib/classes/TSSProOptions.php:701
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1154, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:701, ../lib/classes/TSSProHelper.php:1154, ../lib/classes/TSSProOptions.php:701
 msgid "Circle"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1177
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1177, ../lib/classes/TSSProHelper.php:1177
 msgid "No testimonials found"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1187, ../lib/classes/TSSProOptions.php:718
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1187, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:718, ../lib/classes/TSSProHelper.php:1187, ../lib/classes/TSSProOptions.php:718
 msgid "Menu Order"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1188, ../lib/classes/TSSProOptions.php:76, ../lib/classes/TSSProOptions.php:719
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1188, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:76, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:719, ../lib/classes/TSSProHelper.php:1188, ../lib/classes/TSSProOptions.php:76, ../lib/classes/TSSProOptions.php:719
 msgid "Name"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1189, ../lib/classes/TSSProOptions.php:720
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1189, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:720, ../lib/classes/TSSProHelper.php:1189, ../lib/classes/TSSProOptions.php:720
 msgid "ID"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1190, ../lib/classes/TSSProOptions.php:721
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1190, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:721, ../lib/classes/TSSProHelper.php:1190, ../lib/classes/TSSProOptions.php:721
 msgid "Date"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:725
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1194, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:725, ../lib/classes/TSSProHelper.php:1194, ../lib/classes/TSSProOptions.php:725
 msgid "Random"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1205, ../lib/classes/TSSProOptions.php:733
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1205, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:733, ../lib/classes/TSSProHelper.php:1205, ../lib/classes/TSSProOptions.php:733
 msgid "Ascending"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1206, ../lib/classes/TSSProOptions.php:734
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1206, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:734, ../lib/classes/TSSProHelper.php:1206, ../lib/classes/TSSProOptions.php:734
 msgid "Descending"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1212
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1212, ../lib/classes/TSSProHelper.php:1212
 msgid "8 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1213
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1213, ../lib/classes/TSSProHelper.php:1213
 msgid "7 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1214
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1214, ../lib/classes/TSSProHelper.php:1214
 msgid "6 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1215
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1215, ../lib/classes/TSSProHelper.php:1215
 msgid "5 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1216
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1216, ../lib/classes/TSSProHelper.php:1216
 msgid "4 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1217
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1217, ../lib/classes/TSSProHelper.php:1217
 msgid "3 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1218
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1218, ../lib/classes/TSSProHelper.php:1218
 msgid "2 Seconds"
 msgstr ""
 
-#: ../lib/classes/TSSProHelper.php:1219
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProHelper.php:1219, ../lib/classes/TSSProHelper.php:1219
 msgid "1 Second"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:136, ../lib/classes/TSSProInit.php:140, ../lib/classes/TSSProInit.php:141, ../lib/classes/TSSProInit.php:142, ../lib/classes/TSSProOptions.php:81, ../lib/classes/TSSProOptions.php:866
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:136, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:140, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:141, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:142, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:81, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:866, ../lib/classes/TSSProInit.php:136, ../lib/classes/TSSProInit.php:140, ../lib/classes/TSSProInit.php:141, ../lib/classes/TSSProInit.php:142, ../lib/classes/TSSProOptions.php:81, ../lib/classes/TSSProOptions.php:866
 msgid "Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:138
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:138, ../lib/classes/TSSProInit.php:138
 msgid "Testimonials"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:139
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:139, ../lib/classes/TSSProInit.php:139
 msgid "All Testimonials"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:143, ../lib/classes/TSSProInit.php:144
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:143, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:144, ../lib/classes/TSSProInit.php:143, ../lib/classes/TSSProInit.php:144
 msgid "Add Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:145
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:145, ../lib/classes/TSSProInit.php:145
 msgid "Edit Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:146
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:146, ../lib/classes/TSSProInit.php:146
 msgid "New Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:147
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:147, ../lib/classes/TSSProInit.php:147
 msgid "View Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:148
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:148, ../lib/classes/TSSProInit.php:148
 msgid "Search Testimonial"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:149
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:149, ../lib/classes/TSSProInit.php:149
 msgid "No Testimonials found"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:150
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:150, ../lib/classes/TSSProInit.php:150
 msgid "No Testimonials in the trash"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:170, ../lib/classes/TSSProInit.php:173, ../lib/classes/TSSProInit.php:174, ../lib/classes/TSSProInit.php:175
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:170, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:173, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:174, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:175, ../lib/classes/TSSProInit.php:170, ../lib/classes/TSSProInit.php:173, ../lib/classes/TSSProInit.php:174, ../lib/classes/TSSProInit.php:175
 msgid "ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:171
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:171, ../lib/classes/TSSProInit.php:171
 msgid "Testimonial ShortCode generator"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:176
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:176, ../lib/classes/TSSProInit.php:176
 msgid "Edit ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:177
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:177, ../lib/classes/TSSProInit.php:177
 msgid "New ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:178
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:178, ../lib/classes/TSSProInit.php:178
 msgid "View ShortCode"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:179
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:179, ../lib/classes/TSSProInit.php:179
 msgid "ShortCode Locations"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:180
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:180, ../lib/classes/TSSProInit.php:180
 msgid "No ShortCode found."
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:181
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:181, ../lib/classes/TSSProInit.php:181
 msgid "No ShortCode found in trash."
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:367
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:367, ../lib/classes/TSSProInit.php:367
 msgid "Settings successfully updated"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:388
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:388, ../lib/classes/TSSProInit.php:388
 msgid "Testimonial Settings"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:389, ../lib/views/settings-header.php:42
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:389, ../dist/testimonial-slider-and-showcase/lib/views/settings-header.php:42, ../lib/classes/TSSProInit.php:389, ../lib/views/settings-header.php:42
 msgid "Settings"
 msgstr ""
 
-#: ../lib/classes/TSSProInit.php:397, ../lib/classes/TSSProInit.php:398
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:397, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProInit.php:398, ../lib/classes/TSSProInit.php:397, ../lib/classes/TSSProInit.php:398
 msgid "Get Help"
 msgstr ""
 
-#: ../lib/classes/TSSProLoadMoreResponse.php:275, ../lib/classes/TSSProTaxMeta.php:70, ../lib/classes/TSSProTaxMeta.php:120
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:275, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:70, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:120, ../lib/classes/TSSProLoadMoreResponse.php:275, ../lib/classes/TSSProTaxMeta.php:70, ../lib/classes/TSSProTaxMeta.php:120
 msgid "Security error"
 msgstr ""
 
-#: ../lib/classes/TSSProLoadMoreResponse.php:272, ../lib/classes/TSSProLoadMoreResponse.php:269, ../lib/classes/TSSProLoadMoreResponse.php:258, ../lib/classes/TSSProLoadMoreResponse.php:503
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:272, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:269, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:258, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProLoadMoreResponse.php:503, ../lib/classes/TSSProLoadMoreResponse.php:272, ../lib/classes/TSSProLoadMoreResponse.php:269, ../lib/classes/TSSProLoadMoreResponse.php:258, ../lib/classes/TSSProLoadMoreResponse.php:503
 msgid "No more testimonial to load"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:23
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:23, ../lib/classes/TSSProOptions.php:23
 msgid "Slug"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:25
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:25, ../lib/classes/TSSProOptions.php:25
 msgid "Slug configuration"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:102, ../lib/classes/TSSProOptions.php:143
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:102, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:143, ../lib/classes/TSSProOptions.php:102, ../lib/classes/TSSProOptions.php:143
 msgid "Select the field"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:107, ../lib/classes/TSSProOptions.php:873, ../lib/classes/TSSProOptions.php:864
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:107, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:873, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:864, ../lib/classes/TSSProOptions.php:107, ../lib/classes/TSSProOptions.php:873, ../lib/classes/TSSProOptions.php:864
 msgid "Author"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:108, ../lib/classes/TSSProOptions.php:874, ../lib/classes/TSSProOptions.php:865
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:108, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:874, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:865, ../lib/classes/TSSProOptions.php:108, ../lib/classes/TSSProOptions.php:874, ../lib/classes/TSSProOptions.php:865
 msgid "Author Image"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:109, ../lib/classes/TSSProOptions.php:875
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:109, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:875, ../lib/classes/TSSProOptions.php:109, ../lib/classes/TSSProOptions.php:875
 msgid "Short Description"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:113, ../lib/classes/TSSProOptions.php:541, ../lib/classes/TSSProOptions.php:662, ../lib/classes/TSSProOptions.php:879, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:93, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:407
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:113, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:541, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:662, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:879, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:93, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:407, ../lib/classes/TSSProOptions.php:113, ../lib/classes/TSSProOptions.php:541, ../lib/classes/TSSProOptions.php:662, ../lib/classes/TSSProOptions.php:879, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:93, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:407
 msgid "Rating"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:118, ../lib/classes/TSSProOptions.php:148
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:118, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:148, ../lib/classes/TSSProOptions.php:118, ../lib/classes/TSSProOptions.php:148
 msgid "Select the option which you like to display"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:128, ../lib/classes/TSSProOptions.php:275
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:128, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:275, ../lib/classes/TSSProOptions.php:128, ../lib/classes/TSSProOptions.php:275
 msgid "Social share items"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:155
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:155, ../lib/classes/TSSProOptions.php:155
 msgid "Disable admin notification"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:156
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:156, ../lib/classes/TSSProOptions.php:156
 msgid "Disable"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:162
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:162, ../lib/classes/TSSProOptions.php:162
 msgid "Admin Notification to Email"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:165
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:165, ../lib/classes/TSSProOptions.php:165
 msgid "If blank this will be the admin email."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:170
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:170, ../lib/classes/TSSProOptions.php:170
 msgid "Notification Email Subject"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:185
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:185, ../lib/classes/TSSProOptions.php:185
 msgid "reCAPTCHA"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:200
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:200, ../lib/classes/TSSProOptions.php:200
 msgid "Site Key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:206
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:206, ../lib/classes/TSSProOptions.php:206
 msgid "Secret Key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:219
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:219, ../lib/classes/TSSProOptions.php:219
 msgid "Custom CSS"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:221
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:221, ../lib/classes/TSSProOptions.php:221
 msgid "Add your custom css here!!!"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:232
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:232, ../lib/classes/TSSProOptions.php:232
 msgid "Deactivate License"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:233
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:233, ../lib/classes/TSSProOptions.php:233
 msgid "Activate License"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:240
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:240, ../lib/classes/TSSProOptions.php:240
 msgid "Enter your license key"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:250, ../lib/classes/TSSProOptions.php:772
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:250, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:772, ../lib/classes/TSSProOptions.php:250, ../lib/classes/TSSProOptions.php:772
 msgid "Facebook"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:251, ../lib/classes/TSSProOptions.php:773
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:251, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:773, ../lib/classes/TSSProOptions.php:251, ../lib/classes/TSSProOptions.php:773
 msgid "Twitter"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:252
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:252, ../lib/classes/TSSProOptions.php:252
 msgid "LinkedIn"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:253, ../lib/classes/TSSProOptions.php:776
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:253, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:776, ../lib/classes/TSSProOptions.php:253, ../lib/classes/TSSProOptions.php:776
 msgid "Pinterest"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:254, ../lib/classes/TSSProOptions.php:777
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:254, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:777, ../lib/classes/TSSProOptions.php:254, ../lib/classes/TSSProOptions.php:777
 msgid "Email"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:264
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:264, ../lib/classes/TSSProOptions.php:264
 msgid "Field selection"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:269
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:269, ../lib/classes/TSSProOptions.php:269
 msgid "Check the field which you want to display"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:287
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:287, ../lib/classes/TSSProOptions.php:287
 msgid "Grid"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:288
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:288, ../lib/classes/TSSProOptions.php:288
 msgid "Slider"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:296
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:296, ../lib/classes/TSSProOptions.php:296
 msgid "Layout type"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:302
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:302, ../lib/classes/TSSProOptions.php:302
 msgid "Grid Layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:307
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:307, ../lib/classes/TSSProOptions.php:307
 msgid "Slider Layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:316
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:316, ../lib/classes/TSSProOptions.php:316
 msgid "Layout style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:317
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:317, ../lib/classes/TSSProOptions.php:317
 msgid "Click to the Layout name to see live demo"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:323
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:323, ../lib/classes/TSSProOptions.php:323
 msgid "Desktop column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:330
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:330, ../lib/classes/TSSProOptions.php:330
 msgid "Tab column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:337
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:337, ../lib/classes/TSSProOptions.php:337
 msgid "Mobile column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:343
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:343, ../lib/classes/TSSProOptions.php:343
 msgid "Speed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:347
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:347, ../lib/classes/TSSProOptions.php:347
 msgid "Auto play Speed in milliseconds"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:350
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:350, ../lib/classes/TSSProOptions.php:350
 msgid "Carousel Options"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:359
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:359, ../lib/classes/TSSProOptions.php:359
 msgid "Autoplay timeout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:363
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:363, ../lib/classes/TSSProOptions.php:363
 msgid "Autoplay interval timeout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:367
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:367, ../lib/classes/TSSProOptions.php:367
 msgid "Average"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:369, ../lib/classes/TSSProOptions.php:384, ../lib/classes/TSSProOptions.php:449
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:369, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:384, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:449, ../lib/classes/TSSProOptions.php:369, ../lib/classes/TSSProOptions.php:384, ../lib/classes/TSSProOptions.php:449
 msgid "Enable"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:375
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:375, ../lib/classes/TSSProOptions.php:375
 msgid "Average Rating text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:377, ../lib/classes/TSSProSC.php:519
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:377, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:519, ../lib/classes/TSSProOptions.php:377, ../lib/classes/TSSProSC.php:519
 msgid "Average Rating"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:382, ../lib/classes/TSSProOptions.php:845, ../lib/elementor/elements/sections/TSSElementorContentSections.php:235, ../lib/elementor/elements/sections/TSSElementorContentSections.php:275
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:382, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:845, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:235, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:275, ../lib/classes/TSSProOptions.php:382, ../lib/classes/TSSProOptions.php:845, ../lib/elementor/elements/sections/TSSElementorContentSections.php:235, ../lib/elementor/elements/sections/TSSElementorContentSections.php:275
 msgid "Pagination"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:389
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:389, ../lib/classes/TSSProOptions.php:389
 msgid "Display per page"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:392
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:392, ../lib/classes/TSSProOptions.php:392
 msgid "If value of Limit setting is not blank (empty), this value should be smaller than Limit value."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:396
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:396, ../lib/classes/TSSProOptions.php:396
 msgid "Load more button text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:398
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:398, ../lib/classes/TSSProOptions.php:398
 msgid "Load more"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:402
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:402, ../lib/classes/TSSProOptions.php:402
 msgid "Image Size"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:408
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:408, ../lib/classes/TSSProOptions.php:408
 msgid "Custom Image Size"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:412
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:412, ../lib/classes/TSSProOptions.php:412
 msgid "Please note that, if you enter image size larger than the actual image iteself, the image sizes will fallback to the default thumbnail dimension (150x150 px)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:417
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:417, ../lib/classes/TSSProOptions.php:417
 msgid "Image Type"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:425
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:425, ../lib/classes/TSSProOptions.php:425
 msgid "Testimonial limit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:426
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:426, ../lib/classes/TSSProOptions.php:426
 msgid "Testimonial limit only integer number is allowed, Leave it blank for full text."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:430
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:430, ../lib/classes/TSSProOptions.php:430
 msgid "Margin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:432
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:432, ../lib/classes/TSSProOptions.php:432
 msgid "Select the margin for layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:438
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:438, ../lib/classes/TSSProOptions.php:438
 msgid "Grid style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:441
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:441, ../lib/classes/TSSProOptions.php:441
 msgid "Select grid style for layout"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:448
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:448, ../lib/classes/TSSProOptions.php:448
 msgid "Detail page link"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:455
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:455, ../lib/classes/TSSProOptions.php:455
 msgid "Default preview  image"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:456
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:456, ../lib/classes/TSSProOptions.php:456
 msgid "Add an image for default preview"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:466
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:466, ../lib/classes/TSSProOptions.php:466
 msgid "Include only"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:468, ../lib/classes/TSSProOptions.php:473
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:468, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:473, ../lib/classes/TSSProOptions.php:468, ../lib/classes/TSSProOptions.php:473
 msgid "List of post IDs to show (comma-separated values, for example: 1,2,3)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:471, ../lib/elementor/elements/sections/TSSElementorContentSections.php:389
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:471, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:389, ../lib/classes/TSSProOptions.php:471, ../lib/elementor/elements/sections/TSSElementorContentSections.php:389
 msgid "Exclude"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:476
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:476, ../lib/classes/TSSProOptions.php:476
 msgid "Limit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:478
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:478, ../lib/classes/TSSProOptions.php:478
 msgid "The number of posts to show. Set empty to show all found posts."
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:481
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:481, ../lib/classes/TSSProOptions.php:481
 msgid "Categories"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:486, ../lib/classes/TSSProOptions.php:495
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:486, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:495, ../lib/classes/TSSProOptions.php:486, ../lib/classes/TSSProOptions.php:495
 msgid "Select the category you want to filter, Leave it blank for All category"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:490
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:490, ../lib/classes/TSSProOptions.php:490
 msgid "Tags"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:499
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:499, ../lib/classes/TSSProOptions.php:499
 msgid "Taxonomy relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:503
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:503, ../lib/classes/TSSProOptions.php:503
 msgid "Select this option if you select more than one taxonomy like category and tag, or category , tag and tools"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:507, ../lib/elementor/elements/sections/TSSElementorContentSections.php:434
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:507, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:434, ../lib/classes/TSSProOptions.php:507, ../lib/elementor/elements/sections/TSSElementorContentSections.php:434
 msgid "Order By"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:514, ../lib/classes/TSSProTaxMeta.php:192, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:514, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:192, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:443, ../lib/classes/TSSProOptions.php:514, ../lib/classes/TSSProTaxMeta.php:192, ../lib/elementor/elements/sections/TSSElementorContentSections.php:443
 msgid "Order"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:545
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:545, ../lib/classes/TSSProOptions.php:545
 msgid "Video URL"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:549
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:549, ../lib/classes/TSSProOptions.php:549
 msgid "Only Youtube and Vimeo url allowed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:552
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:552, ../lib/classes/TSSProOptions.php:552
 msgid "Social media"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:565
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:565, ../lib/classes/TSSProOptions.php:565
 msgid "Parent class"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:567
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:567, ../lib/classes/TSSProOptions.php:567
 msgid "Parent class for adding custom css"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:571
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:571, ../lib/classes/TSSProOptions.php:571
 msgid "Color schema"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:575
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:575, ../lib/classes/TSSProOptions.php:575
 msgid "Primary"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:585
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:585, ../lib/classes/TSSProOptions.php:585
 msgid "Background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:589
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:589, ../lib/classes/TSSProOptions.php:589
 msgid "Hover background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:593
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:593, ../lib/classes/TSSProOptions.php:593
 msgid "Active background"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:597
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:597, ../lib/classes/TSSProOptions.php:597
 msgid "Text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:601
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:601, ../lib/classes/TSSProOptions.php:601
 msgid "Hover text"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:605, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:178, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:554
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:605, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:178, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:554, ../lib/classes/TSSProOptions.php:605, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:178, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:554
 msgid "Border"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:612
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:612, ../lib/classes/TSSProOptions.php:612
 msgid "Isotope counter tooltip background color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:617
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:617, ../lib/classes/TSSProOptions.php:617
 msgid "Isotope counter tooltip text color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:622
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:622, ../lib/classes/TSSProOptions.php:622
 msgid "Gutter / Padding"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:627
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:627, ../lib/classes/TSSProOptions.php:627
 msgid "Image Border Style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:632
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:632, ../lib/classes/TSSProOptions.php:632
 msgid "Border width at pixel"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:633
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:633, ../lib/classes/TSSProOptions.php:633
 msgid "Only number is allowed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:637, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:218, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:260
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:637, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:218, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:260, ../lib/classes/TSSProOptions.php:637, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:218, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:260
 msgid "Border Color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:641
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:641, ../lib/classes/TSSProOptions.php:641
 msgid "Border style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:644
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:644, ../lib/classes/TSSProOptions.php:644
 msgid "Solid"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:645
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:645, ../lib/classes/TSSProOptions.php:645
 msgid "Dotted"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:646
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:646, ../lib/classes/TSSProOptions.php:646
 msgid "Dashed"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:647
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:647, ../lib/classes/TSSProOptions.php:647
 msgid "Double"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:654
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:654, ../lib/classes/TSSProOptions.php:654
 msgid "Author name"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:658
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:658, ../lib/classes/TSSProOptions.php:658
 msgid "Author bio"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:667
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:667, ../lib/classes/TSSProOptions.php:667
 msgid "Social"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:671
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:671, ../lib/classes/TSSProOptions.php:671
 msgid "Testimonial Style"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:675
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:675, ../lib/classes/TSSProOptions.php:675
 msgid "Color"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:685
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:685, ../lib/classes/TSSProOptions.php:685
 msgid "OR Relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:686
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:686, ../lib/classes/TSSProOptions.php:686
 msgid "AND Relation"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:693
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:693, ../lib/classes/TSSProOptions.php:693
 msgid "Italic"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:694
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:694, ../lib/classes/TSSProOptions.php:694
 msgid "Oblique"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:707
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:707, ../lib/classes/TSSProOptions.php:707
 msgid "1 Column"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:708
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:708, ../lib/classes/TSSProOptions.php:708
 msgid "2 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:709
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:709, ../lib/classes/TSSProOptions.php:709
 msgid "3 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:710
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:710, ../lib/classes/TSSProOptions.php:710
 msgid "4 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:711
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:711, ../lib/classes/TSSProOptions.php:711
 msgid "5 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:712
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:712, ../lib/classes/TSSProOptions.php:712
 msgid "6 Columns"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:740
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:740, ../lib/classes/TSSProOptions.php:740
 msgid "Even"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:741
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:741, ../lib/classes/TSSProOptions.php:741
 msgid "Masonry"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:747
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:747, ../lib/classes/TSSProOptions.php:747
 msgid "Soft Crop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:748
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:748, ../lib/classes/TSSProOptions.php:748
 msgid "Hard Crop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:763
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:763, ../lib/classes/TSSProOptions.php:763
 msgid "Bootstrap default"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:764
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:764, ../lib/classes/TSSProOptions.php:764
 msgid "No Margin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:774
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:774, ../lib/classes/TSSProOptions.php:774
 msgid "Instagram"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:775
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:775, ../lib/classes/TSSProOptions.php:775
 msgid "Linkedin"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:778
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:778, ../lib/classes/TSSProOptions.php:778
 msgid "Skype"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:779
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:779, ../lib/classes/TSSProOptions.php:779
 msgid "Whatsapp"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:780
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:780, ../lib/classes/TSSProOptions.php:780
 msgid "Telegram"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:788, ../lib/classes/TSSProOptions.php:818, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:319, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:373, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:428, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:499
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:788, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:818, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:319, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:373, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:428, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:499, ../lib/classes/TSSProOptions.php:788, ../lib/classes/TSSProOptions.php:818, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:319, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:373, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:428, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:499
 msgid "Left"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:789, ../lib/classes/TSSProOptions.php:819, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:327, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:381, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:436, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:507
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:789, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:819, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:327, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:381, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:436, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:507, ../lib/classes/TSSProOptions.php:789, ../lib/classes/TSSProOptions.php:819, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:327, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:381, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:436, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:507
 msgid "Right"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:790, ../lib/classes/TSSProOptions.php:820, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:323, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:377, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:432, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:503
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:790, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:820, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:323, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:377, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:432, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:503, ../lib/classes/TSSProOptions.php:790, ../lib/classes/TSSProOptions.php:820, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:323, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:377, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:432, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:503
 msgid "Center"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:791, ../lib/classes/TSSProOptions.php:821
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:791, ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:821, ../lib/classes/TSSProOptions.php:791, ../lib/classes/TSSProOptions.php:821
 msgid "Justify"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:798
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:798, ../lib/classes/TSSProOptions.php:798
 msgid "Bold"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:799
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:799, ../lib/classes/TSSProOptions.php:799
 msgid "Bolder"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:800
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:800, ../lib/classes/TSSProOptions.php:800
 msgid "Lighter"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:801
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:801, ../lib/classes/TSSProOptions.php:801
 msgid "Inherit"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:802
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:802, ../lib/classes/TSSProOptions.php:802
 msgid "Initial"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:803
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:803, ../lib/classes/TSSProOptions.php:803
 msgid "Unset"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:804
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:804, ../lib/classes/TSSProOptions.php:804
 msgid "100"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:805
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:805, ../lib/classes/TSSProOptions.php:805
 msgid "200"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:806
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:806, ../lib/classes/TSSProOptions.php:806
 msgid "300"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:807
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:807, ../lib/classes/TSSProOptions.php:807
 msgid "400"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:808
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:808, ../lib/classes/TSSProOptions.php:808
 msgid "500"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:809
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:809, ../lib/classes/TSSProOptions.php:809
 msgid "600"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:810
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:810, ../lib/classes/TSSProOptions.php:810
 msgid "700"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:811
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:811, ../lib/classes/TSSProOptions.php:811
 msgid "800"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:812
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:812, ../lib/classes/TSSProOptions.php:812
 msgid "900"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:827
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:827, ../lib/classes/TSSProOptions.php:827
 msgid "10 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:828
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:828, ../lib/classes/TSSProOptions.php:828
 msgid "20 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:829
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:829, ../lib/classes/TSSProOptions.php:829
 msgid "30 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:830
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:830, ../lib/classes/TSSProOptions.php:830
 msgid "40 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:831
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:831, ../lib/classes/TSSProOptions.php:831
 msgid "50 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:832
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:832, ../lib/classes/TSSProOptions.php:832
 msgid "60 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:833
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:833, ../lib/classes/TSSProOptions.php:833
 msgid "70 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:834
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:834, ../lib/classes/TSSProOptions.php:834
 msgid "80 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:835
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:835, ../lib/classes/TSSProOptions.php:835
 msgid "90 %"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:841
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:841, ../lib/classes/TSSProOptions.php:841
 msgid "Loop"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:842
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:842, ../lib/classes/TSSProOptions.php:842
 msgid "Auto Play"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:843
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:843, ../lib/classes/TSSProOptions.php:843
 msgid "Pause on mouse hover"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:844
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:844, ../lib/classes/TSSProOptions.php:844
 msgid "Nav Button"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:846, ../lib/elementor/elements/sections/TSSElementorContentSections.php:653
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:846, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:653, ../lib/classes/TSSProOptions.php:846, ../lib/elementor/elements/sections/TSSElementorContentSections.php:653
 msgid "Auto Height"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:847
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:847, ../lib/classes/TSSProOptions.php:847
 msgid "Lazy Load"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:848
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:848, ../lib/classes/TSSProOptions.php:848
 msgid "Right to left (RTL)"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:857
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:857, ../lib/classes/TSSProOptions.php:857
 msgid "Video"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:867
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:867, ../lib/classes/TSSProOptions.php:867
 msgid "Read More"
 msgstr ""
 
-#: ../lib/classes/TSSProOptions.php:870
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProOptions.php:870, ../lib/classes/TSSProOptions.php:870
 msgid "Social Share"
 msgstr ""
 
-#: ../lib/classes/TSSProPostMeta.php:32
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProPostMeta.php:32, ../lib/classes/TSSProPostMeta.php:32
 msgid "Testimonial's Information"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:493
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:493, ../lib/classes/TSSProSC.php:493
 msgid "No shortCode found"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:264, ../lib/elementor/elements/renders/TSSElementorRender.php:232
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:264, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:232, ../lib/classes/TSSProSC.php:264, ../lib/elementor/elements/renders/TSSElementorRender.php:232
 msgid "out of 5 stars"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:266, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:234, ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
 msgid "Based on"
 msgstr ""
 
-#: ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProSC.php:266, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/renders/TSSElementorRender.php:234, ../lib/classes/TSSProSC.php:266, ../lib/elementor/elements/renders/TSSElementorRender.php:234
 msgid "Reviews"
 msgstr ""
 
-#: ../lib/classes/TSSProTaxMeta.php:67
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:67, ../lib/classes/TSSProTaxMeta.php:67
 msgid "No term in list"
 msgstr ""
 
-#: ../lib/classes/TSSProTaxMeta.php:117
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:117, ../lib/classes/TSSProTaxMeta.php:117
 msgid "Select a taxonomy"
 msgstr ""
 
-#: ../lib/classes/TSSProTaxMeta.php:114
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSProTaxMeta.php:114, ../lib/classes/TSSProTaxMeta.php:114
 msgid "No term found"
 msgstr ""
 
-#: ../lib/classes/TSSShortCodeGenerator.php:60
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSShortCodeGenerator.php:60, ../lib/classes/TSSShortCodeGenerator.php:60
 msgid "Pro field alert!"
 msgstr ""
 
-#: ../lib/classes/TSSShortCodeGenerator.php:61
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSShortCodeGenerator.php:61, ../lib/classes/TSSShortCodeGenerator.php:61
 msgid "Sorry! this is a pro field. To use this field, you need to use pro plugin."
 msgstr ""
 
-#: ../lib/classes/TSSShortCodeGenerator.php:62
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSShortCodeGenerator.php:62, ../lib/classes/TSSShortCodeGenerator.php:62
 msgid "Upgrade to pro"
 msgstr ""
 
-#: ../lib/classes/TSSVCInit.php:64
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSVCInit.php:64, ../lib/classes/TSSVCInit.php:64
 msgid "Testimonial Pro"
 msgstr ""
 
-#: ../lib/classes/TSSVCInit.php:75
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSVCInit.php:75, ../lib/classes/TSSVCInit.php:75
 msgid "Short Code"
 msgstr ""
 
-#: ../lib/classes/TSSVCInit.php:79
+#: ../dist/testimonial-slider-and-showcase/lib/classes/TSSVCInit.php:79, ../lib/classes/TSSVCInit.php:79
 msgid "Short Code list"
 msgstr ""
 
-#: ../lib/elementor/TSSElementorWidgets.php:168
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/TSSElementorWidgets.php:168, ../lib/elementor/TSSElementorWidgets.php:168
 msgid "Go Premium for More Features"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:108
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:108, ../lib/models/TSSProField.php:108
 msgid "[Pro]"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:108
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:108, ../lib/models/TSSProField.php:108
 msgid "This is premium field"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:307
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:307, ../lib/models/TSSProField.php:307
 msgid "Please use default customizer to add your css. This option is deprecated. "
 msgstr ""
 
-#: ../lib/models/TSSProField.php:633
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:633, ../lib/models/TSSProField.php:633
 msgid "Pro"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:697
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:697, ../lib/models/TSSProField.php:697
 msgid "Width"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:803, ../lib/models/TSSProField.php:776
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:803, ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:776, ../lib/models/TSSProField.php:803, ../lib/models/TSSProField.php:776
 msgid "Active Social link"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:786
+#: ../dist/testimonial-slider-and-showcase/lib/models/TSSProField.php:786, ../lib/models/TSSProField.php:786
 msgid "Available Social link"
 msgstr ""
 
-#: ../lib/views/settings-header.php:23
+#: ../dist/testimonial-slider-and-showcase/lib/views/settings-header.php:23, ../lib/views/settings-header.php:23
 msgid "Testimonial Slider Showcase"
 msgstr ""
 
-#: ../lib/views/settings-header.php:51
+#: ../dist/testimonial-slider-and-showcase/lib/views/settings-header.php:51, ../lib/views/settings-header.php:51
 msgid "Support"
 msgstr ""
 
-#: ../lib/views/settings-header.php:59
+#: ../dist/testimonial-slider-and-showcase/lib/views/settings-header.php:59, ../lib/views/settings-header.php:59
 msgid "Help"
 msgstr ""
 
-#: ../lib/views/settings.php:27
+#: ../dist/testimonial-slider-and-showcase/lib/views/settings.php:27, ../lib/views/settings.php:27
 msgid "General"
 msgstr ""
 
-#: ../lib/views/settings.php:41
+#: ../dist/testimonial-slider-and-showcase/lib/views/settings.php:41, ../lib/views/settings.php:41
 msgid "Save Changes"
 msgstr ""
 
-#: ../lib/views/taxonomy-order.php:17
+#: ../dist/testimonial-slider-and-showcase/lib/views/taxonomy-order.php:17, ../lib/views/taxonomy-order.php:17
 msgid "Taxonomy Ordering"
 msgstr ""
 
-#: ../lib/views/taxonomy-order.php:25
+#: ../dist/testimonial-slider-and-showcase/lib/views/taxonomy-order.php:25, ../lib/views/taxonomy-order.php:25
 msgid "Please update your WordPress to 4.4.0 or latest version to use taxonomy order functionality."
 msgstr ""
 
-#: ../lib/views/taxonomy-order.php:33
+#: ../dist/testimonial-slider-and-showcase/lib/views/taxonomy-order.php:33, ../lib/views/taxonomy-order.php:33
 msgid "Select taxonomy"
 msgstr ""
 
-#: ../lib/views/taxonomy-order.php:35
+#: ../dist/testimonial-slider-and-showcase/lib/views/taxonomy-order.php:35, ../lib/views/taxonomy-order.php:35
 msgid "Select one taxonomy"
 msgstr ""
 
-#: ../lib/views/taxonomy-order.php:47
+#: ../dist/testimonial-slider-and-showcase/lib/views/taxonomy-order.php:47, ../lib/views/taxonomy-order.php:47
 msgid "No taxonomy selected"
 msgstr ""
 
-#: ../lib/widgets/TSScWidget.php:24
+#: ../dist/testimonial-slider-and-showcase/lib/widgets/TSScWidget.php:24, ../lib/widgets/TSScWidget.php:24
 msgid "Display Testimonial"
 msgstr ""
 
-#: ../lib/widgets/TSScWidget.php:28
+#: ../dist/testimonial-slider-and-showcase/lib/widgets/TSScWidget.php:28, ../lib/widgets/TSScWidget.php:28
 msgid "Testimonial Slider And Showcase"
 msgstr ""
 
-#: ../lib/widgets/TSScWidget.php:76
+#: ../dist/testimonial-slider-and-showcase/lib/widgets/TSScWidget.php:76, ../lib/widgets/TSScWidget.php:76
 msgid "Title:"
 msgstr ""
 
-#: ../lib/widgets/TSScWidget.php:85
+#: ../dist/testimonial-slider-and-showcase/lib/widgets/TSScWidget.php:85, ../lib/widgets/TSScWidget.php:85
 msgid "Select a shortcode"
 msgstr ""
 
-#: ../lib/elementor/elements/TSSElementorGridWidget.php:39
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/TSSElementorGridWidget.php:39, ../lib/elementor/elements/TSSElementorGridWidget.php:39
 msgid "Testimonial Grid Layout"
 msgstr ""
 
-#: ../lib/elementor/elements/TSSElementorSliderWidget.php:39
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/TSSElementorSliderWidget.php:39, ../lib/elementor/elements/TSSElementorSliderWidget.php:39
 msgid "Testimonial Slider Layout"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:57, ../lib/elementor/elements/sections/TSSElementorContentSections.php:128
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:57, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:128, ../lib/elementor/elements/sections/TSSElementorContentSections.php:57, ../lib/elementor/elements/sections/TSSElementorContentSections.php:128
 msgid "Select Layout"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:74, ../lib/elementor/elements/sections/TSSElementorContentSections.php:145
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:74, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:145, ../lib/elementor/elements/sections/TSSElementorContentSections.php:74, ../lib/elementor/elements/sections/TSSElementorContentSections.php:145
 msgid "Responsive Columns"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:84, ../lib/elementor/elements/sections/TSSElementorContentSections.php:155
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:84, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:155, ../lib/elementor/elements/sections/TSSElementorContentSections.php:84, ../lib/elementor/elements/sections/TSSElementorContentSections.php:155
 msgid "Number of Columns"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:85, ../lib/elementor/elements/sections/TSSElementorContentSections.php:156
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:85, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:156, ../lib/elementor/elements/sections/TSSElementorContentSections.php:85, ../lib/elementor/elements/sections/TSSElementorContentSections.php:156
 msgid "Please select the number of columns to show per row."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:213
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:213, ../lib/elementor/elements/sections/TSSElementorContentSections.php:213
 msgid "Isotope Settings"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:242, ../lib/elementor/elements/sections/TSSElementorContentSections.php:282
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:242, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:282, ../lib/elementor/elements/sections/TSSElementorContentSections.php:242, ../lib/elementor/elements/sections/TSSElementorContentSections.php:282
 msgid "Show Pagination?"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:244, ../lib/elementor/elements/sections/TSSElementorContentSections.php:284
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:244, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:284, ../lib/elementor/elements/sections/TSSElementorContentSections.php:244, ../lib/elementor/elements/sections/TSSElementorContentSections.php:284
 msgid "Please enable the switch to display pagination."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:250, ../lib/elementor/elements/sections/TSSElementorContentSections.php:290
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:250, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:290, ../lib/elementor/elements/sections/TSSElementorContentSections.php:250, ../lib/elementor/elements/sections/TSSElementorContentSections.php:290
 msgid "Number of Testimonials Per Page"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:252, ../lib/elementor/elements/sections/TSSElementorContentSections.php:292
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:252, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:292, ../lib/elementor/elements/sections/TSSElementorContentSections.php:252, ../lib/elementor/elements/sections/TSSElementorContentSections.php:292
 msgid "Please enter the number of posts per page to show."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:322
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:322, ../lib/elementor/elements/sections/TSSElementorContentSections.php:322
 msgid "Select Image Size"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:347
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:347, ../lib/elementor/elements/sections/TSSElementorContentSections.php:347
 msgid "Query"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:369
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:369, ../lib/elementor/elements/sections/TSSElementorContentSections.php:369
 msgid "Include"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:375
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:375, ../lib/elementor/elements/sections/TSSElementorContentSections.php:375
 msgid "Include Testimonials"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:377
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:377, ../lib/elementor/elements/sections/TSSElementorContentSections.php:377
 msgid "Please select the testimonials to show. Leave it blank to include all posts."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:395
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:395, ../lib/elementor/elements/sections/TSSElementorContentSections.php:395
 msgid "Exclude Testimonials"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:397
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:397, ../lib/elementor/elements/sections/TSSElementorContentSections.php:397
 msgid "Please select the testimonials to exclude. Leave it blank to exclude none."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:413
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:413, ../lib/elementor/elements/sections/TSSElementorContentSections.php:413
 msgid "Posts Limit"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:414
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:414, ../lib/elementor/elements/sections/TSSElementorContentSections.php:414
 msgid "The number of testimonials to show. Set empty to show all testimonials."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:425
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:425, ../lib/elementor/elements/sections/TSSElementorContentSections.php:425
 msgid "Sorting"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:435, ../lib/elementor/elements/sections/TSSElementorContentSections.php:444
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:435, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:444, ../lib/elementor/elements/sections/TSSElementorContentSections.php:435, ../lib/elementor/elements/sections/TSSElementorContentSections.php:444
 msgid "Please choose to reorder to testimonials."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:465
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:465, ../lib/elementor/elements/sections/TSSElementorContentSections.php:465
 msgid "Content Visibility"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:472
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:472, ../lib/elementor/elements/sections/TSSElementorContentSections.php:472
 msgid "Show Author Name"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:473, ../lib/elementor/elements/sections/TSSElementorContentSections.php:483, ../lib/elementor/elements/sections/TSSElementorContentSections.php:494, ../lib/elementor/elements/sections/TSSElementorContentSections.php:505, ../lib/elementor/elements/sections/TSSElementorContentSections.php:516, ../lib/elementor/elements/sections/TSSElementorContentSections.php:527, ../lib/elementor/elements/sections/TSSElementorContentSections.php:538, ../lib/elementor/elements/sections/TSSElementorContentSections.php:623, ../lib/elementor/elements/sections/TSSElementorContentSections.php:633, ../lib/elementor/elements/sections/TSSElementorContentSections.php:643, ../lib/elementor/elements/sections/TSSElementorContentSections.php:654, ../lib/elementor/elements/sections/TSSElementorContentSections.php:663, ../lib/elementor/elements/sections/TSSElementorContentSections.php:690, ../lib/elementor/elements/sections/TSSElementorContentSections.php:700
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:473, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:483, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:494, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:505, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:516, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:527, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:538, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:623, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:633, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:643, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:654, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:663, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:690, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:700, ../lib/elementor/elements/sections/TSSElementorContentSections.php:473, ../lib/elementor/elements/sections/TSSElementorContentSections.php:483, ../lib/elementor/elements/sections/TSSElementorContentSections.php:494, ../lib/elementor/elements/sections/TSSElementorContentSections.php:505, ../lib/elementor/elements/sections/TSSElementorContentSections.php:516, ../lib/elementor/elements/sections/TSSElementorContentSections.php:527, ../lib/elementor/elements/sections/TSSElementorContentSections.php:538, ../lib/elementor/elements/sections/TSSElementorContentSections.php:623, ../lib/elementor/elements/sections/TSSElementorContentSections.php:633, ../lib/elementor/elements/sections/TSSElementorContentSections.php:643, ../lib/elementor/elements/sections/TSSElementorContentSections.php:654, ../lib/elementor/elements/sections/TSSElementorContentSections.php:663, ../lib/elementor/elements/sections/TSSElementorContentSections.php:690, ../lib/elementor/elements/sections/TSSElementorContentSections.php:700
 msgid "On"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:474, ../lib/elementor/elements/sections/TSSElementorContentSections.php:484, ../lib/elementor/elements/sections/TSSElementorContentSections.php:495, ../lib/elementor/elements/sections/TSSElementorContentSections.php:506, ../lib/elementor/elements/sections/TSSElementorContentSections.php:517, ../lib/elementor/elements/sections/TSSElementorContentSections.php:528, ../lib/elementor/elements/sections/TSSElementorContentSections.php:539, ../lib/elementor/elements/sections/TSSElementorContentSections.php:624, ../lib/elementor/elements/sections/TSSElementorContentSections.php:634, ../lib/elementor/elements/sections/TSSElementorContentSections.php:644, ../lib/elementor/elements/sections/TSSElementorContentSections.php:655, ../lib/elementor/elements/sections/TSSElementorContentSections.php:664, ../lib/elementor/elements/sections/TSSElementorContentSections.php:691, ../lib/elementor/elements/sections/TSSElementorContentSections.php:701
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:474, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:484, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:495, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:506, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:517, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:528, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:539, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:624, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:634, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:644, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:655, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:664, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:691, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:701, ../lib/elementor/elements/sections/TSSElementorContentSections.php:474, ../lib/elementor/elements/sections/TSSElementorContentSections.php:484, ../lib/elementor/elements/sections/TSSElementorContentSections.php:495, ../lib/elementor/elements/sections/TSSElementorContentSections.php:506, ../lib/elementor/elements/sections/TSSElementorContentSections.php:517, ../lib/elementor/elements/sections/TSSElementorContentSections.php:528, ../lib/elementor/elements/sections/TSSElementorContentSections.php:539, ../lib/elementor/elements/sections/TSSElementorContentSections.php:624, ../lib/elementor/elements/sections/TSSElementorContentSections.php:634, ../lib/elementor/elements/sections/TSSElementorContentSections.php:644, ../lib/elementor/elements/sections/TSSElementorContentSections.php:655, ../lib/elementor/elements/sections/TSSElementorContentSections.php:664, ../lib/elementor/elements/sections/TSSElementorContentSections.php:691, ../lib/elementor/elements/sections/TSSElementorContentSections.php:701
 msgid "Off"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:476
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:476, ../lib/elementor/elements/sections/TSSElementorContentSections.php:476
 msgid "Switch on to display author name."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:482
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:482, ../lib/elementor/elements/sections/TSSElementorContentSections.php:482
 msgid "Show Author Image"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:487
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:487, ../lib/elementor/elements/sections/TSSElementorContentSections.php:487
 msgid "Switch on to display author image."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:493
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:493, ../lib/elementor/elements/sections/TSSElementorContentSections.php:493
 msgid "Show Testimonial Text"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:498
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:498, ../lib/elementor/elements/sections/TSSElementorContentSections.php:498
 msgid "Switch on to display testimonial text."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:504
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:504, ../lib/elementor/elements/sections/TSSElementorContentSections.php:504
 msgid "Show Designation"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:509
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:509, ../lib/elementor/elements/sections/TSSElementorContentSections.php:509
 msgid "Switch on to display author designation."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:515
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:515, ../lib/elementor/elements/sections/TSSElementorContentSections.php:515
 msgid "Show Company Name"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:520
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:520, ../lib/elementor/elements/sections/TSSElementorContentSections.php:520
 msgid "Switch on to display company name."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:526
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:526, ../lib/elementor/elements/sections/TSSElementorContentSections.php:526
 msgid "Show Location Name"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:531
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:531, ../lib/elementor/elements/sections/TSSElementorContentSections.php:531
 msgid "Switch on to display location name."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:537
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:537, ../lib/elementor/elements/sections/TSSElementorContentSections.php:537
 msgid "Show Rating"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:542
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:542, ../lib/elementor/elements/sections/TSSElementorContentSections.php:542
 msgid "Switch on to display author rating."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:564, ../lib/elementor/elements/sections/TSSElementorContentSections.php:580
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:564, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:580, ../lib/elementor/elements/sections/TSSElementorContentSections.php:564, ../lib/elementor/elements/sections/TSSElementorContentSections.php:580
 msgid "Content Limit"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:571
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:571, ../lib/elementor/elements/sections/TSSElementorContentSections.php:571
 msgid "Limit Testimonial Content?"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:574
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:574, ../lib/elementor/elements/sections/TSSElementorContentSections.php:574
 msgid "Switch on to limit testimonial content."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:581
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:581, ../lib/elementor/elements/sections/TSSElementorContentSections.php:581
 msgid "Limits the testimonial text (letter limit). Leave it blank for full text."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:605
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:605, ../lib/elementor/elements/sections/TSSElementorContentSections.php:605
 msgid "Slider Settings"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:614
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:614, ../lib/elementor/elements/sections/TSSElementorContentSections.php:614
 msgid "Controls"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:622
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:622, ../lib/elementor/elements/sections/TSSElementorContentSections.php:622
 msgid "Infinite Loop"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:625
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:625, ../lib/elementor/elements/sections/TSSElementorContentSections.php:625
 msgid "Switch on to enable slider infinite loop."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:632
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:632, ../lib/elementor/elements/sections/TSSElementorContentSections.php:632
 msgid "Navigation Arrows"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:635
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:635, ../lib/elementor/elements/sections/TSSElementorContentSections.php:635
 msgid "Switch on to enable slider navigation arrows."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:642
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:642, ../lib/elementor/elements/sections/TSSElementorContentSections.php:642
 msgid "Dot Pagination"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:646
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:646, ../lib/elementor/elements/sections/TSSElementorContentSections.php:646
 msgid "Switch on to enable slider dot pagination."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:656
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:656, ../lib/elementor/elements/sections/TSSElementorContentSections.php:656
 msgid "Switch on to enable slider dynamic height."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:662
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:662, ../lib/elementor/elements/sections/TSSElementorContentSections.php:662
 msgid "Image Lazy Load"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:665
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:665, ../lib/elementor/elements/sections/TSSElementorContentSections.php:665
 msgid "Switch on to enable slider image lazy load."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:671
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:671, ../lib/elementor/elements/sections/TSSElementorContentSections.php:671
 msgid "Slide Speed (in ms)"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:672
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:672, ../lib/elementor/elements/sections/TSSElementorContentSections.php:672
 msgid "Please enter the duration of transition between slides (in ms)."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:681
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:681, ../lib/elementor/elements/sections/TSSElementorContentSections.php:681
 msgid "Autoplay"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:689
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:689, ../lib/elementor/elements/sections/TSSElementorContentSections.php:689
 msgid "Enable Autoplay?"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:693
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:693, ../lib/elementor/elements/sections/TSSElementorContentSections.php:693
 msgid "Switch on to enable slider autoplay."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:699
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:699, ../lib/elementor/elements/sections/TSSElementorContentSections.php:699
 msgid "Pause on Mouse Hover?"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:702
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:702, ../lib/elementor/elements/sections/TSSElementorContentSections.php:702
 msgid "Switch on to enable slider autoplay pause on mouse hover."
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:710
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:710, ../lib/elementor/elements/sections/TSSElementorContentSections.php:710
 msgid "Autoplay Delay"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorContentSections.php:713
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorContentSections.php:713, ../lib/elementor/elements/sections/TSSElementorContentSections.php:713
 msgid "Please select autoplay interval delay"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:48
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:48, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:48
 msgid "Colors"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:57
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:57, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:57
 msgid "Color Scheme"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:65
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:65, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:65
 msgid "Quote Icon"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:75, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:300
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:75, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:300, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:75, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:300
 msgid "Author Name"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:84, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:353
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:84, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:353, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:84, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:353
 msgid "Author Bio"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:102, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:479
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:102, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:479, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:102, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:479
 msgid "Testimonial Text"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:133
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:133, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:133
 msgid "Button Colors"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:156, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:198, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:240
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:156, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:198, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:240, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:156, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:198, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:240
 msgid "Background Color"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:167, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:208, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:250
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:167, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:208, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:250, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:167, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:208, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:250
 msgid "Text Color"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:191
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:191, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:191
 msgid "Hover"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:233
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:233, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:233
 msgid "Active"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:289
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:289, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:289
 msgid "Typography"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:316, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:370, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:425, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:496
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:316, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:370, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:425, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:496, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:316, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:370, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:425, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:496
 msgid "Alignment"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:341, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:395, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:466, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:521
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:341, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:395, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:466, ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:521, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:341, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:395, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:466, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:521
 msgid "Spacing"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:450
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:450, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:450
 msgid "Icon Spacing"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:546
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:546, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:546
 msgid "Image Style"
 msgstr ""
 
-#: ../lib/elementor/elements/sections/TSSElementorStyleSections.php:563
+#: ../dist/testimonial-slider-and-showcase/lib/elementor/elements/sections/TSSElementorStyleSections.php:563, ../lib/elementor/elements/sections/TSSElementorStyleSections.php:563
 msgid "Border Radius"
 msgstr ""

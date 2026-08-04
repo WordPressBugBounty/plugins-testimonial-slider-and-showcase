@@ -1,146 +1,167 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
-Contributors: techlabpro1
+Contributors: techlabpro1, mamunnu
 Donate link:
 Stable tag: 2.4.2
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Testimonial Slider and Showcase WordPress plugin is most customizable and user friendly testimonial plugin to manage your customers testimonial.
+Display customer testimonials beautifully with responsive slider and grid layouts. Build trust and boost conversions with this WordPress testimonial plugin.
+
 
 == Description ==
 
-[Testimonial](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) Slider and Showcase plugin for WordPress website. It is a developer and user-friendly testimonial plugin that facilitates easy management of customer testimonials. Since it is fully responsive, it ensures that your testimonials appear in beautiful layouts on all devices.
+== Build Trust and Convert More Visitors with Customer Testimonials ==
+
+Looking for a reliable **WordPress testimonial plugin** to showcase customer reviews and build credibility? Testimonial Slider and Showcase makes it simple to display social proof that converts visitors into customers.
+
+Whether you run an agency, e-commerce store, or service business, displaying authentic customer feedback is one of the most effective ways to establish trust. This **testimonial slider** plugin gives you complete control over how testimonials appear on your WordPress site—without writing any code.
 
 👉 [ShortCode Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/) | [Elementor Demo](https://www.radiustheme.com/demo/plugins/testimonial-slider/elementor-grid-layout-1/) | [Documentation](https://www.radiustheme.com/docs/testimonial-slider/) | [Get Pro](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) 👈
 
-This testimonials slider plugin is full customizable and allows you to generate shortcodes easily. You can use the shortcodes onto any post or page on which you need to showcase testimonials in slider or grid view. It offers many variations of the grid and slider layouts.
+== Why Choose This Testimonial Plugin? ==
 
-You also get to customize the testimonials fields, style, color, and general appearance. With this WordPress testimonial plugin, you can control whether the profile images on the testimonials you display are square or rounded. The Testimonial Slider and Showcase Pro allow you to customize the image size. It also lets you order testimonials by date, title, or id.
+[**Testimonial Slider and Showcase**](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/) is designed for WordPress users who want professional-looking customer reviews without the complexity. The plugin works seamlessly with Gutenberg, Elementor, and classic editors—giving you flexibility regardless of how you build your pages.
 
-"Testimonial Slider & Showcase Elementor Addon is a versatile and user-friendly tool for creating customizable testimonial sliders and showcases in Elementor. This addon allows you to display customer reviews, feedback, and testimonials in an attractive showcase or slider format, offering a visually engaging way to highlight your social proof."
+Every layout is fully responsive, ensuring your testimonials look polished on desktops, tablets, and mobile devices. The intuitive shortcode generator means you can create and embed testimonial displays in minutes.
+
+⭐⭐⭐⭐⭐
+**Easily customiable, awesome testimonial tool.**
+This is an awesome plugin. The visual customizations make it easy to brand the content, and the categorization functionality allows you to deploy relevant testimonials in different areas of your site. I use this for all my sites – highly reccommend!
+— ***Dave Karras***
+
+⭐⭐⭐⭐⭐
+**Very customisable**
+I’m using the free slider and it has just enough customising options allowing it to fit into our site’s visual identity. Also very intuitive and easy to install and use without needing any help from web designers.
+— ***Mihail Bila***
+
+👉[Check out our great reviews!](https://wordpress.org/support/plugin/testimonial-slider-and-showcase/reviews/)
 
 [youtube https://www.youtube.com/watch?v=g7x9k15SMLM]
 
 
-== 🏆 Features of The Testimonial Slider and Showcase ==
-You can make money from posting ads where users pay for each ad or for ad promotions, such as
+== ⭐ Key Features ==
 
-* **Grid and Slider Layouts:** When you use the free versions, you can use either of the 2 grid layouts and 2 slider layouts.
+**Multiple Display Layouts:** Choose between grid and slider formats to match your design preferences. The free version includes 2 grid layouts and 2 slider layouts, with 20+ additional layouts available in Pro.
 
-* **Isotope Filter [PRO]:** With the isotope filter, the premium version of this plugin allows you to show and hide elements easily.
+**Unlimited Shortcodes:** Create as many testimonial displays as you need. Each shortcode can have unique settings, allowing you to show different testimonials on different pages.
 
-* **Shortcode Generator:** With the help of the shortcode generator, you can call up a shortcode easily. This plugin lets you create unlimited shortcodes.
+**Star Ratings Display:** Let customers rate their experience. Visual star ratings add credibility and help visitors quickly assess customer satisfaction.
 
-    i. After filling your customers’ data in the corresponding fields, generate shortcodes using layout selection, fields’ selection, filtering, styling tab, and save the shortcode.
+**Complete Style Control:** ustomize colors, backgrounds, borders, and typography without touching CSS. Choose between square and rounded profile images to match your brand aesthetic.
 
-    ii. Call the shortcode, copy it and then use it to add your testimonials to any page or post on your website easily.
+**Drag-and-Drop Ordering:** Arrange testimonials in any sequence using simple drag-and-drop functionality. Feature your best reviews first.
 
-* **Ordering Option:** The ordering option that comes with this testimonial plugin enables you to order the testimonials you display by date, title, or id. What’s more, you get to order your testimonials by drag &amp; drop. You can also order your testimonials by various taxonomy.
+**Elementor Integration:** Use dedicated Elementor widgets for testimonial grids, sliders, and isotope layouts. Build testimonial sections visually within Elementor.
 
-* **Image Size Control:** When you have many large images on your website, your site will become slow. You get to limit the size of the images on your website with this plugin to avoid that. The PRO version gives you the option of a custom image size.
+**Gutenberg Block Support:** Add testimonials directly through the WordPress block editor. No shortcode copying required.
 
-* **Style Control:** With Testimonial Slider and Showcase, you can control the style in which your testimonials appear. You get to choose the colors and styles you want for your testimonial sections. It even allows you to display the testimonial profile images in round or square borders. The device-wise display control means that all your visitors will view the versions of your testimonials.
+**Fully Responsive Design:** Control how many testimonials appear per row on desktop, tablet, and mobile devices. Your testimonial showcase adapts to every screen size.
 
-* **Member Filter Option:** This testimonial plugin allows you to display testimonials by department or individual member. Your testimonials can be displayed with various filter options for your members.
+**Translation Ready:** POT files included for easy translation. Display testimonials in any language your audience speaks.
 
-* **Translation Support:** Whichever language your website uses, it won&#39;t conflict with this plugin because it is fully translatable. You get this plugin with ready POT files for various languages. You can translate your website very easily.
+**RTL Language Support:** Full support for right-to-left languages including Arabic, Hebrew, and Persian.
 
-* **RTL Support:** If you want a website that translates into any RTL language, this plugin totally supports that. It supports all RTL languages, including Hebrew, Persian, and Arabic. This means that your website can display the testimonials from all your users, regardless of their language preferences.
 
-== 3 Easy Steps to Using Testimonial Slider and Showcase Plugin ==
+== 🚀 How Testimonials Improve Your Website ==
 
-When you have installed the plugin and are ready to display your testimonials as elegantly as possible,
-here is how you go about it.
+**Increase Conversions:** Displaying customer testimonials near call-to-action buttons can significantly improve conversion rates. Visitors trust peer recommendations more than marketing copy.
 
-1. Add all the members that you want to display along with all the necessary fields and profile images.
-1. Generate the shortcode for the entire testimonial. Here is how you do it:
+**Build Instant Credibility:** New visitors can immediately see that real people have had positive experiences with your product or service.
 
-    * **Step1: Layout**
-        You first choose the layout type from the three options available. You can then choose the layout style. The free version allows you to choose from 2 layout style options, while the pro provides an extra 9.You then get to edit other settings, including the number of desktop view columns, tab columns, and mobile columns.
+**Improve SEO with Fresh Content:** Regular customer testimonials add unique, relevant content to your site—something search engines value.
 
-    * **Step 2: Filtering**
-        You choose the only comma-separated values that should be included. Choose the list of post IDs that you want to exclude, while still using commas to separate the values. Select the limit on the number of posts to display. If you set to empty, you’ll showcase all your found posts.
+**Reduce Purchase Anxiety:** Seeing positive experiences from other customers helps reduce hesitation during the buying process.
 
-        With the PRO plugin, you then select the categories you want to filter. Leaving the space blank will showcase all your categories. The PRO plugin lets you select the tags you want to use in the filters.
 
-    * **Step 3: Fields selection**
-        When checking the field that you want to display, you check the fields that you want to display. Your options include, author, author image, testimonial, read more, designation, company, location, rating, video, social media, and social share.
+== 🎯 Who Should Use This Plugin? ==
 
-        If you have the PRO version of the plugin, you can choose the social share item sources you want to display. The checkboxes include Facebook, LinkedIn, Twitter, Pinterest, and Email.
+**✅ Business Websites** – Build credibility by showcasing satisfied client feedback prominently on your homepage or services pages.
 
-    * **Step 4: Styling**
-        Choose the parent class you want for adding the custom CSS. Select the color schemes you want for the primary, container background, and item background. Choose colors you want for your button background, hover background, hover background, text, hover text, and border. Choose the overlay style, including the overlay color, overlay opacity, and overlay top padding.
+**✅ E-commerce Stores:** Show product reviews and customer experiences to increase sales confidence.
 
-3.Now, use the shortcode in the page or post you want it to go using Gutenberg or Elementor addon. Alternatively, just copy the shortcode and paste it on the page or post.
+**✅ Local Businesses:** Feature testimonials from satisfied customers to build community trust.
 
-== 🏆 How to use Testimonial Slider Elementor Addon ==
-We introduce Elementor Addon for Testimonial Slider so now you can easily use in Elementor addon.
+**✅ Coaches & Consultants:** Share transformation stories and client results to establish authority.
 
-[youtube https://www.youtube.com/watch?v=kK_0-5RSoQg]
+**✅ SaaS Companies:** Highlight user feedback and case study quotes throughout your marketing pages.
 
-== 🏆 How to Enable Front End Submission ==
+**✅ Nonprofits & Organizations:** Showcase donor and volunteer testimonials to build supporter confidence.
+
+
+== ⭐ Getting Started in 3 Steps ==
+
+👉 **Step 1: Add Your Testimonials:** Navigate to Testimonial Slider → Add New. Enter the customer name, their feedback, profile image, company, designation, and star rating.
+
+👉 **Step 2: Generate Your Shortcode:** Go to Testimonial Slider → Shortcode Generator. Select your preferred layout (grid or slider), choose which fields to display, customize colors and styling, then save your shortcode.
+
+👉 **Step 3: Display on Your Site:** Copy the shortcode and paste it into any page, post, or widget area. Alternatively, use the Gutenberg block or Elementor widget for visual placement.
+
+
+== ⭐ Available Testimonial Fields ==
+
+Each testimonial entry supports the following information:
+
+- **Customer Name** – Who provided the testimonial
+- **Testimonial Content** – The actual feedback or review text
+- **Profile Image** – Photo of the customer (displays square or rounded)
+- **Designation** – Job title or role
+- **Company Name** – Organization the customer represents
+- **Location** – Where the customer is based
+- **Star Rating** – Visual rating from 1-5 stars
+- **Video Testimonial** – Embed video reviews [Pro]
+- **Social Profiles** – Link to customer social accounts [Pro]
+
+
+== 💎 Pro Version Features ==
+
+Unlock additional functionality with [Testimonial Slider Pro](https://www.radiustheme.com/downloads/wp-testimonial-slider-showcase-pro-wordpress/):
+
+**20+ Additional Layouts: ** Access 9 extra grid layouts, 11 slider designs, and 6 isotope filter layouts for maximum design flexibility.
+
+**Isotope Filter Display:** Let visitors filter testimonials by category or tag with smooth animated transitions.
+
+**Video Testimonials:** Embed video reviews directly within your testimonial displays for more engaging social proof.
+
+**Ajax Pagination:** Load more testimonials on scroll or click without page refresh.
+
+**Detail Page Popups:** Display full testimonial details in elegant popup modals.
+
+**Frontend Submission Form:** Allow customers to submit testimonials directly from your website.
+
+**Category & Tag Filtering:** Organize testimonials by department, product, or service and filter accordingly.
+
+**Masonry Grid Layout:** Create Pinterest-style testimonial displays that maximize visual impact.
+
+**Advanced Styling Options:** Fine-tune margins, padding, gutters, and overlay effects.
+
+== How to Enable Front End Submission ==
 From front end user can submit testimonial
 
 [youtube https://www.youtube.com/watch?v=3Gd0cHI2uUc]
 
-
-== 🏆 Available Testimonial Fields ==
-The following are the fields that this plugin allows you to have on your testimonials:
-
-* Title or name of the user
-* Testimonial content, which is the user&#39;s comments
-* The profile image of the user
-* The designation of the user
-* The company name
-* The user rating
-* Video [Pro]
-* Social [Pro]
-* Front End Submission [Pro]
-
-== 🏆 Features of the Pro Version of the Testimonial Slider and Showcase ==
-* **Layouts:** The premium version of this plugin comes with 9 additional grid layouts, 11 sliders, and 6 isotope filter layouts.
-
-* **Detail Page Popup:** The testimonial detail page can have multiple, single, or smart popups.
-
-* **Grid Filter:** You can use various grid layouts for filtering the testimonials.
-
-* **Filter Preview:** The premium plugin also lets you filter your testimonials by categories or tags.
-
-* **Layout Preview:** Before taking your creation or customization work live, you can view the preview easily.
-
-* **Disable Show All Button:** You can hide or display the Show All button when your testimonials are in an isotope or filter layout. You can also make the department default.
-
-* **Ajax Pagination:** The premium version supports Ajax load more, load more on scroll, and number pagination.
-
-* **Masonry Grid:** You can showcase your testimonials with the elegance of the masonry grid.
-
-* **Margin Control:** You have control over where the margins of the testimonials start and stop.
-
-* **Gutter/ Padding Control:** You can customize the size of the gutter margins or inter-column space.
-
-= Fully translatable =
-* POT files included (/languages/)
-
 == Installation ==
 
-1. Unzip the downloaded `testimonial-slider-showcase` zip file
-2. Upload the 'testimonial-slider-showcase' folder and its contents into the `wp-content/plugins/` directory of your WordPress installation
-3. Activate `tlp-team` from Plugins page
+1. Download the plugin from WordPress.org or search "Testimonial Slider and Showcase" in your WordPress dashboard under Plugins → Add New.
+2. Click Install Now, then Activate.
+3. Navigate to Testimonial Slider → Add New to create your first testimonial.
+4. Go to Testimonial Slider → Shortcode Generator to create your display shortcode.
+5. Paste the shortcode into any page or post, or use the Gutenberg block or Elementor widget.
 
 = Requirements =
-* **WordPress version:** >= 4.4
-* **PHP version:** >= 7.2
+* **WordPress version:** >= 5.0
+* **PHP version:** >= 7.4
 
-== Need Any Help? ==
-* For any bug, support or suggestion please submit your ticket [here](https://www.radiustheme.com/ticket-support/).
+== Support & Community ==
 
-== Liked RadiusTheme ==
-* Join our [Facebook Group](https://www.facebook.com/groups/radiustheme).
-* Learn from our tutorials on [YouTube Channel](https://www.youtube.com/@RadiusTheme).
+- [Documentation](https://www.radiustheme.com/docs/testimonial-slider/) – Detailed setup guides and tutorials
+- [Support Tickets](https://www.radiustheme.com/ticket-support/) – Get help from our team
+- [Facebook Community](https://www.facebook.com/groups/radiustheme) – Join discussions with other users
+- [YouTube Tutorials](https://www.youtube.com/@RadiusTheme) – Video walkthroughs and tips
+
 
 == 🔥 WHAT’S NEXT ==
 
@@ -160,31 +181,45 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Frequently Asked Questions ==
 
-= How to Use Testimonial Slider Plugin? =
+= How do I display testimonials on my page? =
 
-* Go to `Testimonial Slider > Add New testimonial`
-* Go to `Testimonial Slider > Shortcode Generator`
-* Go to page or post editor click Testimonial Shortcode button and select a shortcode from dropdown list and insert shortcode.
+* After creating testimonials and generating a shortcode, simply paste the shortcode into any page or post. You can also use the Gutenberg block or Elementor widget.
 
-= Is Testimonial Showcase Plugin support Grid Layout? =
+= Does this plugin work with my theme? =
 
-* Yes it is support both grid and slider layouts
+* Yes. Testimonial Slider and Showcase is designed to work with all standard WordPress themes. If you encounter any compatibility issues, our support team can help.
 
-= Can I add unlimited shortcode? =
+= Can I create multiple testimonial displays? =
 
-* Yes you can add unlimited shortcode
+* Absolutely. You can create unlimited shortcodes, each with different settings. This allows you to show specific testimonials on specific pages.
 
-= Is Testimonials Slider plugin will work with my theme =
+= Does it work with Elementor? =
 
-* Yes it will work all standard theme. If face any issue create ticket in our website we will help.
+* Yes. The plugin includes dedicated Elementor widgets for grid, slider, and isotope layouts with full customization options within the Elementor editor.
 
-= If I update PRO is my data lost? =
+= Does it work with Gutenberg? =
 
-* No data will be same as it is but you may  need to save shortcode generator to get PRO features.
+* Yes. A dedicated Gutenberg block lets you insert testimonial shortcodes directly into the block editor.
 
-= How Can I get Support ? =
+= Is this plugin responsive? =
 
-* Please mail us at `support@radiustheme.com`
+* Yes. All layouts automatically adjust for desktop, tablet, and mobile screens. You can also customize column counts for each device type.
+
+= Can I reorder my testimonials? =
+
+* Yes. Use drag-and-drop to arrange testimonials in any order. You can also sort by date, title, or ID.
+
+= Will my data be preserved if I upgrade to Pro? =
+
+* Yes. All your testimonials and shortcode settings remain intact when upgrading to the Pro version.
+
+= How do I get support? =
+
+* Submit a support ticket at [radiustheme.com/ticket-support](https://www.radiustheme.com/ticket-support/) and our team will assist you.
+
+= How can I report security issues?
+
+* Report security vulnerabilities through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/wordpress/plugin/testimonial-slider-and-showcase).
 
 
 == Screenshots ==
@@ -198,6 +233,8 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Changelog ==
 
+= 2.4.2 (August 04, 2025) =
+* Updated: WordPress 7.0 compatibility check.
 
 = 2.4.1 (December 10, 2025) =
 * Updated: WordPress 6.9 compatibility check.
