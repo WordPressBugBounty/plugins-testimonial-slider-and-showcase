@@ -50,7 +50,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 					$tCol = 2;
 				}
 
-				if ( ! in_array( $dCol, array_keys( TSSPro()->scColumns() ), true ) ) {
+				if ( ! in_array( $mCol, array_keys( TSSPro()->scColumns() ), true ) ) {
 					$mCol = 1;
 				}
 
@@ -136,11 +136,13 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 					];
 				}
 				if ( ! empty( $taxQ ) ) {
-                    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-					$args['tax_query'] = $taxQ;
+					// Set the relation before copying: the copy is by value.
 					if ( count( $taxQ ) > 1 ) {
 						$taxQ['relation'] = ! empty( $_REQUEST['tss_taxonomy_relation'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_taxonomy_relation'] ) ) : 'AND';
 					}
+
+                    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+					$args['tax_query'] = $taxQ;
 				}
 
 				// Order.
@@ -152,7 +154,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 				}
 
 				if ( $order_by ) {
-					$args['orderby'] = $order_by;
+					$args['orderby'] = TSSPro()->tssOrderBy( $order_by, $order );
 				}
 
 				$testi_limit = ! empty( $_REQUEST['tss_testimonial_limit'] ) ? absint( $_REQUEST['tss_testimonial_limit'] ) : null;
@@ -169,7 +171,7 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 				// $arg['scMeta']    = $scMeta;
 				$arg['grid']      = "rt-col-md-{$dCol} rt-col-sm-{$tCol} rt-col-xs-{$mCol}";
 				$gridType         = ! empty( $_REQUEST['tss_grid_style'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_grid_style'] ) ) : 'even';
-				$arg['read_more'] = ! empty( $_REQUEST['tss_read_more_button_text'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_read_more_button_text'] ) ) : null;
+				$arg['read_more'] = ! empty( $_REQUEST['tss_read_more_button_text'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_read_more_button_text'] ) ) : esc_html__( 'Read more', 'testimonial-slider-showcase' );
 				$arg['class']     = $gridType . '-grid-item';
 				$arg['class']    .= ' tss-grid-item';
 				$preLoader        = null;
@@ -198,6 +200,10 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 
 				if ( $image_type == 'circle' ) {
 					$arg['class'] .= ' tss-img-circle';
+				} elseif ( 'square' === $image_type ) {
+					$arg['class'] .= ' tss-img-square';
+				} else {
+					$arg['class'] .= ' tss-img-normal';
 				}
 
 				$margin = ! empty( $_REQUEST['tss_margin'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['tss_margin'] ) ) : 'default';
@@ -228,7 +234,9 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 
 				// Start layout.
 				$html .= TSSPro()->layoutStyle( $layoutID, $_REQUEST );
-				$html .= "<div class='rt-container-fluid tss-wrapper ".esc_attr($parentClass)."' id=' ".esc_attr($layoutID)." ' {$containerDataAttr}>";
+				// No padding inside the id: layoutStyle() emits "#{$layoutID} ..."
+				// rules, and a padded id never matches them.
+				$html .= "<div class='rt-container-fluid tss-wrapper ".esc_attr($parentClass)."' id='".esc_attr($layoutID)."' {$containerDataAttr}>";
 				$html .= "<div data-title='" . esc_html__( 'Loading ...', 'testimonial-slider-showcase' ) . "' class='rt-row tss-{$layout}{$masonryG} {$preLoader}'>";
 
 				$tssQuery = new WP_Query( $args );
@@ -249,6 +257,11 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 						$htmlButton     = null;
 						$fSelectTrigger = false;
 
+						// Real per-category totals for the whole wall, not just the page
+						// about to be printed — see TSSProHelper::isoFilterTotals().
+						// Kept in step with the shortcode and Elementor arms.
+						$isoTotals = TSSPro()->isoFilterTotals( $args, 10000000 === $limit ? 0 : $limit );
+
 						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 							foreach ( $terms as $term ) {
 								$tItem   = ! empty( $_REQUEST['tss_isotope_selected_filter'][0] ) ? absint( $_REQUEST['tss_isotope_selected_filter'][0] ) : null;
@@ -259,13 +272,20 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 									$fSelectTrigger = true;
 								}
 
-								$htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
+								$fTotal      = TSSPro()->isoFilterTotalAttr( $isoTotals, $term->term_id );
+								$htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter=''{$fTotal} data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
 							}
 						}
 
 						if ( empty( $_REQUEST['tss_isotope_filter_show_all'][0] ) ) {
-							$fSelect = ( $fSelectTrigger ? null : 'class="selected"' );
-							$html   .= "<span class='rt-iso-button' data-filter-counter='' data-filter='*' {$fSelect}>" . esc_html__( 'Show all', 'testimonial-slider-showcase' ) . '</span>';
+							// The selected state has to go INSIDE the existing class
+							// attribute. Emitting a second class="selected" alongside
+							// class='rt-iso-button' made the parser keep the first and
+							// drop the second, so the Layout Preview never marked an
+							// active filter - unlike the shortcode and Elementor arms.
+							$fSelect = ( $fSelectTrigger ? '' : ' selected' );
+							$fTotal  = TSSPro()->isoFilterTotalAttr( $isoTotals, 'all' );
+							$html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter=''{$fTotal} data-filter='*'>" . esc_html__( 'Show all', 'testimonial-slider-showcase' ) . '</span>';
 						}
 
 						$html .= $htmlButton;
@@ -350,11 +370,15 @@ if ( ! class_exists( 'TSSPreview' ) ) :
 						$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );
 
 						if ( $isIsotope ) {
-							$termAs    = wp_get_post_terms(
-								$iID,
-								TSSPro()->taxonomies['category'],
-								[ 'fields' => 'all' ]
-							);
+							// get_the_terms() reads the term cache WP_Query already primed for this
+							// page of posts. wp_get_post_terms() goes to the database for every single
+							// card, so an isotope wall cost one extra query per testimonial on top of
+							// its own query - 12 of the 17 queries a 12-card wall used to run.
+							$termAs = get_the_terms( $iID, TSSPro()->taxonomies['category'] );
+
+							if ( is_wp_error( $termAs ) || ! $termAs ) {
+								$termAs = [];
+							}
 							$isoFilter = null;
 
 							if ( ! empty( $termAs ) ) {

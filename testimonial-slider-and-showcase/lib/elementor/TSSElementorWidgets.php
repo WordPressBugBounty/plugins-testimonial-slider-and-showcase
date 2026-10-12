@@ -101,7 +101,9 @@ if ( ! class_exists( 'TSSElementorWidgets' ) ) :
 					$id = $field['id'];
 					unset( $field['id'] );
 					unset( $field['mode'] );
-					$obj->start_controls_tabs( $id );
+					// Pass the remaining args through: Elementor reads condition /
+					// conditions from here to hide the Normal/Hover tab strip.
+					$obj->start_controls_tabs( $id, $field );
 				} elseif ( isset( $field['mode'] ) && 'tabs_end' === $field['mode'] ) {
 					$obj->end_controls_tabs();
 				} elseif ( isset( $field['mode'] ) && 'tab_start' === $field['mode'] ) {

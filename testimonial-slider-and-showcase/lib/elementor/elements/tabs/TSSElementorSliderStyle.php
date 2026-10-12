@@ -37,7 +37,7 @@ if ( ! class_exists( 'TSSElementorSliderStyle' ) ) :
 		public static function register() {
 			self::settings();
 
-			return apply_filters( 'rttss_elementor_end_of_style_tab', self::$fields );
+			return apply_filters( 'rttss_elementor_end_of_style_tab', self::$fields, 'slider' );
 		}
 
 		/**
@@ -52,7 +52,7 @@ if ( ! class_exists( 'TSSElementorSliderStyle' ) ) :
 			$styleSections = new TSSElementorStyleSections();
 
 			$sections = [
-				'commonColors',
+				'sliderColors',
 				'typography',
 				'image',
 			];

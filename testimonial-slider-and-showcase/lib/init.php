@@ -115,7 +115,15 @@ if ( ! class_exists( 'TSSPro' ) ) {
 				'notification_email' => get_option( 'admin_email' ),
 			];
 
-			do_action( 'rtts_loaded' );
+			/**
+			 * `rtts_loaded` is the single action the Pro plugin boots from.
+			 * Withhold it when the installed Pro is older than TSS_MIN_PRO_VERSION
+			 * so an incompatible Pro never hooks into this release. Pro stays
+			 * active and simply does nothing until it is updated.
+			 */
+			if ( ! function_exists( 'tss_is_pro_compatible' ) || tss_is_pro_compatible() ) {
+				do_action( 'rtts_loaded' );
+			}
 		}
 
 		/**

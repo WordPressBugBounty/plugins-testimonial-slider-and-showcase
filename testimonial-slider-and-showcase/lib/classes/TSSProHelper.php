@@ -303,57 +303,65 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 			return $text;
 		}
 
-		public function getAllTssCategoryList() {
+		/**
+		 * id => name for one of this plugin's taxonomies, for a control's options.
+		 *
+		 * Shared by the three public list helpers below. Like the testimonial list,
+		 * these only ever fill in a control's option list, so they are skipped
+		 * where no panel is drawn and cached for the rest of the request — a page
+		 * with two widgets asked for the same terms four times over.
+		 *
+		 * @param string $taxonomy Taxonomy key.
+		 * @return array
+		 */
+		private function tssTermOptions( $taxonomy ) {
+			if ( ! $this->tssNeedsControlOptions() ) {
+				return [];
+			}
+
+			static $cache = [];
+
+			if ( isset( $cache[ $taxonomy ] ) ) {
+				return $cache[ $taxonomy ];
+			}
+
 			$terms    = [];
-//			$termList = get_terms( [ TSSPro()->taxonomies['category'] ], [ 'hide_empty' => 0 ] );
-			$termList = get_terms( array(
-				'taxonomy'   => TSSPro()->taxonomies['category'],
-				'hide_empty' => false,
-			) );
+			$termList = get_terms(
+				[
+					'taxonomy'   => $taxonomy,
+					'hide_empty' => false,
+				]
+			);
+
 			if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
 				foreach ( $termList as $term ) {
 					$terms[ $term->term_id ] = $term->name;
 				}
 			}
 
+			$cache[ $taxonomy ] = $terms;
+
 			return $terms;
+		}
+
+		public function getAllTssCategoryList() {
+			return $this->tssTermOptions( TSSPro()->taxonomies['category'] );
 		}
 
 		public function getAllTssCategoryListWithDefault() {
-			$terms = [
-				'all' => esc_html__( 'Show All', 'testimonial-slider-showcase' ),
-			];
+			$terms = $this->tssTermOptions( TSSPro()->taxonomies['category'] );
 
-//			$termList = get_terms( [ TSSPro()->taxonomies['category'] ], [ 'hide_empty' => 0 ] );
-
-			$termList = get_terms( array(
-				'taxonomy'   => TSSPro()->taxonomies['category'],
-				'hide_empty' => false,
-			) );
-
-			if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
-				foreach ( $termList as $term ) {
-					$terms[ $term->term_id ] = $term->name;
-				}
+			// The "Show All" entry belongs to the option list, so it goes only where
+			// the list itself does — an empty list means nobody is looking.
+			if ( empty( $terms ) ) {
+				return [];
 			}
 
-			return $terms;
+			return [ 'all' => esc_html__( 'Show All', 'testimonial-slider-showcase' ) ] + $terms;
 		}
 
 		public function getAllTssTagList() {
-			$terms    = [];
-//			$termList = get_terms( [ TSSPro()->taxonomies['tag'] ], [ 'hide_empty' => 0 ] );
-			$termList = get_terms( array(
-				'taxonomy'   => TSSPro()->taxonomies['tag'],
-				'hide_empty' => false,
-			) );
-			if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
-				foreach ( $termList as $term ) {
-					$terms[ $term->term_id ] = $term->name;
-				}
-			}
-
-			return $terms;
+			return $this->tssTermOptions( TSSPro()->taxonomies['tag'] );
 		}
 
 		public function getAllTaxonomyObject() {
@@ -550,8 +558,8 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$elData = [
 					'tss_layout'                => $scMeta['tss_el_layout_type'],
 					'tss_desktop_column'        => $scMeta['tss_el_cols'],
-					'tss_tab_column'            => isset( $meta['tss_el_cols_tablet'] ) && $meta['tss_el_cols_tablet'] != '' ? absint( $meta['tss_el_cols_tablet'] ) : 2,
-					'tss_mobile_column'         => isset( $meta['tss_el_cols_mobile'] ) && $meta['tss_el_cols_mobile'] != '' ? absint( $meta['tss_el_cols_mobile'] ) : 1,
+					'tss_tab_column'            => isset( $scMeta['tss_el_cols_tablet'] ) && $scMeta['tss_el_cols_tablet'] != '' ? absint( $scMeta['tss_el_cols_tablet'] ) : 2,
+					'tss_mobile_column'         => isset( $scMeta['tss_el_cols_mobile'] ) && $scMeta['tss_el_cols_mobile'] != '' ? absint( $scMeta['tss_el_cols_mobile'] ) : 1,
 					'tss_image_size'            => $scMeta['tss_el_image'],
 					'custom_img_size'           => ! empty( $cImageSize ) ? $cImageSize : [],
 					'default_image'             => ! empty( $scMeta['tss_el_image_default_preview']['id'] ) ? absint( $scMeta['tss_el_image_default_preview']['id'] ) : null,
@@ -560,8 +568,8 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 					'tss_limit'                 => $scMeta['tss_el_posts_limit'],
 					'tss_pagination'            => $scMeta['tss_el_pagination'],
 					'tss_posts_per_page'        => $scMeta['tss_el_pagination_per_page'],
-					'tss_categories'            => $scMeta['tss_el_categories'],
-					'tss_tags'                  => $scMeta['tss_el_tags'],
+					'tss_categories'            => ! empty( $scMeta['tss_el_categories'] ) ? $scMeta['tss_el_categories'] : [],
+					'tss_tags'                  => ! empty( $scMeta['tss_el_tags'] ) ? $scMeta['tss_el_tags'] : [],
 					'tss_taxonomy_relation'     => $scMeta['tss_el_taxonomy_relation'],
 					'tss_order_by'              => $scMeta['tss_el_posts_order_by'],
 					'tss_order'                 => $scMeta['tss_el_posts_order'],
@@ -570,6 +578,8 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 					'tss_read_more_button_text' => $scMeta['tss_el_read_more_text'],
 					'tss_item_fields'           => $this->tssElContentVisibility( $scMeta ),
 					'tss_share_fields'          => $scMeta['tss_el_social_share_items'],
+					'tss_el_social_label'       => isset( $scMeta['tss_el_social_label'] ) ? $scMeta['tss_el_social_label'] : null,
+					'tss_el_social_share_label' => isset( $scMeta['tss_el_social_share_label'] ) ? $scMeta['tss_el_social_share_label'] : null,
 					'tss_detail_page_link'      => $scMeta['tss_el_detail_page_link'],
 				];
 
@@ -762,10 +772,321 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 			}
 		}
 
+		/**
+		 * True per-category totals for an isotope wall.
+		 *
+		 * The filter buttons used to be counted client-side, from whatever
+		 * happened to be in the DOM. With pagination on that is only the first
+		 * page, so "Clients 2" meant "2 of the Clients loaded so far" while the
+		 * Load More button beside it counted down the WHOLE query — two numbers
+		 * that could never agree, and a pager that promised the same remainder no
+		 * matter which tab was open.
+		 *
+		 * This runs the wall's own query once more, IDs only and without paging,
+		 * and tallies the category terms across the result, so every button can
+		 * carry the real number and the pager can count down the active one. Two
+		 * extra queries per render, both served from the object cache on repeat.
+		 *
+		 * @param array $args  The wall's WP_Query args.
+		 * @param int   $limit Wall size cap — the shortcode's own "limit" option.
+		 *                     0 means uncapped.
+		 * @return array Map of term_id => count, plus 'all' => wall size.
+		 */
+		/**
+		 * Every post id the wall covers, in wall order, ignoring paging.
+		 *
+		 * This is the universe an isotope filter works over: the shortcode's own
+		 * query capped by its "limit" option. Paging a single category has to stay
+		 * inside it, or a wall limited to 12 would start serving the 13th and 14th
+		 * post as soon as a category was opened.
+		 *
+		 * @param array $args  The wall's WP_Query args.
+		 * @param int   $limit Wall size cap. 0 means uncapped.
+		 * @return array
+		 */
+		public function isoWallIds( array $args, $limit = 0 ) {
+			$args['posts_per_page']         = $limit > 0 ? $limit : -1;
+			$args['fields']                 = 'ids';
+			$args['no_found_rows']          = true;
+			$args['update_post_meta_cache'] = false;
+			$args['update_post_term_cache'] = false;
+			$args['ignore_sticky_posts']    = true;
+
+			unset( $args['paged'], $args['offset'] );
+
+			$query = new WP_Query( $args );
+
+			return $query->posts;
+		}
+
+		public function isoFilterTotals( array $args, $limit = 0 ) {
+			$ids    = $this->isoWallIds( $args, $limit );
+			$totals = [ 'all' => count( $ids ) ];
+
+			if ( empty( $ids ) ) {
+				return $totals;
+			}
+
+			// 'all_with_object_id' keeps one row per relationship. Plain 'ids'
+			// de-duplicates across the whole set, which would report 1 per term.
+			$rows = wp_get_object_terms(
+				$ids,
+				TSSPro()->taxonomies['category'],
+				[ 'fields' => 'all_with_object_id' ]
+			);
+
+			if ( is_wp_error( $rows ) ) {
+				return $totals;
+			}
+
+			foreach ( $rows as $row ) {
+				$totals[ $row->term_id ] = isset( $totals[ $row->term_id ] ) ? $totals[ $row->term_id ] + 1 : 1;
+			}
+
+			return $totals;
+		}
+
+		/**
+		 * Narrows a wall's args to one isotope category, page by page.
+		 *
+		 * A category tab used to be a browser-side filter over whatever had been
+		 * paged in, which is why "5 per page" meant five of the WHOLE wall and a
+		 * category could show two cards under a tab reading six. Pointing the query
+		 * itself at the category makes "5 per page" mean five of that category, and
+		 * lets found_posts / max_num_pages come back describing the filtered set so
+		 * the pager counts down the right thing.
+		 *
+		 * Restricted to the wall's own universe (see isoWallIds) so the "limit"
+		 * option still holds and the numbers match the tab counts, which are
+		 * computed over that same universe.
+		 *
+		 * @param array $args  The wall's WP_Query args, already built.
+		 * @param int   $term  Category term id.
+		 * @param int   $limit Wall size cap. 0 means uncapped.
+		 * @param int   $perPage Page size.
+		 * @param int   $paged Page number, 1-based.
+		 * @return array
+		 */
+		public function isoFilteredArgs( array $args, $term, $limit, $perPage, $paged ) {
+			$ids = $this->isoWallIds( $args, $limit );
+
+			// An empty post__in matches everything, so stand in an impossible id
+			// rather than silently serving the whole wall.
+			$args['post__in'] = ! empty( $ids ) ? $ids : [ 0 ];
+			$args['orderby']  = 'post__in';
+
+			$taxQ = isset( $args['tax_query'] ) ? $args['tax_query'] : [];
+
+			$taxQ[] = [
+				'taxonomy' => TSSPro()->taxonomies['category'],
+				'field'    => 'term_id',
+				'terms'    => [ absint( $term ) ],
+			];
+
+			if ( count( $taxQ ) > 1 ) {
+				$taxQ['relation'] = 'AND';
+			}
+
+			$args['tax_query']      = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			$args['posts_per_page'] = absint( $perPage );
+			$args['paged']          = max( 1, absint( $paged ) );
+
+			unset( $args['offset'] );
+
+			return $args;
+		}
+
+		/**
+		 * Paging state for an isotope wall whose pager cannot carry it.
+		 *
+		 * The category filter runs in the browser, over whatever has been paged in,
+		 * so opening a tab has to be able to fetch the rest of that category. The
+		 * "Load More" button already carries the numbers needed to do that; with
+		 * numbered pagination or load-on-scroll there is nowhere for the script to
+		 * read them from, and the tab just sits there reading "Developers 6" over
+		 * two cards with nothing to click.
+		 *
+		 * Deliberately NOT emitted for the Load More type: exactly one element must
+		 * own the current page number, never two, or they drift apart and pages get
+		 * fetched twice.
+		 *
+		 * @param array  $atts  data-* attributes, without the "data-" prefix.
+		 * @param string $extra Raw extra attributes (the Elementor arm's payload).
+		 * @return string
+		 */
+		/**
+		 * Orderby with the post ID as a tie-break.
+		 *
+		 * Testimonials imported together share a date (and keep menu order 0),
+		 * and MySQL is free to order ties differently in the page query and in
+		 * each Load More / scroll query - so a later page could repeat an item
+		 * and skip another. The ID makes the order total.
+		 *
+		 * @param string      $orderBy Orderby key.
+		 * @param string|null $order   ASC or DESC.
+		 * @return string|array
+		 */
+		public function tssOrderBy( $orderBy, $order = null ) {
+			if ( ! in_array( $orderBy, [ 'menu_order', 'title', 'date' ], true ) ) {
+				return $orderBy;
+			}
+
+			$order = 'ASC' === strtoupper( (string) $order ) ? 'ASC' : 'DESC';
+
+			return [
+				$orderBy => $order,
+				'ID'     => $order,
+			];
+		}
+
+		/**
+		 * Post statuses a Load More / Load on Scroll request may return.
+		 *
+		 * Those requests go through admin-ajax.php, where is_admin() is true and
+		 * WP_Query without a post_status also returns draft, pending and future
+		 * posts - front-end submissions are saved as drafts awaiting approval.
+		 * Matches what the page render shows: published, plus private for users
+		 * who may read it.
+		 *
+		 * @return array
+		 */
+		public function tssLoadMoreStatus() {
+			return current_user_can( 'read_private_posts' ) ? [ 'publish', 'private' ] : [ 'publish' ];
+		}
+
+		public function isoPagerState( array $atts, $extra = '' ) {
+			$html = "<span class='tss-iso-pager-state'";
+
+			foreach ( $atts as $key => $value ) {
+				$html .= ' data-' . esc_attr( $key ) . "='" . esc_attr( $value ) . "'";
+			}
+
+			return $html . ' ' . $extra . '></span>';
+		}
+
+		/**
+		 * The data-filter-total attribute for one isotope filter button.
+		 *
+		 * Emitted by all three renderers, so it lives here rather than being
+		 * written out three times. Returns an empty string when there is no total
+		 * to give — the rating filter has no category tally — and the script then
+		 * falls back to counting the DOM, which is the old behaviour.
+		 *
+		 * @param array           $totals Output of isoFilterTotals().
+		 * @param int|string|null $term   Term id, or 'all' for the Show all button.
+		 * @return string
+		 */
+		public function isoFilterTotalAttr( $totals, $term ) {
+			// No tally at all — the rating filter has none — so say nothing and let
+			// the script fall back to counting the DOM.
+			if ( ! is_array( $totals ) || ! isset( $totals['all'] ) ) {
+				return '';
+			}
+
+			// A term with no members in this wall is absent from the tally, but the
+			// answer for it is a definite zero, not "unknown". Saying so keeps the
+			// server authoritative for every button: an "Include Testimonials"
+			// filter can easily leave a category empty.
+			$count = isset( $totals[ $term ] ) ? $totals[ $term ] : 0;
+
+			return " data-filter-total='" . absint( $count ) . "'";
+		}
+
+		/**
+		 * CSS for the Author Name / Author Bio Alignment options, shared by the
+		 * shortcode (layoutStyle()) and the Elementor controls.
+		 *
+		 * text-align alone only moves text inside a box that is wider than it. In
+		 * several layouts the name or bio box is exactly as wide as its text (a
+		 * flex item in a centred column, or an inline-block name), so the auto
+		 * margin moves the box itself. Only the side being aligned towards gets
+		 * one, so each layout keeps its own spacing on the other side.
+		 *
+		 * @param string $align left, center or right; anything else (the
+		 *                      shortcode's "justify") is text-align only.
+		 * @return string
+		 */
+		public function boxAlignCss( $align ) {
+			$map = [
+				'left'   => 'text-align:left;margin-right:auto;',
+				'center' => 'text-align:center;margin-left:auto;margin-right:auto;',
+				'right'  => 'text-align:right;margin-left:auto;',
+			];
+
+			return isset( $map[ $align ] ) ? $map[ $align ] : 'text-align:' . $align . ';';
+		}
+
+		/**
+		 * Selector for the layouts that set the author name to inline-block. That
+		 * box is exactly as wide as the text, and an inline box ignores auto
+		 * margins, so neither boxAlignCss() mechanism can move it.
+		 * inlineNameBlockCss() turns it into a block of the same width.
+		 *
+		 * @param string $prefix Selector up to and including the .tss-wrapper part.
+		 * @return string
+		 */
+		public function inlineNameSelector( $prefix ) {
+			$sel = [];
+
+			foreach ( [ 'layout5', 'carousel5', 'layout6', 'carousel6', 'layout7', 'carousel7', 'layout8', 'carousel8' ] as $layout ) {
+				$sel[] = "{$prefix} .tss-{$layout} .single-item-wrapper h3.author-name";
+			}
+
+			return implode( ', ', $sel );
+		}
+
+		/**
+		 * Declarations for inlineNameSelector().
+		 *
+		 * @return string
+		 */
+		public function inlineNameBlockCss() {
+			return 'display:block;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;max-width:100%;';
+		}
+
+		/**
+		 * CSS for the rating Alignment option, shared by the shortcode
+		 * (layoutStyle()) and the Elementor control so the two arms stay in step.
+		 *
+		 * Most layouts size .rating-wrapper to the stars themselves (fit-content,
+		 * inline-flex, or a flex item), so text-align alone has no room to act.
+		 * Auto margins move the box inside its column, justify-content covers the
+		 * flex wrappers, and text-align covers the full-width ones. Two families
+		 * need more:
+		 * - video: the stars sit at the end of the author row after a name block
+		 *   that grows to fill it, so the wrapper takes the free space instead
+		 *   and text-align places the stars inside it;
+		 * - layout 10: the stars flow beside the floated photo, where a box pushed
+		 *   right with an auto margin drops below it, so the wrapper goes full
+		 *   width and text-align does the work.
+		 *
+		 * @param string $align left, center or right; anything else aligns left.
+		 * @return array Declarations keyed wrapper / video / layout10.
+		 */
+		public function ratingAlignCss( $align ) {
+			$map = [
+				'left'   => 'text-align:left;justify-content:flex-start;margin-left:0;margin-right:auto;',
+				'center' => 'text-align:center;justify-content:center;margin-left:auto;margin-right:auto;',
+				'right'  => 'text-align:right;justify-content:flex-end;margin-left:auto;margin-right:0;',
+			];
+
+			return [
+				'wrapper'  => isset( $map[ $align ] ) ? $map[ $align ] : $map['left'],
+				'video'    => 'flex-grow:9999;width:auto;margin-left:0;margin-right:0;',
+				'layout10' => 'width:auto;margin-left:0;margin-right:0;',
+			];
+		}
+
 
 		public function layoutStyle( $layoutID, $meta, $scId = null ) {
 			$css  = null;
 			$css .= "<style type='text/css' media='all'>";
+
+			// Layout 9 (and its carousel / isotope twins) centres the name, bio and
+			// stars in an overlay on the photo; the Elementor arm hides those three
+			// Alignment controls there, so the shortcode ignores them to match.
+			$layout        = $scId ? ( isset( $meta['tss_layout'][0] ) ? $meta['tss_layout'][0] : '' ) : ( isset( $meta['tss_layout'] ) ? $meta['tss_layout'] : '' );
+			$layoutAligned = ! in_array( $layout, [ 'layout9', 'carousel9', 'isotope4' ], true );
 
 			// Variable
 			if ( $scId ) {
@@ -781,6 +1102,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$rating      = ( ! empty( $meta['tss_rating_style'][0] ) ? unserialize( $meta['tss_rating_style'][0] ) : [] );
 				$social      = ( ! empty( $meta['tss_social_style'][0] ) ? unserialize( $meta['tss_social_style'][0] ) : [] );
 				$testimonial = ( ! empty( $meta['tss_testimonial_style'][0] ) ? unserialize( $meta['tss_testimonial_style'][0] ) : [] );
+				$quote       = ( ! empty( $meta['tss_quote_style'][0] ) ? unserialize( $meta['tss_quote_style'][0] ) : [] );
 				$overlay     = ( ! empty( $meta['tss_overlay_style'][0] ) ? unserialize( $meta['tss_overlay_style'][0] ) : null );
 			} else {
 				$colorSchema = ( ! empty( $meta['tss_color'] ) ? array_filter( $meta['tss_color'] ) : null );
@@ -795,6 +1117,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$rating      = ( ! empty( $meta['tss_rating_style'] ) ? array_map( 'sanitize_text_field', $meta['tss_rating_style'] ) : [] );
 				$social      = ( ! empty( $meta['tss_social_style'] ) ? array_map( 'sanitize_text_field', $meta['tss_social_style'] ) : [] );
 				$testimonial = ( ! empty( $meta['tss_testimonial_style'] ) ? array_map( 'sanitize_text_field', $meta['tss_testimonial_style'] ) : [] );
+				$quote       = ( ! empty( $meta['tss_quote_style'] ) ? array_map( 'sanitize_text_field', $meta['tss_quote_style'] ) : [] );
 				$overlay     = ( ! empty( $meta['tss_overlay_style'] ) ? array_map( 'sanitize_text_field', $meta['tss_overlay_style'] ) : null );
 			}
 
@@ -807,57 +1130,101 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 							#{$layoutID}.tss-wrapper .tss-carousel9 .profile-img-wrapper:after {
 								background: {$colorSchema['primary']} !important;
 							}";
+
+					// Layouts built on the design tokens (layout 1) take their whole
+					// accent palette from these, so Primary drives the accent bar,
+					// quote mark, read-more link, name hover and pagination at once.
+					$primary = $colorSchema['primary'];
+					$css    .= "#{$layoutID}.tss-wrapper {
+								--tss-primary: {$primary};
+								--tss-primary-hover: color-mix(in srgb, {$primary} 80%, #000);
+								--tss-primary-soft: color-mix(in srgb, {$primary} 12%, #fff);
+							}";
 				}
 				if ( ! empty( $colorSchema['container_bg'] ) ) {
 					$css .= "#{$layoutID}.tss-wrapper {
 							background: {$colorSchema['container_bg']};}";
 				}
 				if ( ! empty( $colorSchema['item_bg'] ) ) {
+					// Layout 4 / isotope 2 used to paint .profile-img-wrapper too. Since
+					// the redesign that is a small square box round a circular photo,
+					// so it drew a square block behind the photo. The Elementor
+					// "Content Background" control drops the same two selectors.
 					$css .= "#{$layoutID}.tss-wrapper .item-content-wrapper,
 							#{$layoutID}.tss-wrapper .tss-layout10 .item-content-wrapper .item-content,
 							#{$layoutID}.tss-wrapper .tss-carousel10 .item-content-wrapper .item-content,
 							#{$layoutID}.tss-wrapper .tss-isotope5 .item-content-wrapper .item-content,
-							#{$layoutID}.tss-wrapper .tss-layout4 .profile-img-wrapper,
-							#{$layoutID}.tss-wrapper .tss-isotope2 .profile-img-wrapper,
-							#{$layoutID}.tss-wrapper .tss-isotope2 .tss-meta-info,
-							#{$layoutID}.tss-wrapper .tss-isotope3 .single-item-wrapper,
 							#{$layoutID}.tss-wrapper .tss-layout7 .single-item-wrapper,
 							#{$layoutID}.tss-wrapper .tss-carousel7 .single-item-wrapper,
 							#{$layoutID}.tss-wrapper .tss-carousel8 .single-item-wrapper,
 							#{$layoutID}.tss-wrapper .tss-carousel4 .single-item-wrapper,
 							#{$layoutID}.tss-wrapper .tss-carousel5 .single-item-wrapper,
-							#{$layoutID}.tss-wrapper .tss-layout8 .single-item-wrapper,
-							#{$layoutID}.tss-wrapper .tss-layout5 .tss-meta-info{ background: {$colorSchema['item_bg']};}";
+							#{$layoutID}.tss-wrapper .tss-layout8 .single-item-wrapper{ background: {$colorSchema['item_bg']};}";
 					$css .= "#{$layoutID}.tss-wrapper .tss-layout1 .item-content-wrapper:after,
 							#{$layoutID}.tss-wrapper .tss-carousel1 .item-content-wrapper:after{
 								border-right: 15px solid {$colorSchema['item_bg']};}";
 					$css .= "#{$layoutID}.tss-wrapper .tss-carousel2 .item-content-wrapper:after,
 							#{$layoutID}.tss-wrapper .tss-layout2 .item-content-wrapper:after{
 							border-left: 15px solid {$colorSchema['item_bg']};}";
-					$css .= "#{$layoutID}.tss-wrapper .tss-carousel6 .item-content-wrapper:after,
-								#{$layoutID}.tss-wrapper .tss-layout6 .item-content-wrapper:after{
-								border-top: 15px solid {$colorSchema['item_bg']};}";
+					// Layout 6 and its carousel twin draw the tail as a rotated square,
+					// not a CSS-border triangle, so it takes the item background as a
+					// background. Emitting border-top here instead would draw a 15px
+					// stripe across the tail.
+					$css .= "#{$layoutID}.tss-wrapper .tss-layout6 .item-content-wrapper:after,
+							#{$layoutID}.tss-wrapper .tss-carousel6 .item-content-wrapper:after{
+								background: {$colorSchema['item_bg']};}";
+					// Layout 10's bubble tab is a rotated square, not a CSS-border
+					// triangle, so it takes the item background as a background —
+					// same treatment as layout 6's tail. Emitting border-color here
+					// instead would leave the tab unpainted.
 					$css .= "#{$layoutID}.tss-wrapper .tss-layout10 .item-content:after,
 							#{$layoutID}.tss-wrapper .tss-isotope5 .item-content:after,
-							#{$layoutID}.tss-wrapper .tss-carousel10 .item-content:after{ border-color: transparent transparent {$colorSchema['item_bg']} {$colorSchema['item_bg']};}";
+							#{$layoutID}.tss-wrapper .tss-carousel10 .item-content:after{ background: {$colorSchema['item_bg']};}";
+					// Carousels 11 and 12 have no box of their own: paint the quote
+					// alone, not .item-content-wrapper, whose reserved read-more row left
+					// the box flush with the text on top and ~30px of empty row below.
+					// The inset is a same-colour border, not padding: the quote is
+					// line-clamped, and overflow clips at the padding box, so padding
+					// would show the clamped 7th line. The min-height keeps the base
+					// rule's six lines, plus the two borders, so slides stay one height;
+					// align-content centres a shorter quote in it rather than leaving the
+					// spare lines under the text (-webkit-box-pack alone does nothing in
+					// Chrome once line-clamp is set).
+					// Matches the Elementor arm in pro's ElementorFilters.
+					$css .= "#{$layoutID}.tss-wrapper .tss-carousel11 .item-content-wrapper,
+							#{$layoutID}.tss-wrapper .tss-carousel12 .item-content-wrapper{ background: transparent;}";
+					$css .= "#{$layoutID}.tss-wrapper .tss-carousel11 .item-content-wrapper .item-content,
+							#{$layoutID}.tss-wrapper .tss-carousel12 .item-content-wrapper .item-content{
+								background: {$colorSchema['item_bg']};
+								border: solid {$colorSchema['item_bg']};
+								border-width: clamp(20px, 3vw, 32px) clamp(20px, 4vw, 40px);
+								border-radius: var(--tss-radius, 16px);
+								max-width: calc(62ch + 2 * clamp(20px, 4vw, 40px));
+								min-height: calc(9em + 2 * clamp(20px, 3vw, 32px));
+								-webkit-box-pack: center;
+								align-content: center;}";
 
 				}
 			}
 			$css .= "#{$layoutID}.tss-wrapper .tss-layout10 .item-content-wrapper,
-					#{$layoutID}.tss-wrapper .tss-isotope3 .item-content-wrapper,
 					#{$layoutID}.tss-wrapper .tss-isotope5 .item-content-wrapper,
 					#{$layoutID}.tss-wrapper .tss-carousel10 .item-content-wrapper{background: transparent;}";
 			/* button */
 			if ( $button ) {
 				if ( ! empty( $button['bg'] ) ) {
+					// The active dot and the selected filter are left to the Active
+					// colour (or the layout default); carousel 12 moves its arrows and
+					// dots into .tss-carousel-controls once swiper has initialised.
 					$css .= "#{$layoutID}.tss-wrapper .tss-utility button,
 						#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-arrow,
-						#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-pagination-bullet,
+						#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-pagination-bullet:not(.swiper-pagination-bullet-active),
 						#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow,
-						#{$layoutID}.tss-wrapper .tss-carousel .swiper-pagination-bullet,
+						#{$layoutID}.tss-wrapper .tss-carousel .swiper-pagination-bullet:not(.swiper-pagination-bullet-active),
+						#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-arrow,
+						#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-pagination-bullet:not(.swiper-pagination-bullet-active),
 						#{$layoutID}.tss-wrapper .tss-utility .rt-button,
 						#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li a,
-						#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button{";
+						#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button:not(.selected){";
 					$css .= "background-color: {$button['bg']};";
 					$css .= ! empty( $button['text'] ) ? "color: {$button['text']};" : null;
 					$css .= '}';
@@ -865,13 +1232,15 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 
 				if ( ! empty( $button['hover_bg'] ) ) {
 					$css .= "#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-arrow:hover,
-							#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-pagination-bullet:hover,
+							#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover,
 							#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow:hover,
-							#{$layoutID}.tss-wrapper .tss-carousel .swiper-pagination-bullet:hover,
+							#{$layoutID}.tss-wrapper .tss-carousel .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover,
+							#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-arrow:hover,
+							#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover,
 							#{$layoutID}.tss-wrapper .tss-utility button:hover,
 							#{$layoutID}.tss-wrapper .tss-utility .rt-button:hover,
 							#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li a:hover,
-							#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button:hover{";
+							#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button:not(.selected):hover{";
 					$css .= "background-color: {$button['hover_bg']};";
 					$css .= '}';
 				}
@@ -879,6 +1248,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				if ( ! empty( $button['active_bg'] ) ) {
 					$css .= "#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-pagination-bullet-active,
 							#{$layoutID}.tss-wrapper .tss-carousel .swiper-pagination-bullet-active,
+							#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-pagination-bullet-active,
 							#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li.active span,
 							#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button.selected{";
 					$css .= "background-color: {$button['active_bg']};";
@@ -886,14 +1256,20 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				}
 				if ( ! empty( $button['text'] ) ) {
 					$css .= "#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li a,
-							#{$layoutID}.tss-wrapper .tss-utility .rt-button{";
+							#{$layoutID}.tss-wrapper .tss-utility .rt-button,
+							#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-arrow > i,
+							#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow > i,
+							#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-arrow > i{";
 					$css .= "color: {$button['text']};";
 					$css .= '}';
 				}
 				if ( ! empty( $button['hover_text'] ) ) {
 					$css .= "#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li a:hover,
-								#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button:hover,
-								#{$layoutID}.tss-wrapper .tss-utility .rt-button:hover{";
+								#{$layoutID}.tss-wrapper .tss-isotope-button-wrapper .rt-iso-button:not(.selected):hover,
+								#{$layoutID}.tss-wrapper .tss-utility .rt-button:hover,
+								#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-arrow:hover > i,
+								#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow:hover > i,
+								#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-arrow:hover > i{";
 					$css .= "color: {$button['hover_text']};";
 					$css .= '}';
 				}
@@ -901,13 +1277,45 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 					$css .= "#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li.active span,
 								#{$layoutID}.tss-wrapper .tss-pagination ul.pagination-list li a,
 								#{$layoutID}.tss-wrapper .tss-carousel-main .swiper-arrow,
-								#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow {";
+								#{$layoutID}.tss-wrapper .tss-carousel .swiper-arrow,
+								#{$layoutID}.tss-wrapper .tss-carousel-controls .swiper-arrow {";
 					$css .= "border-color: {$button['border']};";
+					$css .= '}';
+				}
+
+				// Read More (the clamp toggle and the text-limit link) has no settings of
+				// its own, so it follows the button colours. Text colours apply as they
+				// are. A background or a border turns it into a button (filled or
+				// outlined); only then does the hover background apply, since a text
+				// link with a fill but no padding would read as a highlight.
+				$readMore      = "#{$layoutID}.tss-wrapper .single-item-wrapper .tss-readmore-toggle,
+								#{$layoutID}.tss-wrapper .single-item-wrapper .rt-read-more";
+				$readMoreHover = "#{$layoutID}.tss-wrapper .single-item-wrapper .tss-readmore-toggle:hover,
+								#{$layoutID}.tss-wrapper .single-item-wrapper .tss-readmore-toggle:focus,
+								#{$layoutID}.tss-wrapper .single-item-wrapper .rt-read-more:hover,
+								#{$layoutID}.tss-wrapper .single-item-wrapper .rt-read-more:focus";
+
+				if ( ! empty( $button['text'] ) ) {
+					$css .= "{$readMore}{color: {$button['text']};}";
+				}
+
+				if ( ! empty( $button['hover_text'] ) ) {
+					$css .= "{$readMoreHover}{color: {$button['hover_text']};}";
+				}
+
+				if ( ! empty( $button['bg'] ) || ! empty( $button['border'] ) ) {
+					$css .= "{$readMore}{padding: 6px 14px; border-radius: 4px; text-decoration: none;";
+					$css .= ! empty( $button['bg'] ) ? "background-color: {$button['bg']};" : null;
+					$css .= ! empty( $button['border'] ) ? "border: 1px solid {$button['border']};" : null;
+					$css .= '}';
+					$css .= "{$readMoreHover}{text-decoration: none;";
+					$css .= ! empty( $button['hover_bg'] ) ? "background-color: {$button['hover_bg']};" : null;
 					$css .= '}';
 				}
 			}
 
-			// Overlay.
+			// Overlay. Only the layout 9 design has one: the ::before layer revealed
+			// when a card is hovered or tapped (see .tss-is-revealed in the CSS).
 			if ( $overlay ) {
 				if ( ! empty( $overlay['color'] ) ) {
 					$opacity = ! empty( $overlay['opacity'] ) ? esc_attr( $overlay['opacity'] ) / 100 : .9;
@@ -916,6 +1324,20 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 						#{$layoutID}.tss-wrapper .tss-carousel9 .profile-img-wrapper:before{";
 					$css    .= 'background: ' . $this->TLPhex2rgba( $overlay['color'], $opacity ) . ';';
 					$css    .= '}';
+				} elseif ( ! empty( $overlay['opacity'] ) ) {
+					// No colour: fade the default Primary gradient instead. The layer's
+					// own opacity runs the reveal (0 at rest), so only the revealed
+					// states take the value, or the overlay would show without a hover.
+					$opacity = min( 100, absint( $overlay['opacity'] ) ) / 100;
+					$shown   = [];
+
+					foreach ( [ 'layout9', 'isotope4', 'carousel9' ] as $overlayLayout ) {
+						foreach ( [ ':hover', ':focus-within', '.tss-is-revealed' ] as $state ) {
+							$shown[] = "#{$layoutID}.tss-wrapper .tss-{$overlayLayout} .single-item-wrapper{$state} .profile-img-wrapper:before";
+						}
+					}
+
+					$css .= implode( ',', $shown ) . "{opacity: {$opacity};}";
 				}
 			}
 
@@ -964,17 +1386,22 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper h3.author-name,
 						#{$layoutID}.tss-wrapper .single-item-wrapper h3.author-name a{";
 				$css .= ( ! empty( $name['color'] ) ? 'color:' . $name['color'] . ';' : null );
-				$css .= ( ! empty( $name['align'] ) ? 'text-align:' . $name['align'] . ';' : null );
 				$css .= ( ! empty( $name['weight'] ) ? 'font-weight:' . $name['weight'] . ';' : null );
 				$css .= ( ! empty( $name['size'] ) ? 'font-size:' . $name['size'] . 'px;' : null );
 				$css .= '}';
+
+				if ( ! empty( $name['align'] ) && $layoutAligned ) {
+					$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper h3.author-name{" . $this->boxAlignCss( $name['align'] ) . '}';
+					$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper h3.author-name a{text-align:" . $name['align'] . ';}';
+					$css .= $this->inlineNameSelector( "#{$layoutID}.tss-wrapper" ) . '{' . $this->inlineNameBlockCss() . '}';
+				}
 			}
 
 			// Author bio
 			if ( ! empty( $author_bio ) && is_array( $author_bio ) ) {
 				$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper h4.author-bio{";
 				$css .= ( ! empty( $author_bio['color'] ) ? 'color:' . $author_bio['color'] . ';' : null );
-				$css .= ( ! empty( $author_bio['align'] ) ? 'text-align:' . $author_bio['align'] . ';' : null );
+				$css .= ( ! empty( $author_bio['align'] ) && $layoutAligned ? $this->boxAlignCss( $author_bio['align'] ) : null );
 				$css .= ( ! empty( $author_bio['weight'] ) ? 'font-weight:' . $author_bio['weight'] . ';' : null );
 				$css .= ( ! empty( $author_bio['size'] ) ? 'font-size:' . $author_bio['size'] . 'px;' : null );
 				$css .= '}';
@@ -987,9 +1414,12 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$css .= ( ! empty( $rating['weight'] ) ? 'font-weight:' . $rating['weight'] . ';' : null );
 				$css .= ( ! empty( $rating['size'] ) ? 'font-size:' . $rating['size'] . 'px;' : null );
 				$css .= '}';
-				$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper .rating-wrapper {";
-				$css .= ( ! empty( $rating['align'] ) ? 'text-align:' . $rating['align'] . ';' : null );
-				$css .= '}';
+				if ( ! empty( $rating['align'] ) && $layoutAligned ) {
+					$ratingAlign = $this->ratingAlignCss( $rating['align'] );
+					$css        .= "#{$layoutID}.tss-wrapper .single-item-wrapper .rating-wrapper{" . $ratingAlign['wrapper'] . '}';
+					$css        .= "#{$layoutID}.tss-wrapper .single-item-wrapper .tss-meta-text + .rating-wrapper{" . $ratingAlign['video'] . '}';
+					$css        .= "#{$layoutID}.tss-wrapper .tss-layout10 .rating-wrapper,#{$layoutID}.tss-wrapper .tss-isotope5 .rating-wrapper,#{$layoutID}.tss-wrapper .tss-carousel10 .rating-wrapper{" . $ratingAlign['layout10'] . '}';
+				}
 			}
 
 			// Social media
@@ -1001,8 +1431,17 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$css .= ( ! empty( $social['weight'] ) ? 'font-weight:' . $social['weight'] . ';' : null );
 				$css .= ( ! empty( $social['size'] ) ? 'font-size:' . $social['size'] . 'px;' : null );
 				$css .= '}';
+				// Same declarations as the Elementor tss_el_social_alignment control:
+				// in most layouts the icon row is only as wide as its icons, so the
+				// auto margins move the row and text-align moves icons inside it.
+				$socialMargins = [
+					'left'   => 'margin-left:0;margin-right:auto;',
+					'center' => 'margin-left:auto;margin-right:auto;',
+					'right'  => 'margin-left:auto;margin-right:0;',
+				];
 				$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper .author-social {";
 				$css .= ( ! empty( $social['align'] ) ? 'text-align:' . $social['align'] . ';' : null );
+				$css .= ( ! empty( $social['align'] ) && isset( $socialMargins[ $social['align'] ] ) ? $socialMargins[ $social['align'] ] : null );
 				$css .= '}';
 
 				$css .= "#{$layoutID}.tss-wrapper .single-item-wrapper .author-social span.dashicons.dashicons-twitter:before {";
@@ -1034,17 +1473,36 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				$css .= '}';
 			}
 
-			// Overlay
-			if ( $overlay ) {
-				if ( ! empty( $overlay['color'] ) ) {
-					$css .= "#{$layoutID}.tss-wrapper .tss-isotope1 .profile-img-wrapper:before{";
-					$css .= 'background:' . TSSPro()->TLPhex2rgba(
-						$overlay['color'],
-						( ! empty( $overlay['opacity'] ) ? esc_attr( $overlay['opacity'] ) / 100 : .8 )
-					) . ';';
-					$css .= '}';
+			// Quote. Three shapes carry it: the .tss-quote-mark glyph (a round badge
+			// on layout 3 / slider 3 / isotope 3), the layout 9 family's badge on the
+			// photo (.profile-img-wrapper:after), and carousel 11 / 12's typographic
+			// quotes around the copy. Badges are re-sized in em so they keep their
+			// designed proportions (34px box around a 26px glyph, 46px around 20px).
+			if ( ! empty( $quote ) && is_array( $quote ) ) {
+				$qColor = ! empty( $quote['color'] ) ? sanitize_hex_color( $quote['color'] ) : '';
+				$qBg    = ! empty( $quote['bg'] ) ? sanitize_hex_color( $quote['bg'] ) : '';
+				$qSize  = ! empty( $quote['size'] ) ? absint( $quote['size'] ) : 0;
+				$w      = "#{$layoutID}.tss-wrapper";
+				$mark   = "{$w} .single-item-wrapper .tss-quote-mark";
+				$badge  = "{$w} .tss-carousel3 .single-item-wrapper .tss-quote-mark, {$w} .tss-layout3 .single-item-wrapper .tss-quote-mark, {$w} .tss-isotope3 .single-item-wrapper .tss-quote-mark";
+				$photo  = "{$w} .tss-layout9 .single-item-wrapper .profile-img-wrapper:after, {$w} .tss-isotope4 .single-item-wrapper .profile-img-wrapper:after, {$w} .tss-carousel9 .single-item-wrapper .profile-img-wrapper:after";
+				$inline = "{$w} .tss-carousel11 .item-content p:first-of-type:before, {$w} .tss-carousel11 .item-content p:last-of-type:after, {$w} .tss-carousel11 .item-content:before, {$w} .tss-carousel11 .item-content:after, {$w} .tss-carousel12 .item-content p:first-of-type:before, {$w} .tss-carousel12 .item-content p:last-of-type:after, {$w} .tss-carousel12 .item-content:before, {$w} .tss-carousel12 .item-content:after";
+
+				if ( $qColor ) {
+					$css .= "{$mark}, {$photo}, {$inline}{color: {$qColor};}";
+				}
+
+				if ( $qBg ) {
+					$css .= "{$badge}, {$photo}{background: {$qBg};}";
+				}
+
+				if ( $qSize ) {
+					$css .= "{$mark}{font-size: {$qSize}px;}";
+					$css .= "{$badge}{width: 1.3077em; height: 1.3077em; padding-top: 0.4615em; top: -0.6538em;}";
+					$css .= "{$photo}{font-size: {$qSize}px; width: 2.3em; height: 2.3em; line-height: 2.3em;}";
 				}
 			}
+
 			$css .= '</style>';
 
 			return $css;
@@ -1108,10 +1566,37 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 			}
 
 			if ( $html ) {
-				$html = "<div class='tss-social-share'><span class='share-icons'> ". esc_html__('Social on: ', 'testimonial-slider-showcase') ." </span> {$html}</div>";
+				// The Elementor "Social Share Label" control; the shortcode keeps the default.
+				$shareLabel = is_array( $scMeta ) && isset( $scMeta['tss_el_social_share_label'] )
+					? trim( sanitize_text_field( $scMeta['tss_el_social_share_label'] ) )
+					: trim( __( 'Share on: ', 'testimonial-slider-showcase' ) );
+				$shareLabel = '' !== $shareLabel ? "<span class='share-icons'>" . esc_html( $shareLabel ) . '</span> ' : '';
+				$html       = "<div class='tss-social-share'>{$shareLabel}{$html}</div>";
 			}
 
 			return $html;
+		}
+
+		/**
+		 * Label printed ahead of the social media icons.
+		 *
+		 * @param string|null $label   The Elementor "Social Media Label" value, or null
+		 *                             when the render path sets none (shortcode).
+		 * @param bool        $default Fall back to "Follow us:" when $label is null.
+		 * @return string
+		 */
+		public function rtSocialLabel( $label = null, $default = false ) {
+			if ( null === $label ) {
+				if ( ! $default ) {
+					return '';
+				}
+
+				$label = __( 'Follow us:', 'testimonial-slider-showcase' );
+			}
+
+			$label = trim( $label );
+
+			return '' !== $label ? "<span class='tss-social-label'>" . esc_html( $label ) . '</span>' : '';
 		}
 
 		public function tssGridLayouts() {
@@ -1139,7 +1624,7 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 						'url'   => TSSPro()->assetsUrl . 'images/layouts/carousel1.png',
 					],
 					'carousel3' => [
-						'title' => esc_html__( 'Carousel 2', 'testimonial-slider-showcase' ),
+						'title' => esc_html__( 'Carousel 3', 'testimonial-slider-showcase' ),
 						'url'   => TSSPro()->assetsUrl . 'images/layouts/carousel3.png',
 					],
 				]
@@ -1152,15 +1637,60 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 				[
 					'normal' => esc_html__( 'Normal', 'testimonial-slider-showcase' ),
 					'circle' => esc_html__( 'Circle', 'testimonial-slider-showcase' ),
+					'square' => esc_html__( 'Square', 'testimonial-slider-showcase' ),
 				]
 			);
 		}
 
+		/**
+		 * Whether a control's option list is going to be drawn.
+		 *
+		 * Elementor registers a widget's controls on the FRONT END as well as in
+		 * the editor, so an option list built from a query runs on every page view,
+		 * once per widget on the page. Nothing on the front end reads the list:
+		 * Control_Select2 extends Base_Data_Control, whose get_value() returns the
+		 * saved setting verbatim and never consults 'options'. So the list is only
+		 * worth building where the panel is actually rendered.
+		 *
+		 * The editor page and the panel's AJAX both run under is_admin(); newer
+		 * Elementor fetches some panel config over REST. The preview iframe is
+		 * deliberately NOT included — it renders front-end markup, and the panel it
+		 * belongs to lives in the outer admin frame.
+		 *
+		 * @return bool
+		 */
+		public function tssNeedsControlOptions() {
+			if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+				return true;
+			}
+
+			if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance->editor ) ) {
+				return \Elementor\Plugin::$instance->editor->is_edit_mode();
+			}
+
+			return false;
+		}
+
 		public function tssAllTestimonialPosts() {
+			// Every testimonial, full post rows, unbounded — this is the most
+			// expensive option list the plugin builds, so it is skipped entirely
+			// where it cannot be seen. See tssNeedsControlOptions().
+			if ( ! $this->tssNeedsControlOptions() ) {
+				return [];
+			}
+
+			// Two widgets on one page asked for this list twice; the answer cannot
+			// change within a request.
+			static $cache = null;
+
+			if ( null !== $cache ) {
+				return $cache;
+			}
+
 			$posts = [];
 			$args  = [
 				'post_type'      => [ TSSPro()->post_type ],
-				'post_status'    => [ 'Publish' ],
+				'post_status'    => [ 'publish' ],
 				'order'          => 'DESC',
 				'orderby'        => 'date',
 				'posts_per_page' => -1,
@@ -1179,7 +1709,9 @@ if ( ! class_exists( 'TSSProHelper' ) ) :
 
 			wp_reset_postdata();
 
-			return $posts;
+			$cache = $posts;
+
+			return $cache;
 		}
 
 		public function tssPostsOrderBy() {

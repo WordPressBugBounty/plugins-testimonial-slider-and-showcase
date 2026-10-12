@@ -130,7 +130,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 				if ( ! in_array( $tCol, array_keys( TSSPro()->scColumns() ), true ) ) {
 					$tCol = 2;
 				}
-				if ( ! in_array( $dCol, array_keys( TSSPro()->scColumns() ), true ) ) {
+				if ( ! in_array( $mCol, array_keys( TSSPro()->scColumns() ), true ) ) {
 					$mCol = 1;
 				}
 
@@ -188,6 +188,10 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 
 				if ( 'circle' === $imageType ) {
 					$arg['class'] .= ' tss-img-circle';
+				} elseif ( 'square' === $imageType ) {
+					$arg['class'] .= ' tss-img-square';
+				} else {
+					$arg['class'] .= ' tss-img-normal';
 				}
 
 				$arg['items']       = $itemFields;
@@ -280,6 +284,11 @@ if ( ! class_exists( 'TSSProSC' ) ) :
                             }
 
                         } else{
+                            // Real per-category totals for the whole wall, not just
+                            // the page that is about to be printed — see
+                            // TSSProHelper::isoFilterTotals().
+                            $isoTotals = TSSPro()->isoFilterTotals( $tssArgs, ( empty( $postLimit ) || '-1' === $postLimit ) ? 0 : absint( $postLimit ) );
+
                             if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                                 foreach ( $terms as $term ) {
                                     $fSelect = null;
@@ -287,13 +296,15 @@ if ( ! class_exists( 'TSSProSC' ) ) :
                                         $fSelect        = ' selected';
                                         $fSelectTrigger = true;
                                     }
-                                    $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
+                                    $fTotal      = TSSPro()->isoFilterTotalAttr( $isoTotals, $term->term_id );
+                                    $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter=''{$fTotal} data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
                                 }
                             }
                         }
 						if ( empty( $isotopeShowAll ) ) {
 							$fSelect = ( $fSelectTrigger ? null : ' selected' );
-							$html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter='' data-filter='*'>" . esc_html__( 'Show all', 'testimonial-slider-showcase' ) . '</span>';
+							$fTotal  = isset( $isoTotals ) ? TSSPro()->isoFilterTotalAttr( $isoTotals, 'all' ) : '';
+							$html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter=''{$fTotal} data-filter='*'>" . esc_html__( 'Show all', 'testimonial-slider-showcase' ) . '</span>';
 						}
 						$html .= $htmlButton;
 						$html .= '</div>';
@@ -371,11 +382,15 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 						$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );
 
 						if ( $isIsotope && taxonomy_exists( TSSPro()->taxonomies['category'] ) ) {
-							$termAs = wp_get_post_terms(
-								$iID,
-								TSSPro()->taxonomies['category'],
-								[ 'fields' => 'all' ]
-							);
+							// get_the_terms() reads the term cache WP_Query already primed for this
+							// page of posts. wp_get_post_terms() goes to the database for every single
+							// card, so an isotope wall cost one extra query per testimonial on top of
+							// its own query - 12 of the 17 queries a 12-card wall used to run.
+							$termAs = get_the_terms( $iID, TSSPro()->taxonomies['category'] );
+
+							if ( is_wp_error( $termAs ) || ! $termAs ) {
+								$termAs = [];
+							}
 
 							$isoFilter = null;
 
@@ -440,12 +455,19 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 					$totalPage   = $tssQuery->max_num_pages;
 					$foundPost   = $tssQuery->found_posts;
 
-					if ( $scMeta['tss_limit'][0] ) {
-						$range     = $scMeta['tss_posts_per_page'][0];
+					// Both of these are optional settings, so a shortcode saved without
+					// them has no such meta key at all. Reading them unguarded emitted
+					// "Undefined array key tss_limit" plus "Trying to access array
+					// offset on null" on every render of such a shortcode.
+					if ( ! empty( $scMeta['tss_limit'][0] ) ) {
+						$range     = ! empty( $scMeta['tss_posts_per_page'][0] ) ? $scMeta['tss_posts_per_page'][0] : 0;
 						$foundPost = $tssQuery->found_posts;
 
 						if ( $range && $foundPost > $range ) {
-							$foundPost = $scMeta['tss_limit'][0];
+							// The limit is a cap, not a count: with fewer testimonials than
+							// the limit, paging by the limit offered pages with nothing on them.
+							$limit     = (int) $scMeta['tss_limit'][0];
+							$foundPost = $limit > 0 ? min( $limit, (int) $tssQuery->found_posts ) : (int) $tssQuery->found_posts;
 							$totalPage = ceil( $foundPost / $range );
 						}
 					}
@@ -469,7 +491,26 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 												<span class="rt-button" data-sc-id="' . absint( $scID ) . '" data-total-pages="' . absint( $totalPage ) . '" data-posts-per-page="' . $postPp . '" data-found-posts="' . absint( $foundPosts ) . '" data-paged="1" data-no-more-post-text="' . esc_attr( $noMorePostText ) . '" data-loading-text="' . esc_attr( $loadingText ) . '">' . esc_html( $loadMore  ) . ' <span>(' . esc_html( $morePosts ) . ')</span></span>
 											</div>';
 					} elseif ( 'load_on_scroll' === $paginationType ) {
-						$htmlUtility .= '<div class="tss-scroll-load-more" data-trigger="1" data-sc-id="' . absint( $scID ) . '" data-paged="2"></div>';
+						// data-max-page was missing here while the Elementor twin has
+						// always had it. scrollLoadMore() reads it to know when to stop,
+						// so without it the comparison is against undefined and the
+						// trigger keeps firing past the last page.
+						$htmlUtility .= '<div class="tss-scroll-load-more" data-trigger="1" data-sc-id="' . absint( $scID ) . '" data-paged="2" data-max-page="' . absint( $totalPage ) . '"></div>';
+					}
+
+					// See TSSProHelper::isoPagerState(). The Load More button and the
+					// scroll trigger already carry these numbers, so both are excluded
+					// — exactly one element per wall owns the page number.
+					if ( $isIsotope && ! in_array( $paginationType, [ 'load_more', 'load_on_scroll' ], true ) ) {
+						$htmlUtility .= TSSPro()->isoPagerState(
+							[
+								'sc-id'          => $scID,
+								'paged'          => $page,
+								'total-pages'    => $totalPage,
+								'posts-per-page' => $postPp,
+								'found-posts'    => $foundPosts,
+							]
+						);
 					}
 
 					if ( $htmlUtility ) {
@@ -515,7 +556,7 @@ if ( ! class_exists( 'TSSProSC' ) ) :
 				'testi_limit'         => ! empty( $meta['tss_testimonial_limit'][0] ) ? absint( $meta['tss_testimonial_limit'][0] ) : null,
 				'gridType'            => ! empty( $meta['tss_grid_style'][0] ) ? esc_attr( $meta['tss_grid_style'][0] ) : 'even',
                 'hasAverage'          => ! empty( $meta['tss_average_switch'][0] ) ? true : false,
-				'readMore'            => ! empty( $meta['tss_read_more_button_text'][0] ) ? esc_html( $meta['tss_read_more_button_text'][0] ) : null,
+				'readMore'            => ! empty( $meta['tss_read_more_button_text'][0] ) ? esc_html( $meta['tss_read_more_button_text'][0] ) : esc_html__( 'Read more', 'testimonial-slider-showcase' ),
 				'averageRatingText'   => ! empty( $meta['tss_average_rating_text'][0] ) ? esc_html( $meta['tss_average_rating_text'][0] ) : esc_html__( 'Average Rating', 'testimonial-slider-showcase' ),
 				'loadMore'            => ! empty( $meta['tss_load_more_button_text'][0] ) ? esc_html( $meta['tss_load_more_button_text'][0] ) : esc_html__( 'Load More', 'testimonial-slider-showcase' ),
 				'margin'              => ! empty( $meta['tss_margin'][0] ) ? esc_attr( $meta['tss_margin'][0] ) : 'default',

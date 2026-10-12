@@ -55,6 +55,12 @@ if ( ! class_exists( 'TSSQueryArgs' ) ) :
 		 */
 		private function getPostType() {
 			$this->args['post_type'] = [ TSSPro()->post_type ];
+
+			// Same set as the Load More / scroll pages (see tssLoadMoreStatus()),
+			// or page 1 and the pages after it page through different lists -
+			// in the Elementor editor page 1 included drafts and later pages
+			// did not, so an item was skipped.
+			$this->args['post_status'] = TSSPro()->tssLoadMoreStatus();
 		}
 
 		/**
@@ -95,7 +101,7 @@ if ( ! class_exists( 'TSSQueryArgs' ) ) :
 				$this->args['order'] = $order;
 			}
 			if ( $order_by ) {
-				$this->args['orderby'] = $order_by;
+				$this->args['orderby'] = TSSPro()->tssOrderBy( $order_by, $order );
 			}
 
 			return $this;

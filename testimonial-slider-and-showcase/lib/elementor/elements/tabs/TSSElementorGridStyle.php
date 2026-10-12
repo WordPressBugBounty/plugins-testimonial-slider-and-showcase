@@ -36,7 +36,7 @@ if ( ! class_exists( 'TSSElementorGridStyle' ) ) :
 		public static function register() {
 			self::settings();
 
-			return apply_filters( 'rttss_elementor_end_of_style_tab', self::$fields );
+			return apply_filters( 'rttss_elementor_end_of_style_tab', self::$fields, 'grid' );
 		}
 
 		/**

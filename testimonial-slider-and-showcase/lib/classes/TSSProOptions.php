@@ -413,11 +413,12 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 					),
 				],
 				'tss_image_type'                => [
-					'type'      => 'radio',
-					'label'     => esc_html__( 'Image Type', 'testimonial-slider-showcase' ),
-					'alignment' => 'vertical',
-					'default'   => 'normal',
-					'options'   => $this->get_image_types(),
+					'type'        => 'radio',
+					'label'       => esc_html__( 'Image Type', 'testimonial-slider-showcase' ),
+					'alignment'   => 'vertical',
+					'default'     => 'normal',
+					'options'     => $this->get_image_types(),
+					'description' => esc_html__( 'Normal shows the photo with softly rounded corners; layouts designed with square or rounded photos keep them. Circle and Square override every layout.', 'testimonial-slider-showcase' ),
 				],
 				'tss_testimonial_limit'         => [
 					'type'        => 'number',
@@ -676,6 +677,26 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 						],
 					],
 				],
+				// Kept last: pro splices its own style fields in by numeric offset.
+				'tss_quote_style'                    => [
+					'type'        => 'multiple_options',
+					'label'       => esc_html__( 'Quote Style', 'testimonial-slider-showcase' ),
+					'description' => esc_html__( 'The quote mark on layouts that show one. Badge background applies where the quote sits in a round badge (Layout 3, Slider 3, Isotope 3 and the Layout 9 family).', 'testimonial-slider-showcase' ),
+					'options'     => [
+						'color' => [
+							'type'  => 'color',
+							'label' => esc_html__( 'Color', 'testimonial-slider-showcase' ),
+						],
+						'bg'    => [
+							'type'  => 'color',
+							'label' => esc_html__( 'Badge background', 'testimonial-slider-showcase' ),
+						],
+						'size'  => [
+							'type'  => 'number',
+							'label' => esc_html__( 'Size (px)', 'testimonial-slider-showcase' ),
+						],
+					],
+				],
 			];
 			return apply_filters( 'rtts_layout_style', $sc_style );
 		}
@@ -699,6 +720,7 @@ if ( ! class_exists( 'TSSProOptions' ) ) :
 			return [
 				'normal' => esc_html__( 'Normal', 'testimonial-slider-showcase' ),
 				'circle' => esc_html__( 'Circle', 'testimonial-slider-showcase' ),
+				'square' => esc_html__( 'Square', 'testimonial-slider-showcase' ),
 			];
 		}
 

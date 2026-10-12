@@ -308,7 +308,7 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 		 *
 		 * @return array
 		 */
-		public function image() {
+		public function image( $withImageType = false ) {
 			$this->fields[] = [
 				'mode'  => 'section_start',
 				'id'    => 'tss_el_image_section',
@@ -325,6 +325,23 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 				'label_block'     => true,
 				'content_classes' => 'elementor-descriptor',
 			];
+
+			if ( $withImageType ) {
+				// Same choices and classes as the shortcode's Image Type. The video 2
+				// layout's photo is the video poster, which keeps its own shape.
+				$this->fields[] = [
+					'type'        => \Elementor\Controls_Manager::SELECT2,
+					'id'          => 'tss_el_image_type',
+					'label'       => esc_html__( 'Image Type', 'testimonial-slider-showcase' ),
+					'options'     => TSSPro()->tssGetImageTypes(),
+					'default'     => 'normal',
+					'label_block' => true,
+					'description' => esc_html__( 'Normal shows the photo with softly rounded corners; layouts designed with square or rounded photos keep them. Circle and Square override every layout. A Border Radius set under Style → Image Style replaces Normal.', 'testimonial-slider-showcase' ),
+					'condition'   => [
+						'tss_el_layout_type!' => [ 'carousel_video2' ],
+					],
+				];
+			}
 
 			$this->fields = array_merge( apply_filters( 'rttss_elementor_before_image_end', $this->fields ) );
 
@@ -598,6 +615,15 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 		 *
 		 * @return array
 		 */
+		/**
+		 * Image Section with the Image Type control (slider widget).
+		 *
+		 * @return array
+		 */
+		public function sliderImage() {
+			return $this->image( true );
+		}
+
 		public function slider() {
 			$this->fields[] = [
 				'mode'  => 'section_start',
@@ -644,7 +670,13 @@ if ( ! class_exists( 'TSSElementorContentSections' ) ) :
 				'label_off'   => esc_html__( 'Off', 'testimonial-slider-showcase' ),
 				'default'     => 'yes',
 				'description' => esc_html__( 'Switch on to enable slider dot pagination.', 'testimonial-slider-showcase' ),
-				'condition'   => [ 'tss_el_layout_type!' => [ 'carousel11', 'carousel12' ] ],
+				// carousel11 and carousel12 were both removed from this exclusion when they
+				// were redesigned: their control rows put the dots between the arrows, and
+				// the shortcode arm has always rendered them. An unmet condition makes
+				// get_settings_for_display() return NULL, so while they were listed here
+				// the Elementor arm could never emit .swiper-pagination at all and the two
+				// arms disagreed. The exclusion is now empty, so the control is simply
+				// available to every layout.
 			];
 
 			$this->fields[] = [

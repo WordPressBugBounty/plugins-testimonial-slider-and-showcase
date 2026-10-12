@@ -34,6 +34,40 @@ if ( ! class_exists( 'TSSElementorInit' ) ) :
 			add_action( 'elementor/elements/categories_registered', [ $this, 'addCategory' ] );
 			add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'editorStyles' ] );
 			add_filter( 'elementor/editor/localize_settings', [ $this, 'promotePremiumWidgets' ] );
+			add_action( 'wp_enqueue_scripts', [ $this, 'previewScriptData' ], 100 );
+		}
+
+		/**
+		 * Prints the `tss` AJAX settings in the editor preview.
+		 *
+		 * The widgets localize `tss` while they render, but a widget dropped into
+		 * the editor renders over AJAX after the preview has loaded, so on a page
+		 * with no TSS widget yet `tss` was never printed and every AJAX action of
+		 * the dropped widget (pagination, Load More, filter refill) threw
+		 * "tss is not defined" until the page was saved and reloaded.
+		 *
+		 * @return void
+		 */
+		public function previewScriptData() {
+			if ( ! did_action( 'elementor/loaded' ) || ! \Elementor\Plugin::$instance->preview->is_preview_mode() || ! wp_script_is( 'tss', 'registered' ) ) {
+				return;
+			}
+
+			if ( in_array( 'sitepress-multilingual-cms/sitepress.php', get_option( 'active_plugins' ) ) ) {
+				$ajaxurl = admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
+			} else {
+				$ajaxurl = admin_url( 'admin-ajax.php' );
+			}
+
+			wp_localize_script(
+				'tss',
+				'tss',
+				[
+					'ajaxurl' => esc_url( $ajaxurl ),
+					'nonce'   => esc_attr( wp_create_nonce( TSSPro()->nonceText() ) ),
+					'nonceId' => esc_attr( TSSPro()->nonceId() ),
+				]
+			);
 		}
 
 		/**

@@ -9,19 +9,30 @@
         $("#rt_tss_sc_settings_meta").on("input propertychange", function () {
             renderTssPreview();
         });
-        if ($("#sc-style .rt-color").length) {
+        // The Styling tab is #sc-styling. The picker only calls these callbacks,
+        // it fires no DOM change event, so without them a picked colour reached
+        // the preview only when some other field changed. Iris can run the
+        // callback before it writes the field, so write it here first; dragging
+        // fires a burst of changes, so refresh once the pointer settles.
+        if ($("#sc-styling .rt-color").length) {
+            var colorTimer = null,
+                refreshSoon = function () {
+                    clearTimeout(colorTimer);
+                    colorTimer = setTimeout(renderTssPreview, 250);
+                };
             var cOptions = {
                 defaultColor: false,
                 change: function (event, ui) {
-                    renderTssPreview();
+                    $(this).val(ui.color.toString());
+                    refreshSoon();
                 },
                 clear: function () {
-                    renderTssPreview();
+                    refreshSoon();
                 },
                 hide: true,
                 palettes: true
             };
-            $("#sc-style .rt-color").wpColorPicker(cOptions);
+            $("#sc-styling .rt-color").wpColorPicker(cOptions);
         }
 
 
@@ -278,8 +289,10 @@
                     if (container.find('.tss-utility .tss-scroll-load-more').length) {
 
                     }
-                } else if (container.find('.tss-row.tss-masonry').length) {
-                    var masonryTarget = container.find('.tss-row.tss-masonry');
+                } else if (container.find('.rt-row.tss-masonry').length) {
+                    // The row is "rt-row", not "tss-row" - with the old selector the
+                    // masonry preview fell through to the even grid and was never laid out.
+                    var masonryTarget = container.find('.rt-row.tss-masonry');
                     preFunction();
                     var isotopeM = masonryTarget.imagesLoaded(function () {
                         isotopeM.isotope({
@@ -301,20 +314,10 @@
                         ajaxPagination(container, isotopeM);
                     }
                 } else {
-                    if (container.find(".tss-utility  .tss-load-more").length) {
-                        container.find(".tss-load-more").on('click', 'button', function (e) {
-                            e.preventDefault(e);
-                            loadMoreButton($(this), isotopeM, container, 'eLayout');
-                        });
-                    }
-                    if (container.find('.tss-utility .tss-scroll-load-more').length) {
-                        $(window).on('scroll', function () {
-                            var $this = container.find('.tss-utility .tss-scroll-load-more');
-                            if ($this.attr('data-trigger') > 0) {
-                                scrollLoadMore($this, isotopeM, container, 'eLayout');
-                            }
-                        });
-                    }
+                    // The preview shows page 1 only. Load More and Load on Scroll
+                    // called loadMoreButton() / scrollLoadMore(), which live in
+                    // wptestimonial.js and are not loaded here, so every scroll threw
+                    // a ReferenceError. Nothing to bind, as in the branches above.
                     if (container.find('.tss-utility .tss-pagination.tss-ajax').length) {
                         ajaxPagination(container);
                     }
@@ -458,17 +461,27 @@
 	}
 
     function isoFilterCounter(container, isotope) {
-        var total = 0;
-        container.find('.tss-isotope-button-wrapper button').each(function () {
+        // The filter buttons are <span class="rt-iso-button">, never <button>, so
+        // this matched nothing and no count ever reached the Layout Preview.
+        container.find('.tss-isotope-button-wrapper .rt-iso-button').each(function () {
             var self = $(this),
                 filter = self.data("filter"),
-                itemTotal = isotope.find(filter).length;
-            if (filter != "*") {
-                self.attr("data-filter-counter", itemTotal);
-                total = total + itemTotal
+                total = self.attr("data-filter-total");
+
+            // TSSPreview sends the real total for the whole wall. Counting the DOM
+            // instead only described the page that happened to be rendered. Falls
+            // back to the DOM where there is no total. Mirrors wptestimonial.js.
+            if (typeof total !== "undefined" && total !== false && total !== "") {
+                self.attr("data-filter-counter", total);
+            } else if (filter != "*") {
+                self.attr("data-filter-counter", isotope.find(filter).length);
+            } else {
+                // "Show all" counts the cards in the wall rather than summing the
+                // category counts, which double-counted anything filed under two
+                // categories and missed anything filed under none.
+                self.attr("data-filter-counter", isotope.find('.isotope-item').length);
             }
         });
-        container.find('.tss-isotope-button-wrapper button[data-filter="*"]').attr("data-filter-counter", total);
     }
 
 

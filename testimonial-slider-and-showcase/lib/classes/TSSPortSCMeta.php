@@ -284,6 +284,12 @@ if ( ! class_exists( 'TSSPortSCMeta' ) ) :
 					'tss-admin-preview',
 					'tss-admin-sc',
 					'tss-admin',
+					// The frontend script owns clampReadMore(), which lifts the
+					// .item-content clamp on cards whose testimonial has an inline
+					// .rt-read-more. Without it, the shortcode's admin preview shows
+					// the anchor jammed on the last visible text line instead of
+					// letting the text expand as it does on the frontend.
+					'tss',
 				]
 			);
 

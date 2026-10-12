@@ -31,6 +31,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 		public function tssLoadMore() {
 			$error = true;
 			$msg   = $data = null;
+			$found = $pages = 0;
 			if ( wp_verify_nonce(TSSPro()->getNonce(),TSSPro()->nonceText()) ) {
 				$scID = isset( $_REQUEST['scID'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['scID'] ) ) : null;
 
@@ -49,7 +50,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 						$tCol = 2;
 					}
 
-					if ( ! in_array( $dCol, array_keys( TSSPro()->scColumns() ), true ) ) {
+					if ( ! in_array( $mCol, array_keys( TSSPro()->scColumns() ), true ) ) {
 						$mCol = 1;
 					}
 
@@ -61,8 +62,9 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					$isCarousel = preg_match( '/carousel/', $layout );
 
 					/* Argument create */
-					$args              = [];
-					$args['post_type'] = [ TSSPro()->post_type ];
+					$args                = [];
+					$args['post_type']   = [ TSSPro()->post_type ];
+					$args['post_status'] = TSSPro()->tssLoadMoreStatus();
 					// Common filter
 					/* post__in */
 					$post__in = ( isset( $scMeta['tss_post__in'][0] ) ? sanitize_text_field( $scMeta['tss_post__in'][0] ) : null );
@@ -96,9 +98,11 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 						$offset        = $posts_per_page * ( (int) $paged - 1 );
 						$args['paged'] = $paged;
 
-						// Update posts_per_page.
+						// Update posts_per_page. A shortened last page needs an explicit
+						// offset, or WP pages by the shortened size and repeats earlier posts.
 						if ( absint( $args['posts_per_page'] ) > $limit - $offset ) {
 							$args['posts_per_page'] = $limit - $offset;
+							$args['offset']         = $offset;
 						}
 					}
 
@@ -107,8 +111,8 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					// Taxonomy.
-					$cats = ( isset( $scMeta['tss_categories'] ) ? array_filter( $scMeta['tss_categories'] ) : [] );
-					$tags = ( isset( $scMeta['tss_tags'] ) ? array_filter( $scMeta['tss_tags'] ) : [] );
+					$cats = ( isset( $scMeta['tss_categories'] ) ? array_filter( (array) $scMeta['tss_categories'] ) : [] );
+					$tags = ( isset( $scMeta['tss_tags'] ) ? array_filter( (array) $scMeta['tss_tags'] ) : [] );
 					$taxQ = [];
 
 					if ( is_array( $cats ) && ! empty( $cats ) ) {
@@ -128,10 +132,12 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					if ( ! empty( $taxQ ) ) {
-						$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+						// Set the relation before copying: the copy is by value.
 						if ( count( $taxQ ) > 1 ) {
 							$taxQ['relation'] = ! empty( $scMeta['tss_taxonomy_relation'][0] ) ? esc_attr( $scMeta['tss_taxonomy_relation'][0] ) : 'AND';
 						}
+
+						$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					}
 
 					// Order.
@@ -143,7 +149,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					if ( $order_by ) {
-						$args['orderby'] = $order_by;
+						$args['orderby'] = TSSPro()->tssOrderBy( $order_by, $order );
 					}
 
 					// Validation.
@@ -161,7 +167,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					$arg              = [];
 					$arg['grid']      = "rt-col-md-{$dCol} rt-col-sm-{$tCol} rt-col-xs-{$mCol}";
 					$gridType         = ! empty( $scMeta['tss_grid_style'][0] ) ? esc_attr( $scMeta['tss_grid_style'][0] ) : 'even';
-					$arg['read_more'] = ! empty( $scMeta['tss_read_more_button_text'][0] ) ? esc_attr( $scMeta['tss_read_more_button_text'][0] ) : null;
+					$arg['read_more'] = ! empty( $scMeta['tss_read_more_button_text'][0] ) ? esc_attr( $scMeta['tss_read_more_button_text'][0] ) : esc_html__( 'Read more', 'testimonial-slider-showcase' );
 					$arg['class']     = $gridType . '-grid-item';
 					$arg['class']    .= ' tss-grid-item';
 					$preLoader        = null;
@@ -184,6 +190,10 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 
 					if ( 'circle' === $image_type ) {
 						$arg['class'] .= ' tss-img-circle';
+					} elseif ( 'square' === $image_type ) {
+						$arg['class'] .= ' tss-img-square';
+					} else {
+						$arg['class'] .= ' tss-img-normal';
 					}
 
 					$margin = ! empty( $scMeta['tss_margin'][0] ) ? esc_attr( $scMeta['tss_margin'][0] ) : 'default';
@@ -205,7 +215,30 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					$arg['anchorClass'] = null;
 					$arg['link']        = empty( $scMeta['tss_detail_page_link'][0] );
 
+					// An isotope category tab pages within that category, so "5 per
+					// page" means five of THAT category — see
+					// TSSProHelper::isoFilteredArgs(). Without a term this stays the
+					// ordinary unfiltered page and nothing below changes.
+					$isoTerm = ! empty( $_REQUEST['tssTerm'] ) ? absint( $_REQUEST['tssTerm'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+					if ( $isIsotope && $isoTerm && $pagination ) {
+						$args = TSSPro()->isoFilteredArgs( $args, $isoTerm, ( 10000000 === $limit ? 0 : $limit ), $posts_per_page, $paged );
+					}
+
 					$tssQuery = new WP_Query( $args );
+
+					// The pager has to count down whatever set is on screen, so hand
+					// back the totals for the query that just ran. Capped by the wall's
+					// limit on the unfiltered path; the filtered one is already inside
+					// it because isoFilteredArgs() restricts to the wall's own ids.
+					if ( $isoTerm ) {
+						$found = (int) $tssQuery->found_posts;
+					} else {
+						$found = min( (int) $tssQuery->found_posts, $limit );
+					}
+
+					$perPage = ! empty( $posts_per_page ) ? (int) $posts_per_page : $found;
+					$pages   = $perPage > 0 ? (int) ceil( $found / $perPage ) : 1;
 
 					// Start layout.
 					if ( $tssQuery->have_posts() ) {
@@ -220,6 +253,11 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 							$arg['location']     = get_post_meta( $iID, 'tss_location', true );
 							$arg['rating']       = get_post_meta( $iID, 'tss_rating', true );
 							$arg['video']        = get_post_meta( $iID, 'tss_video', true );
+							// The layout templates read $video_url, which is what
+							// TSSProSC, TSSElementorRender and TSSPreview all set. Only
+							// 'video' was set here, so every video layout lost its player
+							// on AJAX pagination and load-more.
+							$arg['video_url']    = $arg['video'];
 							$arg['social_media'] = get_post_meta( $iID, 'tss_social_media', true );
 							$arg['pLink']        = get_permalink();
 							$imgUrl              = wp_get_attachment_image_src( get_post_thumbnail_id( $iID ), 'full' );
@@ -237,7 +275,15 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 							}
 
 							if ( $isIsotope ) {
-								$termAs    = wp_get_post_terms( $iID, TSSPro()->taxonomies['category'], [ 'fields' => 'all' ] );
+								// get_the_terms() reads the term cache WP_Query already primed for this
+								// page of posts. wp_get_post_terms() goes to the database for every single
+								// card, so an isotope wall cost one extra query per testimonial on top of
+								// its own query - 12 of the 17 queries a 12-card wall used to run.
+								$termAs = get_the_terms( $iID, TSSPro()->taxonomies['category'] );
+
+								if ( is_wp_error( $termAs ) || ! $termAs ) {
+									$termAs = [];
+								}
 								$isoFilter = null;
 								if ( ! empty( $termAs ) ) {
 									foreach ( $termAs as $term ) {
@@ -261,7 +307,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					wp_reset_postdata();
 
 				} elseif ( 'elementor' == $scID ) {
-					$data = $this->tssElLoadMore();
+					$data = $this->tssElLoadMore( $found, $pages );
 
 					if ( ! empty( $data ) ) {
 						$error = false;
@@ -280,7 +326,10 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					'error' => $error,
 					'msg'   => $msg,
 					'data'  => $data,
-					'q'     => $args,
+					// Totals for the query that just ran, so a wall showing one
+					// category can re-point its pager at that category's set.
+					'found' => $found,
+					'pages' => $pages,
 				]
 			);
 
@@ -290,10 +339,14 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 		/**
 		 * Elementor data
 		 *
+		 * @param int $found Out: posts in the set that was just queried.
+		 * @param int $pages Out: pages in that set.
 		 * @return string
 		 */
-		public function tssElLoadMore() {
+		public function tssElLoadMore( &$found = null, &$pages = null ) {
 			$data   = null;
+			$found  = 0;
+			$pages  = 0;
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $scMeta = ! empty( $_REQUEST['elData'] ) ? json_decode( sanitize_text_field( wp_unslash( $_REQUEST['elData'] ) ), true ) : null;
 			$layout = ( ! empty( $scMeta['tss_layout'] ) ? esc_attr( $scMeta['tss_layout'] ) : 'layout1' );
@@ -309,7 +362,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 				$tCol = 2;
 			}
 
-			if ( ! in_array( $dCol, array_keys( TSSPro()->scColumns() ), true ) ) {
+			if ( ! in_array( $mCol, array_keys( TSSPro()->scColumns() ), true ) ) {
 				$mCol = 1;
 			}
 
@@ -321,8 +374,9 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			$isCarousel = preg_match( '/carousel/', $layout );
 
 			/* Argument create */
-			$args              = [];
-			$args['post_type'] = [ TSSPro()->post_type ];
+			$args                = [];
+			$args['post_type']   = [ TSSPro()->post_type ];
+			$args['post_status'] = TSSPro()->tssLoadMoreStatus();
 			// Common filter
 			/* post__in */
 			$post__in = ( ! empty( $scMeta['tss_post__in'] ) ? sanitize_text_field( implode( ', ', $scMeta['tss_post__in'] ) ) : null );
@@ -372,8 +426,8 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			}
 
 			// Taxonomy.
-			$cats = ( isset( $scMeta['tss_categories'] ) ? array_filter( $scMeta['tss_categories'] ) : [] );
-			$tags = ( isset( $scMeta['tss_tags'] ) ? array_filter( $scMeta['tss_tags'] ) : [] );
+			$cats = ( isset( $scMeta['tss_categories'] ) ? array_filter( (array) $scMeta['tss_categories'] ) : [] );
+			$tags = ( isset( $scMeta['tss_tags'] ) ? array_filter( (array) $scMeta['tss_tags'] ) : [] );
 			$taxQ = [];
 
 			if ( is_array( $cats ) && ! empty( $cats ) ) {
@@ -393,11 +447,12 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			}
 
 			if ( ! empty( $taxQ ) ) {
-				$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-
+				// Set the relation before copying: the copy is by value.
 				if ( count( $taxQ ) > 1 ) {
 					$taxQ['relation'] = ! empty( $scMeta['tss_taxonomy_relation'] ) ? esc_attr( $scMeta['tss_taxonomy_relation'] ) : 'AND';
 				}
+
+				$args['tax_query'] = $taxQ; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			}
 
 			// Order.
@@ -409,7 +464,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			}
 
 			if ( $order_by ) {
-				$args['orderby'] = $order_by;
+				$args['orderby'] = TSSPro()->tssOrderBy( $order_by, $order );
 			}
 
 			// Validation.
@@ -425,7 +480,7 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			$arg              = [];
 			$arg['grid']      = "rt-col-md-{$dCol} rt-col-sm-{$tCol} rt-col-xs-{$mCol}";
 			$gridType         = ! empty( $scMeta['tss_grid_style'] ) ? esc_attr( $scMeta['tss_grid_style'] ) : 'even';
-			$arg['read_more'] = ! empty( $scMeta['tss_read_more_button_text'] ) ? esc_attr( $scMeta['tss_read_more_button_text'] ) : null;
+			$arg['read_more'] = ! empty( $scMeta['tss_read_more_button_text'] ) ? esc_attr( $scMeta['tss_read_more_button_text'] ) : esc_html__( 'Read more', 'testimonial-slider-showcase' );
 			$arg['class']     = $gridType . '-grid-item';
 			$arg['class']    .= ' tss-grid-item';
 			$preLoader        = null;
@@ -447,10 +502,34 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 			$arg['items']       = ! empty( $scMeta['tss_item_fields'] ) ? array_map( 'sanitize_text_field', $scMeta['tss_item_fields'] ) : [];
 			$arg['shareItems']  = ! empty( $scMeta['tss_share_fields'] ) ? array_map( 'sanitize_text_field', $scMeta['tss_share_fields'] ) : [];
 			$arg['anchorClass'] = null;
-			$link               = ! empty( $scMeta['tss_detail_page_link'] ) ? true : false;
+
+			$arg['social_label'] = isset( $scMeta['tss_el_social_label'] ) ? sanitize_text_field( $scMeta['tss_el_social_label'] ) : null;
+
+			// Templates print the share block only when $scMeta is set, and rtShare()
+			// reads the share label from it, so the paged items need it too.
+			$arg['scMeta'] = $scMeta;
+
+			$link              = ! empty( $scMeta['tss_detail_page_link'] ) ? true : false;
 			$arg['link']        = $link ? true : false;
 
+			// Same category-aware paging as the shortcode arm — see
+			// TSSProHelper::isoFilteredArgs() and the twin block in tssLoadMore().
+			$isoTerm = ! empty( $_REQUEST['tssTerm'] ) ? absint( $_REQUEST['tssTerm'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+			if ( $isIsotope && $isoTerm && $pagination ) {
+				$args = TSSPro()->isoFilteredArgs( $args, $isoTerm, ( 10000000 === $limit ? 0 : $limit ), $posts_per_page, $paged );
+			}
+
 			$tssQuery = new WP_Query( $args );
+
+			if ( $isoTerm ) {
+				$found = (int) $tssQuery->found_posts;
+			} else {
+				$found = min( (int) $tssQuery->found_posts, $limit );
+			}
+
+			$elPerPage = ! empty( $posts_per_page ) ? (int) $posts_per_page : $found;
+			$pages     = $elPerPage > 0 ? (int) ceil( $found / $elPerPage ) : 1;
 
 			// Start layout.
 			if ( $tssQuery->have_posts() ) {
@@ -465,6 +544,8 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					$arg['location']     = get_post_meta( $iID, 'tss_location', true );
 					$arg['rating']       = get_post_meta( $iID, 'tss_rating', true );
 					$arg['video']        = get_post_meta( $iID, 'tss_video', true );
+					// See the note in tssLoadMore(): the templates read $video_url.
+					$arg['video_url']    = $arg['video'];
 					$arg['social_media'] = get_post_meta( $iID, 'tss_social_media', true );
 					$arg['pLink']        = get_permalink();
 					$imgUrl              = wp_get_attachment_image_src( get_post_thumbnail_id( $iID ), 'full' );
@@ -482,7 +563,15 @@ if ( ! class_exists( 'TSSProLoadMoreResponse' ) ) :
 					}
 
 					if ( $isIsotope ) {
-						$termAs    = wp_get_post_terms( $iID, TSSPro()->taxonomies['category'], [ 'fields' => 'all' ] );
+						// get_the_terms() reads the term cache WP_Query already primed for this
+						// page of posts. wp_get_post_terms() goes to the database for every single
+						// card, so an isotope wall cost one extra query per testimonial on top of
+						// its own query - 12 of the 17 queries a 12-card wall used to run.
+						$termAs = get_the_terms( $iID, TSSPro()->taxonomies['category'] );
+
+						if ( is_wp_error( $termAs ) || ! $termAs ) {
+							$termAs = [];
+						}
 						$isoFilter = null;
 
 						if ( ! empty( $termAs ) ) {

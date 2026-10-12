@@ -103,6 +103,9 @@
             }
         }
 
+        // Only the layout 9 design has an overlay (revealed on hover / tap).
+        $(".rt-field-wrapper.tss-overlay-item").toggle(["layout9", "carousel9", "isotope4"].indexOf(layout) > -1);
+
         $(".rt-field-wrapper.tss-load-more-item").hide();
         var pagination = $("#tss_pagination").is(':checked');
         if (pagination && !isCarousel) {

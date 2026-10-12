@@ -1,10 +1,10 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1, mamunnu
 Donate link:
-Stable tag: 2.4.2
+Stable tag: 3.0.1
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -217,9 +217,8 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 * Submit a support ticket at [radiustheme.com/ticket-support](https://www.radiustheme.com/ticket-support/) and our team will assist you.
 
-= How can I report security issues?
-
-* Report security vulnerabilities through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/wordpress/plugin/testimonial-slider-and-showcase).
+= Where do I report security bugs found in this plugin? =
+* Please report security bugs found in the source code of the undefined plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/9e5fbf25-0d56-42d6-a9bf-2b7b56bf9745). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 
 == Screenshots ==
@@ -232,6 +231,23 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 06. Styles
 
 == Changelog ==
+
+= 3.0.1 (October 12, 2026) =
+* Fixed: Load More repeating testimonials and skipping others when a limit is set.
+* Fixed: Invalid mobile column value not falling back to 1 column in the shortcode and admin preview.
+
+= 3.0.0 (October 12, 2026) =
+* Added: Brand-new design for all Grid, Carousel and Isotope layouts.
+* Added: Redesigned Carousel layouts 7–12 with new card styles, spacing, alignment and responsive behavior.
+* Added: Separate "Follow us:" row for social profile links in Layout 1.
+* Added: New Elementor style controls for the redesigned layouts.
+* Added: Version check that blocks outdated Pro versions from loading and shows an update notice.
+* Updated: WordPress 7.1 compatibility check.
+* Fixed: Carousel 11/12 thumbnail strip and Carousel 12 arrow/dot placement.
+* Fixed: Elementor editor preview and Isotope/Masonry rendering of newly loaded items.
+* Fixed: Tablet/mobile column settings not applied correctly.
+* Fixed: Pagination showing empty pages when a limit is set.
+* Fixed: Category/tag filter handling in Load More and taxonomy queries.
 
 = 2.4.2 (August 04, 2025) =
 * Updated: WordPress 7.0 compatibility check.

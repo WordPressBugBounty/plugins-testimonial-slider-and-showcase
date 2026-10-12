@@ -55,7 +55,7 @@ if ( ! class_exists( 'TSSElementorSliderContent' ) ) :
 				'sliderLayout',
 				'filtering',
 				'slider',
-				'image',
+				'sliderImage',
 				'textLimit',
 				'contentVisibility',
 			];

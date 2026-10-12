@@ -84,6 +84,26 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 		 * @param array $scMeta Meta values.
 		 * @return void
 		 */
+		/**
+		 * Whether the Image Style → Border Radius control holds a value on any device.
+		 *
+		 * @param array $meta Widget settings.
+		 * @return bool
+		 */
+		private function hasImageRadius( $meta ) {
+			foreach ( [ '', '_tablet', '_mobile' ] as $device ) {
+				$radius = isset( $meta[ 'tss_el_grid_image_border-radius' . $device ] ) ? $meta[ 'tss_el_grid_image_border-radius' . $device ] : [];
+
+				foreach ( [ 'top', 'right', 'bottom', 'left' ] as $side ) {
+					if ( isset( $radius[ $side ] ) && '' !== (string) $radius[ $side ] ) {
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
 		public function testimonialRender( $scMeta ) {
 			$rand          = wp_rand();
 			$layoutID      = 'tss-container-' . absint( $rand );
@@ -151,14 +171,24 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 				$arg['class'] .= ' masonry-grid-item';
 			}
 
-			if ( $imageType == 'circle' ) {
+			if ( 'circle' === $imageType ) {
 				$arg['class'] .= ' tss-img-circle';
+			} elseif ( 'square' === $imageType ) {
+				$arg['class'] .= ' tss-img-square';
+			} elseif ( 'normal' === $imageType && ! $this->hasImageRadius( $scMeta ) ) {
+				// Normal's 16px rule outranks the Border Radius control, so a radius
+				// set there skips the class and keeps its say.
+				$arg['class'] .= ' tss-img-normal';
 			}
 
 			$arg['items']       = $itemFields;
 			$arg['shareItems']  = [];
 			$arg['anchorClass'] = null;
 			$arg['link']        = $link ? true : false;
+
+			// The "Social Media Label" control. Null keeps each layout's own
+			// default (the shortcode never sets it).
+			$arg['social_label'] = isset( $scMeta['tss_el_social_label'] ) ? sanitize_text_field( $scMeta['tss_el_social_label'] ) : null;
 
 			// Start layout
 			$html .= "<div class='rt-container-fluid tss-wrapper' id='{$layoutID}' {$containerDataAttr}>";
@@ -247,6 +277,12 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
                             }
                         }
                     }else{
+                        // Real per-category totals for the whole wall, not just the
+                        // page about to be printed — see
+                        // TSSProHelper::isoFilterTotals(). Kept in step with the
+                        // shortcode arm in TSSProSC.
+                        $isoTotals = TSSPro()->isoFilterTotals( $tssArgs, ( empty( $postLimit ) || '-1' === $postLimit ) ? 0 : absint( $postLimit ) );
+
                         if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                             foreach ( $terms as $term ) {
                                 $fSelect = null;
@@ -254,14 +290,16 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
                                     $fSelect        = ' selected';
                                     $fSelectTrigger = true;
                                 }
-                                $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter='' data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
+                                $fTotal      = TSSPro()->isoFilterTotalAttr( $isoTotals, $term->term_id );
+                                $htmlButton .= "<span class='rt-iso-button {$fSelect}' data-filter-counter=''{$fTotal} data-filter='.iso_{$term->term_id}' {$fSelect}>" . $term->name . '</span>';
                             }
                         }
                     }
 
                     if ( empty( $isotopeShowAll ) ) {
                         $fSelect = ( $fSelectTrigger ? null : ' selected' );
-                        $html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter='' data-filter='*'>" . esc_html__(
+                        $fTotal  = isset( $isoTotals ) ? TSSPro()->isoFilterTotalAttr( $isoTotals, 'all' ) : '';
+                        $html   .= "<span class='rt-iso-button{$fSelect}' data-filter-counter=''{$fTotal} data-filter='*'>" . esc_html__(
                             'Show all',
                             'testimonial-slider-showcase'
                         ) . '</span>';
@@ -339,11 +377,15 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 
 					$arg['video_url'] = get_post_meta( $iID, 'tss_video', true );
 					if ( $isIsotope && taxonomy_exists( TSSPro()->taxonomies['category'] ) ) {
-						$termAs = wp_get_post_terms(
-							$iID,
-							TSSPro()->taxonomies['category'],
-							[ 'fields' => 'all' ]
-						);
+						// get_the_terms() reads the term cache WP_Query already primed for this
+						// page of posts. wp_get_post_terms() goes to the database for every single
+						// card, so an isotope wall cost one extra query per testimonial on top of
+						// its own query - 12 of the 17 queries a 12-card wall used to run.
+						$termAs = get_the_terms( $iID, TSSPro()->taxonomies['category'] );
+
+						if ( is_wp_error( $termAs ) || ! $termAs ) {
+							$termAs = [];
+						}
 						$isoFilter = null;
 						if ( ! empty( $termAs ) ) {
 							foreach ( $termAs as $term ) {
@@ -400,7 +442,10 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 					$range     = $scMeta['tss_el_pagination_per_page'];
 
 					if ( $range && $foundPost > $scMeta['tss_el_pagination_per_page'] ) {
-						$foundPost = $scMeta['tss_el_posts_limit'];
+						// The limit is a cap, not a count: with fewer testimonials than
+						// the limit, paging by the limit offered pages with nothing on them.
+						$limit     = (int) $scMeta['tss_el_posts_limit'];
+						$foundPost = $limit > 0 ? min( $limit, (int) $tssQuery->found_posts ) : (int) $tssQuery->found_posts;
 						$maxPages  = ceil( $foundPost / $range );
 					}
 				}
@@ -431,6 +476,22 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 								</div>";
 				} elseif ( $paginationType == 'load_on_scroll' ) {
 					$htmlUtility .= "<div class='tss-scroll-load-more' data-trigger='1' data-sc-id='elementor' data-paged='2' data-max-page={$maxPages} {$this->loadMoreArgs($scMeta)}></div>";
+				}
+
+				// See TSSProHelper::isoPagerState(). Kept in step with the shortcode
+				// arm in TSSProSC; the Load More button and the scroll trigger already
+				// carry these, so exactly one element per wall owns the page number.
+				if ( $isIsotope && ! in_array( $paginationType, [ 'load_more', 'load_on_scroll' ], true ) ) {
+					$htmlUtility .= TSSPro()->isoPagerState(
+						[
+							'sc-id'          => 'elementor',
+							'paged'          => $tssQuery->query_vars['paged'],
+							'total-pages'    => $maxPages,
+							'posts-per-page' => $tssQuery->query_vars['posts_per_page'],
+							'found-posts'    => $foundPost,
+						],
+						$this->loadMoreArgs( $scMeta )
+					);
 				}
 
 				if ( $htmlUtility ) {
@@ -473,9 +534,9 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 				'enable_testi_limit'  => ! empty( $meta['tss_el_text_limit'] ) ? true : false,
 				'testi_limit'         => ! empty( $meta['tss_el_testimonial_text_limit'] ) ? absint( $meta['tss_el_testimonial_text_limit'] ) : null,
 				'gridType'            => ! empty( $meta['tss_el_grid_style'] ) ? esc_attr( $meta['tss_el_grid_style'] ) : 'even',
-				'readMore'            => ! empty( $meta['tss_el_read_more_text'] ) ? esc_html( $meta['tss_el_read_more_text'] ) : null,
+				'readMore'            => ! empty( $meta['tss_el_read_more_text'] ) ? esc_html( $meta['tss_el_read_more_text'] ) : esc_html__( 'Read more', 'testimonial-slider-showcase' ),
 				'loadMore'            => ! empty( $meta['tss_el_load_more_text'] ) ? esc_html( $meta['tss_el_load_more_text'] ) : esc_html__( 'Load More', 'testimonial-slider-showcase' ),
-				'imageType'           => ! empty( $meta['tss_el_image_type'] ) ? esc_attr( $meta['tss_el_image_type'] ) : 'cirle',
+				'imageType'           => ! empty( $meta['tss_el_image_type'] ) ? esc_attr( $meta['tss_el_image_type'] ) : '',
 				'itemFields'          => TSSPro()->tssElContentVisibility( $meta ),
 				'link'                => ! empty( $meta['tss_el_detail_page_link'] ) ? true : false,
 				'postIn'              => ! empty( $meta['tss_el_include_posts'] ) ? implode( ', ', $meta['tss_el_include_posts'] ) : '',
@@ -612,8 +673,8 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 			$elData = [
 				'tss_layout'                => $scMeta['tss_el_layout_type'],
 				'tss_desktop_column'        => $scMeta['tss_el_cols'],
-				'tss_tab_column'            => isset( $meta['tss_el_cols_tablet'] ) && $meta['tss_el_cols_tablet'] != '' ? absint( $meta['tss_el_cols_tablet'] ) : 2,
-				'tss_mobile_column'         => isset( $meta['tss_el_cols_mobile'] ) && $meta['tss_el_cols_mobile'] != '' ? absint( $meta['tss_el_cols_mobile'] ) : 1,
+				'tss_tab_column'            => isset( $scMeta['tss_el_cols_tablet'] ) && $scMeta['tss_el_cols_tablet'] != '' ? absint( $scMeta['tss_el_cols_tablet'] ) : 2,
+				'tss_mobile_column'         => isset( $scMeta['tss_el_cols_mobile'] ) && $scMeta['tss_el_cols_mobile'] != '' ? absint( $scMeta['tss_el_cols_mobile'] ) : 1,
 				'tss_image_size'            => $scMeta['tss_el_image'],
 				'custom_img_size'           => ! empty( $cImageSize ) ? $cImageSize : [],
 				'default_image'             => ! empty( $scMeta['tss_el_image_default_preview']['id'] ) ? absint( $scMeta['tss_el_image_default_preview']['id'] ) : null,
@@ -632,6 +693,8 @@ if ( ! class_exists( 'TSSElementorRender' ) ) :
 				'tss_read_more_button_text' => ! empty( $scMeta['tss_el_read_more_text'] ) ? $scMeta['tss_el_read_more_text'] : '',
 				'tss_item_fields'           => TSSPro()->tssElContentVisibility( $scMeta ),
 				'tss_share_fields'          => ! empty( $scMeta['tss_el_social_share_items'] ) ? $scMeta['tss_el_social_share_items'] : [],
+				'tss_el_social_label'       => isset( $scMeta['tss_el_social_label'] ) ? $scMeta['tss_el_social_label'] : null,
+				'tss_el_social_share_label' => isset( $scMeta['tss_el_social_share_label'] ) ? $scMeta['tss_el_social_share_label'] : null,
 				'tss_detail_page_link'      => ! empty( $scMeta['tss_el_detail_page_link'] ) ? $scMeta['tss_el_detail_page_link'] : '',
 			];
 

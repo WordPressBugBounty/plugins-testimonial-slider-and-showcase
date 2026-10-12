@@ -288,11 +288,19 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 
 
 
+			// Every rule in the Divi stylesheet is scoped to ".et-db #et-boc", so on
+			// its own it only styles output inside a Divi-built layout; Elementor
+			// widgets and shortcodes elsewhere on a Divi site were left unstyled.
+			// The base stylesheet therefore always loads, and on Divi sites "tss"
+			// becomes the Divi layer on top of it. Everything keeps enqueueing
+			// "tss", and the custom CSS attached to it still prints last.
+			$styleDeps = [];
+
 			if ( class_exists( 'ET_Builder_Plugin' ) ) {
-				// Divi is active
-				$styles['tss'] = TSSPro()->assetsUrl . 'css/divi-wptestimonial.css';
+				$styles['tss-base'] = TSSPro()->assetsUrl . 'css/wptestimonial.css';
+				$styles['tss']      = TSSPro()->assetsUrl . 'css/divi-wptestimonial.css';
+				$styleDeps['tss']   = [ 'tss-base' ];
 			} else {
-				// Divi not active
 				$styles['tss'] = TSSPro()->assetsUrl . 'css/wptestimonial.css';
 			}
 
@@ -328,7 +336,7 @@ if ( ! class_exists( 'TSSProInit' ) ) :
 			}
 
 			foreach ( $styles as $k => $v ) {
-				wp_register_style( $k, $v, false, $version );
+				wp_register_style( $k, $v, isset( $styleDeps[ $k ] ) ? $styleDeps[ $k ] : [], $version );
 			}
 
 		}

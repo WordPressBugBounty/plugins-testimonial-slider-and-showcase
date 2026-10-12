@@ -28,11 +28,29 @@ $html  = null;
 $html .= "<div class='{$grid} {$class}'>";
 $html .= '<div class="single-item-wrapper">';
 $html .= '<div class="item-content-wrapper tss-left">';
-
 if ( in_array( 'testimonial', $items, true ) && $testimonial ) {
+	$html .= '<span class="tss-quote-mark" aria-hidden="true">&ldquo;</span>';
 	$html .= "<div class='item-content'>{$testimonial}</div>";
+
+	// Only when the shortcode's "Read More" field is checked. Revealed by JS
+	// only when the text is actually clamped. The label reuses the existing
+	// "Read more button text" option (tss_read_more_button_text /
+	// tss_el_read_more_text) so a site that already set one is honoured. It arrives
+	// pre-escaped from the render paths, so decode once and re-escape per context.
+	// There is no matching "Read less" option, so that string stays translatable only.
+	if ( in_array( 'read_more', $items, true ) ) {
+		$tssMoreText = ! empty( $read_more ) ? wp_specialchars_decode( $read_more, ENT_QUOTES ) : __( 'Read more', 'testimonial-slider-showcase' );
+		$tssLessText = __( 'Read less', 'testimonial-slider-showcase' );
+		$html .= '<button class="tss-readmore-toggle" type="button" aria-expanded="false">';
+		$html .= '<span class="tss-readmore-label" data-more="' . esc_attr( $tssMoreText ) . '" data-less="' . esc_attr( $tssLessText ) . '">' . esc_html( $tssMoreText ) . '</span>';
+		// Chevron is drawn in CSS — printHtml() runs wp_kses_post(), which strips <svg>.
+		$html .= '<span class="tss-readmore-icon" aria-hidden="true"></span>';
+		$html .= '</button>';
+	}
 }
 
+// Absorbs the leftover height so the read-more sits under the quote, not floating.
+$html .= '<div class="tss-card-spacer" aria-hidden="true"></div>';
 $html .= '</div>';
 $html .= '<div class="tss-meta-info tss-right">';
 
@@ -68,6 +86,7 @@ if ( in_array( 'rating', $items, true ) ) {
 
 if ( in_array( 'social_media', $items, true ) && ! empty( $social_media ) && function_exists( 'rttsp' ) ) {
 	$html .= "<div class='author-social'>";
+	$html .= TSSPro()->rtSocialLabel( isset( $social_label ) ? $social_label : null );
 
 	foreach ( $social_media as $sid => $url ) {
 		$html .= "<a href='{$url}' target='_blank'><span class='dashicons dashicons-{$sid}'></span></a>";
