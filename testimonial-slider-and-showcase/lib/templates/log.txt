@@ -1,1 +1,0 @@
-<span class='author-designation'></span>, <span class='item-company'></span>, <span class='author-location'></span>
