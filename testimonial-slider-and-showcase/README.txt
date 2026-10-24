@@ -1,7 +1,7 @@
 === Testimonial - Testimonial Slider and Showcase Plugin ===
 Contributors: techlabpro1, mamunnu
 Donate link:
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 Tags: testimonial, testimonial slider, testimonial showcase, customer review, star ratings
 Requires at least: 5.0
 Tested up to: 7.1
@@ -231,6 +231,10 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 06. Styles
 
 == Changelog ==
+
+= 3.0.2 (October 24, 2026) =
+* Fixed: Testimonial content length issue.
+
 
 = 3.0.1 (October 12, 2026) =
 * Fixed: Load More repeating testimonials and skipping others when a limit is set.

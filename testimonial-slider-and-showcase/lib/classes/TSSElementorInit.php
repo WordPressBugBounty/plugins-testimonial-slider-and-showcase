@@ -26,10 +26,24 @@ if ( ! class_exists( 'TSSElementorInit' ) ) :
 		 * Class Constructor.
 		 */
 		public function __construct() {
-			if ( did_action( 'elementor/loaded' ) ) {
-				add_action( 'elementor/widgets/register', [ $this, 'registerWidgets' ] );
+			// Wait for `init`, as Team does: this class is built while the plugin
+			// file loads, and on multisite a network-activated TSS loads before a
+			// site-activated Elementor, so checking for Elementor here dropped
+			// every widget. By `init` every plugin has loaded.
+			add_action( 'init', [ $this, 'initElementor' ], 0 );
+		}
+
+		/**
+		 * Hooks into Elementor, if it is active.
+		 *
+		 * @return void
+		 */
+		public function initElementor() {
+			if ( ! did_action( 'elementor/loaded' ) ) {
+				return;
 			}
 
+			add_action( 'elementor/widgets/register', [ $this, 'registerWidgets' ] );
 			add_action( 'elementor/controls/register', [ $this, 'registerControls' ] );
 			add_action( 'elementor/elements/categories_registered', [ $this, 'addCategory' ] );
 			add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'editorStyles' ] );

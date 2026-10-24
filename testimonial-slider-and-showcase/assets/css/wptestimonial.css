@@ -1716,10 +1716,10 @@
 	color: #3c4150;
 	margin: 0;
 	padding-top: 0;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 10;
-	overflow: hidden;
+	/*display: -webkit-box;*/
+	/*-webkit-box-orient: vertical;*/
+	/*-webkit-line-clamp: 10;*/
+	/*overflow: hidden;*/
 }
 
 .tss-wrapper .tss-carousel1 .item-content p:last-child {
